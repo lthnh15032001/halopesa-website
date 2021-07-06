@@ -32,7 +32,7 @@ const Header = () => {
       }
     }
   `)
-  console.log({ data: data })
+  // console.log({ data: data })
   const handleSubmit = event => {
     event.preventDefault()
   }
@@ -41,7 +41,7 @@ const Header = () => {
     <HeaderWrapper id="top">
       <Container>
         <Flex className="flex-row-reverse d-flex ">
-          <HeaderTextGroup className="d-flex flex-column justify-content-center m-5">
+          <HeaderTextGroup className="d-flex flex-column justify-content-center">
             <LogoHalopesa styles={{
               marginBottom: 0,
               width: "100%",
@@ -67,7 +67,7 @@ const Header = () => {
               </ImageWrapper>
             </div>
           </HeaderTextGroup>
-          <ImageWrapper>
+          <ImageWrapper style={{marginRight:"40px"}}>
             <StyledImage fluid={data.greenSkew.childImageSharp.fluid} />
             <br />
           </ImageWrapper>
@@ -142,12 +142,12 @@ const ImageWrapper = styled.div`
 `
 
 const StyledImage = styled(Img)`
-  width: ${props => props.width ? props.width : "500px"};
+  width: ${props => props.width ? props.width : "680px"};
 @media(max - width: ${props => props.theme.screen.md}) {
-  width: ${props => props.width ? props.width : "400px"};
+  width: ${props => props.width ? props.width : "580px"};
 }
 @media(max - width: ${props => props.theme.screen.sm}) {
-  width: ${props => props.width ? props.width : "300px"};
+  width: ${props => props.width ? props.width : "480px"};
   display: none;
 }
 `
