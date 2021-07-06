@@ -2,22 +2,26 @@ import React, { Component } from "react"
 import AnchorLink from "react-anchor-link-smooth-scroll"
 import Scrollspy from "react-scrollspy"
 import { Menu, X } from "react-feather"
+// import { imageStatic } from "../../../images"
 
 import { Container } from "../../global"
+import { LogoHalopesa } from './LogoHalopesa'
 import {
   Nav,
   NavItem,
-  Brand,
+  // Brand,
   StyledContainer,
   NavListWrapper,
   MobileMenu,
   Mobile,
-  ActionsContainer,
+  // ActionsContainer,
+  TopBanner
 } from "./style"
 
-const NAV_ITEMS = ["Features", "Product", "Pricing", ""]
+const NAV_ITEMS = ["Services", "For Corporation", "For Agent", "News and promotions", "About"]
 
 export default class Navigation extends Component {
+
   state = {
     mobileMenuOpen: false,
     hasScrolled: false,
@@ -61,8 +65,8 @@ export default class Navigation extends Component {
         mobile={mobile}
         offset={-64}
       >
-        {NAV_ITEMS.map(navItem => (
-          <NavItem key={navItem}>{this.getNavAnchorLink(navItem)}</NavItem>
+        {NAV_ITEMS.map((navItem, i) => (
+          <NavItem last={i === NAV_ITEMS.length - 1 ? true : false} key={navItem}>{this.getNavAnchorLink(navItem)}</NavItem>
         ))}
       </Scrollspy>
     </NavListWrapper>
@@ -72,41 +76,45 @@ export default class Navigation extends Component {
     const { mobileMenuOpen } = this.state
 
     return (
-      <Nav {...this.props} scrolled={this.state.hasScrolled}>
-        <StyledContainer>
-          <Brand>
-            <Scrollspy offset={-64} item={["top"]} currentClassName="active">
-              <AnchorLink href="#top" onClick={this.closeMobileMenu}>
-                Finance
-              </AnchorLink>
-            </Scrollspy>
-          </Brand>
-          <Mobile>
-            <button
-              onClick={this.toggleMobileMenu}
-              style={{ color: "black", background: "none" }}
-            >
-              {this.state.mobileMenuOpen ? (
-                <X size={24} alt="close menu" />
-              ) : (
-                <Menu size={24} alt="open menu" />
-              )}
-            </button>
-          </Mobile>
+      <>
+        <div style={{ background: "#F26522", width: "100%" }}>
+          <TopBanner>
+            <div className="contain-top">
+              <div className="hotline">Hotline: 0123 456 789</div>
+              <div className="i8n">English</div>
+            </div>
+          </TopBanner>
+        </div>
+        <Nav {...this.props} scrolled={this.state.hasScrolled} className={`${this.state.hasScrolled ? 'shadow' : 'shadow-sm'}`}>
+          <StyledContainer>
+              <LogoHalopesa />
+            <Mobile>
+              <button
+                onClick={this.toggleMobileMenu}
+                style={{ color: "black", background: "none" }}
+              >
+                {this.state.mobileMenuOpen ? (
+                  <X size={24} alt="close menu" />
+                ) : (
+                  <Menu size={24} alt="open menu" />
+                )}
+              </button>
+            </Mobile>
+            <Mobile hide>{this.getNavList({})}</Mobile>
 
-          <Mobile hide>{this.getNavList({})}</Mobile>
-          <ActionsContainer>
-            <button>Sign up</button>
-          </ActionsContainer>
-        </StyledContainer>
-        <Mobile>
-          {mobileMenuOpen && (
-            <MobileMenu>
-              <Container>{this.getNavList({ mobile: true })}</Container>
-            </MobileMenu>
-          )}
-        </Mobile>
-      </Nav>
+            {/* <ActionsContainer>
+              <button>Sign up</button>
+            </ActionsContainer> */}
+          </StyledContainer>
+          <Mobile>
+            {mobileMenuOpen && (
+              <MobileMenu>
+                <Container>{this.getNavList({ mobile: true })}</Container>
+              </MobileMenu>
+            )}
+          </Mobile>
+        </Nav>
+      </>
     )
   }
 }

@@ -2,14 +2,37 @@ import styled from "styled-components"
 
 import { Container } from "../../global"
 
+export const TopBanner = styled(Container)`
+ 
+  margin: 0 auto;
+  height: 61px;
+  width: 100%;
+  padding: 0 16px;
+  .contain-top {
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    display : flex;
+    align-items: center;
+  }
+  .hotline { 
+    color: #FFFFFF;
+    font-size: 16px;
+  }
+  .i8n { 
+    color: #FFFFFF;
+    font-size: 16px;
+  }
+`
+
 export const Nav = styled.nav`
   padding: ${props => (props.scrolled ? `16px 0` : `24px 0`)};
   position: fixed;
   width: 100%;
-  top: 0;
+  top: ${props => (props.scrolled ? `0` : `61px`)};;
   z-index: 1000;
   background: ${props => (props.scrolled ? `white` : null)};
-  transition: 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition: 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
 `
 
 export const StyledContainer = styled(Container)`
@@ -27,8 +50,8 @@ export const NavListWrapper = styled.div`
     flex-direction: row;
 
     ${({ mobile }) =>
-      mobile &&
-      `
+    mobile &&
+    `
         flex-direction: column;
         margin-top: 1em;
 
@@ -41,7 +64,7 @@ export const NavListWrapper = styled.div`
 `
 
 export const NavItem = styled.li`
-  margin: 0 0.75em;
+  margin: ${props => props.last ? "0 0 0em 2.25em": "0 2.25em;"};
   font-family: ${props => props.theme.font.medium};
   ${props => props.theme.font_size.xsmall};
 
@@ -49,6 +72,7 @@ export const NavItem = styled.li`
     text-decoration: none;
     opacity: 0.9;
     color: ${props => props.theme.color.black.regular};
+    text-transform: uppercase!important;
   }
 
   &.active {

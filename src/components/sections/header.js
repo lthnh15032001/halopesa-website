@@ -4,11 +4,26 @@ import { graphql, useStaticQuery, Link } from "gatsby"
 import Img from "gatsby-image"
 
 import { Container } from "../global"
+import { LogoHalopesa } from "../common/navigation/LogoHalopesa"
 
 const Header = () => {
   const data = useStaticQuery(graphql`
     query {
-      file(sourceInstanceName: { eq: "product" }, name: { eq: "green-skew" }) {
+      greenSkew: file(sourceInstanceName: { eq: "product" }, name: { eq: "HeaderPic" }) {
+        childImageSharp {
+          fluid(maxWidth: 1000) {
+            ...GatsbyImageSharpFluid_tracedSVG
+          }
+        }
+      }
+      appstore: file(sourceInstanceName: { eq: "product" }, name: { eq: "appstore" }) {
+        childImageSharp {
+          fluid(maxWidth: 1000) {
+            ...GatsbyImageSharpFluid_tracedSVG
+          }
+        }
+      }
+      ggplay: file(sourceInstanceName: { eq: "product" }, name: { eq: "ggplay" }) {
         childImageSharp {
           fluid(maxWidth: 1000) {
             ...GatsbyImageSharpFluid_tracedSVG
@@ -17,7 +32,7 @@ const Header = () => {
       }
     }
   `)
-
+  console.log({ data: data })
   const handleSubmit = event => {
     event.preventDefault()
   }
@@ -25,29 +40,35 @@ const Header = () => {
   return (
     <HeaderWrapper id="top">
       <Container>
-        <Flex>
-          <HeaderTextGroup>
-            <Subtitle>Personal Finance</Subtitle>
+        <Flex className="flex-row-reverse d-flex ">
+          <HeaderTextGroup className="d-flex flex-column justify-content-center m-5">
+            <LogoHalopesa styles={{
+              marginBottom: 0,
+              width: "100%",
+              justifyContent: "end"
+            }}
+             />
             <h1>
-              All your money,
+              Stay cool
               <br />
-              one account
+              stay convenient
             </h1>
             <h2>
-              We're building next generation personal finance tools. Sign up to
-              get early access.
+              Welcome and Enjoy the digital payments transformation with HaloPesa.
             </h2>
-            <HeaderForm onSubmit={handleSubmit}>
-              <HeaderInput placeholder="Your email" />
-              <HeaderButton>Early access</HeaderButton>
-            </HeaderForm>
-            <FormSubtitle>
-              Already have a beta account?{" "}
-              <FormSubtitleLink to="/">Sign in</FormSubtitleLink>
-            </FormSubtitle>
+            <div className="flex-row d-flex">
+              <ImageWrapper>
+                <StyledImage width="170px" fluid={data.appstore.childImageSharp.fluid} />
+                <br />
+              </ImageWrapper>
+              <ImageWrapper>
+                <StyledImage width="170px" fluid={data.ggplay.childImageSharp.fluid} />
+                <br />
+              </ImageWrapper>
+            </div>
           </HeaderTextGroup>
           <ImageWrapper>
-            <StyledImage fluid={data.file.childImageSharp.fluid} />
+            <StyledImage fluid={data.greenSkew.childImageSharp.fluid} />
             <br />
           </ImageWrapper>
         </Flex>
@@ -88,6 +109,7 @@ const HeaderTextGroup = styled.div`
   h1 {
     margin: 0 0 24px;
     color: ${props => props.theme.color.primary};
+    text-transform: uppercase;
   }
 
   h2 {
@@ -111,83 +133,6 @@ const Flex = styled.div`
   }
 `
 
-const HeaderForm = styled.form`
-  display: flex;
-  flex-direction: row;
-  padding-bottom: 16px;
-
-  @media (max-width: ${props => props.theme.screen.sm}) {
-    flex-direction: column;
-  }
-`
-
-const FormSubtitle = styled.span`
-  ${props => props.theme.font_size.xxsmall}
-`
-
-const FormSubtitleLink = styled(Link)`
-  color: ${props => props.theme.color.secondary};
-  padding-bottom: 1px;
-  margin-left: 8px;
-  text-decoration: none;
-  border-bottom: 1px solid ${props => props.theme.color.secondary};
-`
-
-const HeaderInput = styled.input`
-  font-weight: 500;
-  font-size: 16px;
-  color: ${props => props.theme.color.primary};
-  line-height: 42px;
-  width: 100%;
-  text-align: left;
-  height: 60px;
-  border-width: 1px;
-  border-style: solid;
-  border-color: ${props => props.theme.color.secondary};
-  border-image: initial;
-  border-radius: 4px;
-  padding: 8px 16px;
-  outline: 0px;
-  &:focus {
-    box-shadow: inset ${props => props.theme.color.secondary} 0px 0px 0px 2px;
-  }
-  @media (max-width: ${props => props.theme.screen.md}) {
-    margin-bottom: 8px;
-  }
-  @media (max-width: ${props => props.theme.screen.sm}) {
-    display: block;
-    width: 100%;
-  }
-`
-
-const HeaderButton = styled.button`
-  font-weight: 500;
-  font-size: 14px;
-  color: white;
-  letter-spacing: 1px;
-  height: 60px;
-  display: block;
-  margin-left: 8px;
-  text-transform: uppercase;
-  cursor: pointer;
-  white-space: nowrap;
-  background: ${props => props.theme.color.secondary};
-  border-radius: 4px;
-  padding: 0px 40px;
-  border-width: 0px;
-  border-style: initial;
-  border-color: initial;
-  border-image: initial;
-  outline: 0px;
-  &:hover {
-    box-shadow: rgba(110, 120, 152, 0.22) 0px 2px 10px 0px;
-  }
-  @media (max-width: ${props => props.theme.screen.md}) {
-  }
-  @media (max-width: ${props => props.theme.screen.sm}) {
-    margin-left: 0;
-  }
-`
 const ImageWrapper = styled.div`
   justify-self: end;
   align-self: center;
@@ -197,12 +142,12 @@ const ImageWrapper = styled.div`
 `
 
 const StyledImage = styled(Img)`
-  width: 500px;
-  @media (max-width: ${props => props.theme.screen.md}) {
-    width: 400px;
-  }
-  @media (max-width: ${props => props.theme.screen.sm}) {
-    width: 300px;
-    display: none;
-  }
+  width: ${props => props.width ? props.width : "500px"};
+@media(max - width: ${props => props.theme.screen.md}) {
+  width: ${props => props.width ? props.width : "400px"};
+}
+@media(max - width: ${props => props.theme.screen.sm}) {
+  width: ${props => props.width ? props.width : "300px"};
+  display: none;
+}
 `
