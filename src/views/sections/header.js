@@ -87,12 +87,7 @@ const HeaderWrapper = styled.header`
   @media (max-width: ${props => props.theme.screen.md}) {
   }
 `
-const Subtitle = styled.h5`
-  font-size: 16px;
-  color: ${props => props.theme.color.accent};
-  letter-spacing: 0px;
-  margin-bottom: 16px;
-`
+
 
 const HeaderTextGroup = styled.div`
   margin: 0;

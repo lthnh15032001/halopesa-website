@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { graphql, useStaticQuery } from "gatsby"
 import { Section, Container } from "../../components/global"
 import Img from "gatsby-image"
-
+import { Button } from "../../components/Button"
 const About = () => {
   const aboutBrief = useStaticQuery(graphql`
     query {
@@ -40,11 +40,9 @@ const About = () => {
               </Number>
             </div>
             <div className="row" style={{ marginTop: 30 }}>
-              <Button className="col-6 shadow" >
-                <div>Read more</div>
-              </Button>
+              <Button className="col-6" name="Read more" />
               <div className="col-6 d-flex justify-content-center align-items-center " >
-                <a href="/" style={{fontWeight: 'bold'}}> How to use</a>
+                <a href="/" style={{ fontWeight: 'bold' }}> How to use</a>
               </div>
             </div>
           </div>
@@ -93,22 +91,7 @@ const Flex = styled.div`
     grid-gap: 64px;
   }
 `
-const Button = styled.div`
-  background: linear-gradient(116.89deg, #F36000 33.17%, #FFB800 98.72%);
-  box-shadow: 10.47px 11.09px 22.19px rgba(255, 153, 0, 0.3);
-  border-radius: 8px;
-  width: 200.12px;
-  height: 59.82px;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  cursor: pointer;
-  div {
-    color: #FFFFFF;
-    font-weight: 600;
-    font-size: 20.2057px
-  }
-`
+
 const Number = styled.div`
   .number {
     font-weight: bold;

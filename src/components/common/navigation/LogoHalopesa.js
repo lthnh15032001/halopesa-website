@@ -29,7 +29,6 @@ export const LogoHalopesa = (props) => {
 
 const ImageWrapper = styled.div`
   display: flex;
-  justify-content:center;
   align-self: center;
   cursor: pointer;
   @media (max-width: ${props => props.theme.screen.md}) {
