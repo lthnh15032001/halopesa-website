@@ -1,10 +1,10 @@
 import React from "react"
 import styled from "styled-components"
-import { graphql, useStaticQuery, Link } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 
-import { Container } from "../global"
-import { LogoHalopesa } from "../common/navigation/LogoHalopesa"
+import { Container } from "../../components/global"
+import { LogoHalopesa } from "../../components/common/navigation/LogoHalopesa"
 
 const Header = () => {
   const data = useStaticQuery(graphql`

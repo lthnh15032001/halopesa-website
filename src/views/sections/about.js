@@ -1,9 +1,9 @@
 import React from "react"
 import styled from "styled-components"
 
-import { Section, Container } from "../global"
+import { Section, Container } from "../../components/global"
 
-const Features = () => (
+const About = () => (
   <Section id="features">
     <StyledContainer>
       <Subtitle>Features</Subtitle>
@@ -49,7 +49,7 @@ const Features = () => (
   </Section>
 )
 
-export default Features
+export default About
 
 const StyledContainer = styled(Container)``
 

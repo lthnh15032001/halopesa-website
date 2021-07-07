@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 
 import "../../../static/fonts/fonts.css"
 import Navigation from "../navigation/navigation"
-import Footer from "../../sections/footer"
+import Footer from "./footer"
 import ContainerCommon from './ContainerCommon'
 const Layout = ({ children }) => (
   <ContainerCommon>

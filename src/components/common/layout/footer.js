@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 
-import { Container } from "../global"
+import { Container } from "../../global"
 
 const Footer = () => (
   <FooterWrapper id="footer">
