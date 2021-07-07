@@ -12,11 +12,9 @@ import GetStarted from "../../components/sections/getstarted"
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <Navigation />
     <Header />
     <Features />
     <GetStarted />
-    <Footer />
   </Layout>
 )
 

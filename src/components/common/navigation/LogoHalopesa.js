@@ -1,7 +1,7 @@
 import React from 'react'
 import Img from "gatsby-image"
 import styled from "styled-components"
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, navigate, useStaticQuery } from "gatsby"
 
 export const LogoHalopesa = (props) => {
   const style = props.styles ? props.styles : {}
@@ -18,7 +18,9 @@ export const LogoHalopesa = (props) => {
   `)
   return (
     <ImageWrapper
-      style={style}>
+      style={style}
+      onClick={() => navigate("/")}  
+    >
       <StyledImage fluid={halopesaLogo.file.childImageSharp.fluid} />
       <br />
     </ImageWrapper>
@@ -29,6 +31,7 @@ const ImageWrapper = styled.div`
   display: flex;
   justify-content:center;
   align-self: center;
+  cursor: pointer;
   @media (max-width: ${props => props.theme.screen.md}) {
     justify-self: center;
   }

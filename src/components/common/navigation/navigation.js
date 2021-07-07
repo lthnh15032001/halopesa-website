@@ -3,7 +3,7 @@ import AnchorLink from "react-anchor-link-smooth-scroll"
 import Scrollspy from "react-scrollspy"
 import { Menu, X } from "react-feather"
 // import { imageStatic } from "../../../images"
-
+import { Link } from "gatsby"
 import { Container } from "../../global"
 import { LogoHalopesa } from './LogoHalopesa'
 import {
@@ -18,7 +18,13 @@ import {
   TopBanner
 } from "./style"
 
-const NAV_ITEMS = ["Services", "For Corporation", "For Agent", "News and promotions", "About"]
+const NAV_ITEMS = [
+  { name: "Services", link: "/services" },
+  { name: "For Corporation", link: "/corporation" },
+  { name: "For Agent", link: "/agent" },
+  { name: "News and promotions", link: "/news" },
+  { name: "About", link: "/about" }
+]
 
 export default class Navigation extends Component {
 
@@ -52,21 +58,21 @@ export default class Navigation extends Component {
   }
 
   getNavAnchorLink = item => (
-    <AnchorLink href={`#${item.toLowerCase()}`} onClick={this.closeMobileMenu}>
-      {item}
-    </AnchorLink>
+    <Link to={`${item.link.toLowerCase()}`} onClick={this.closeMobileMenu}>
+      {item.name}
+    </Link>
   )
 
   getNavList = ({ mobile = false }) => (
     <NavListWrapper mobile={mobile}>
       <Scrollspy
-        items={NAV_ITEMS.map(item => item.toLowerCase())}
+        items={NAV_ITEMS.map(item => item.name.toLowerCase())}
         currentClassName="active"
         mobile={mobile}
         offset={-64}
       >
         {NAV_ITEMS.map((navItem, i) => (
-          <NavItem last={i === NAV_ITEMS.length - 1 ? true : false} key={navItem}>{this.getNavAnchorLink(navItem)}</NavItem>
+          <NavItem last={i === NAV_ITEMS.length - 1 ? true : false} >{this.getNavAnchorLink(navItem)}</NavItem>
         ))}
       </Scrollspy>
     </NavListWrapper>
@@ -87,7 +93,7 @@ export default class Navigation extends Component {
         </div>
         <Nav {...this.props} scrolled={this.state.hasScrolled} className={`${this.state.hasScrolled ? 'shadow' : 'shadow-sm'}`}>
           <StyledContainer>
-              <LogoHalopesa />
+            <LogoHalopesa />
             <Mobile>
               <button
                 onClick={this.toggleMobileMenu}
