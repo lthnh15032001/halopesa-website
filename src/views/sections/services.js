@@ -1,18 +1,101 @@
 import React from "react"
 import styled from "styled-components"
-
+import { graphql, useStaticQuery } from "gatsby"
 import { Section, Container } from "../../components/global"
+import Img from "gatsby-image"
+import {
+  Card, CardImg, CardText, CardBody,
+  CardTitle, CardSubtitle, Button
+} from 'reactstrap';
+import { CardServices } from '../../components/CardServices'
 
-
-const Services = () => (
-  <StyledSection>
-    <GetStartedContainer>
-      <GetStartedTitle>Be the first to get the beta</GetStartedTitle>
-      <TryItButton>Get early access</TryItButton>
-      <Subtitle>No credit card required.</Subtitle>
-    </GetStartedContainer>
+const Services = () => {
+  const serviceBrief = useStaticQuery(graphql`
+    query {
+      serviceBrief: file(sourceInstanceName: { eq: "product" }, name: { eq: "ipx" }) {
+        childImageSharp {
+          fluid(maxWidth: 1000) {
+            ...GatsbyImageSharpFluid_tracedSVG
+          }
+        }
+      }
+      sendmoney: file(sourceInstanceName: { eq: "icon" }, name: { eq: "sendmoney" }) {
+        childImageSharp {
+          fluid(maxWidth: 1000) {
+            ...GatsbyImageSharpFluid_tracedSVG
+          }
+        }
+      }
+      withdraw: file(sourceInstanceName: { eq: "icon" }, name: { eq: "withdraw" }) {
+        childImageSharp {
+          fluid(maxWidth: 1000) {
+            ...GatsbyImageSharpFluid_tracedSVG
+          }
+        }
+      }
+      qrscan: file(sourceInstanceName: { eq: "icon" }, name: { eq: "qrscan" }) {
+        childImageSharp {
+          fluid(maxWidth: 1000) {
+            ...GatsbyImageSharpFluid_tracedSVG
+          }
+        }
+      }
+      airtime: file(sourceInstanceName: { eq: "icon" }, name: { eq: "airtime" }) {
+        childImageSharp {
+          fluid(maxWidth: 1000) {
+            ...GatsbyImageSharpFluid_tracedSVG
+          }
+        }
+      }
+      bill: file(sourceInstanceName: { eq: "icon" }, name: { eq: "bill" }) {
+        childImageSharp {
+          fluid(maxWidth: 1000) {
+            ...GatsbyImageSharpFluid_tracedSVG
+          }
+        }
+      }
+      bank: file(sourceInstanceName: { eq: "icon" }, name: { eq: "bank" }) {
+        childImageSharp {
+          fluid(maxWidth: 1000) {
+            ...GatsbyImageSharpFluid_tracedSVG
+          }
+        }
+      }
+    }
+  `)
+  return <StyledSection>
+    <StyledContainer>
+      <div className="row text-center">
+        <h1>Services</h1>
+        <div className="w-100 d-flex justify-content-center align-items-center">
+          <div style={{ width: '60%' }}>
+            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+          </div>
+        </div>
+      </div>
+      <div className="d-flex justify-content-center align-items-center ">
+        <a href="/" className="mt-3 mb-3">Learn more</a>
+      </div>
+      <Flex className="flex-row d-flex mt-4">
+        <div className="col-4 ">
+          <CardServices fluid={serviceBrief.sendmoney.childImageSharp.fluid} text="HaloPesa corporates with all Mobile Financial Service Providers (MFSP) and Banks in Tanzania. Therefore HaloPesa customers can easily send to and receive money from MFSPs (as TigoPesa, M-Pesa, Airtel Money) and Banks (as CRDB, NMB, FINCA). " />
+          <CardServices className="mb-3 mt-3" fluid={serviceBrief.withdraw.childImageSharp.fluid} text="HaloPesa corporates with all Mobile Financial Service Providers (MFSP) and Banks in Tanzania. Therefore HaloPesa customers can easily send to and receive money from MFSPs (as TigoPesa, M-Pesa, Airtel Money) and Banks (as CRDB, NMB, FINCA). " />
+          <CardServices fluid={serviceBrief.qrscan.childImageSharp.fluid} text="HaloPesa corporates with all Mobile Financial Service Providers (MFSP) and Banks in Tanzania. Therefore HaloPesa customers can easily send to and receive money from MFSPs (as TigoPesa, M-Pesa, Airtel Money) and Banks (as CRDB, NMB, FINCA). " />
+        </div>
+        <div className="col-4 justify-content-center align-items-center d-flex">
+          <ImageWrapper>
+            <StyledImage fluid={serviceBrief.serviceBrief.childImageSharp.fluid} />
+            <br />
+          </ImageWrapper></div>
+        <div className="col-4 ">
+          <CardServices fluid={serviceBrief.airtime.childImageSharp.fluid} text="HaloPesa corporates with all Mobile Financial Service Providers (MFSP) and Banks in Tanzania. Therefore HaloPesa customers can easily send to and receive money from MFSPs (as TigoPesa, M-Pesa, Airtel Money) and Banks (as CRDB, NMB, FINCA). " />
+          <CardServices className="mb-3 mt-3" fluid={serviceBrief.bill.childImageSharp.fluid} text="HaloPesa corporates with all Mobile Financial Service Providers (MFSP) and Banks in Tanzania. Therefore HaloPesa customers can easily send to and receive money from MFSPs (as TigoPesa, M-Pesa, Airtel Money) and Banks (as CRDB, NMB, FINCA). " />
+          <CardServices fluid={serviceBrief.bank.childImageSharp.fluid} text="HaloPesa corporates with all Mobile Financial Service Providers (MFSP) and Banks in Tanzania. Therefore HaloPesa customers can easily send to and receive money from MFSPs (as TigoPesa, M-Pesa, Airtel Money) and Banks (as CRDB, NMB, FINCA). " />
+        </div>
+      </Flex>
+    </StyledContainer>
   </StyledSection>
-)
+}
 
 export default Services
 
@@ -20,52 +103,35 @@ const StyledSection = styled(Section)`
   background-color: ${props => props.theme.color.background.light};
   clip-path: polygon(0 0, 100% 14%, 100% 100%, 0% 100%);
 `
+const StyledContainer = styled(Container)``
 
-const GetStartedContainer = styled(Container)`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 80px 0 40px;
-`
 
-const GetStartedTitle = styled.h3`
-  margin: 0 auto 32px;
-  text-align: center;
-`
 
-const TryItButton = styled.button`
-  font-weight: 500;
-  font-size: 14px;
-  color: white;
-  letter-spacing: 1px;
-  height: 60px;
-  display: block;
-  margin-left: 8px;
-  text-transform: uppercase;
-  cursor: pointer;
-  white-space: nowrap;
-  background: ${props => props.theme.color.secondary};
-  border-radius: 4px;
-  padding: 0px 40px;
-  border-width: 0px;
-  border-style: initial;
-  border-color: initial;
-  border-image: initial;
-  outline: 0px;
-  &:hover {
-    box-shadow: rgba(110, 120, 152, 0.22) 0px 2px 10px 0px;
-  }
+const ImageWrapper = styled.div`
+  justify-self: end;
+  align-self: center;
   @media (max-width: ${props => props.theme.screen.md}) {
-  }
-  @media (max-width: ${props => props.theme.screen.sm}) {
-    margin-left: 0;
+    justify-self: center;
   }
 `
 
-const Subtitle = styled.span`
-  ${props => props.theme.font_size.xxsmall}
-  padding-top: 16px;
-  font-size: 14px;
-  color: ${props => props.theme.color.primary};
+const StyledImage = styled(Img)`
+  width: ${props => props.width ? props.width : "280px"};
+@media(max - width: ${props => props.theme.screen.md}) {
+  width: ${props => props.width ? props.width : "230px"};
+}
+@media(max - width: ${props => props.theme.screen.sm}) {
+  width: ${props => props.width ? props.width : "180px"};
+  display: none;
+}
+`
+const Flex = styled.div`
+  display: grid;
+  justify-content: space-between;
+  align-content: center;
+  grid-template-columns: 1fr 1fr;
+  @media (max-width: ${props => props.theme.screen.md}) {
+    grid-template-columns: 1fr;
+    grid-gap: 64px;
+  }
 `

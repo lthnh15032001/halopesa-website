@@ -40,7 +40,7 @@ const About = () => {
               </Number>
             </div>
             <div className="row" style={{ marginTop: 30 }}>
-              <Button className="col-6">
+              <Button className="col-6 shadow" >
                 <div>Read more</div>
               </Button>
               <div className="col-6 d-flex justify-content-center align-items-center " >
