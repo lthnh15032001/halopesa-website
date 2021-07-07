@@ -5,14 +5,14 @@ import SEO from "../components/common/layout/seo"
 
 import Header from "../views/sections/header"
 import About from "../views/sections/about"
-import GetStarted from "../views/sections/getstarted"
+import Services from "../views/sections/services"
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
     <Header />
     <About />
-    <GetStarted />
+    <Services />
   </Layout>
 )
 

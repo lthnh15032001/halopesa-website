@@ -4,7 +4,7 @@ import styled from "styled-components"
 import { Section, Container } from "../../components/global"
 
 
-const GetStarted = () => (
+const Services = () => (
   <StyledSection>
     <GetStartedContainer>
       <GetStartedTitle>Be the first to get the beta</GetStartedTitle>
@@ -14,7 +14,7 @@ const GetStarted = () => (
   </StyledSection>
 )
 
-export default GetStarted
+export default Services
 
 const StyledSection = styled(Section)`
   background-color: ${props => props.theme.color.background.light};
