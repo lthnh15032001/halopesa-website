@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
-
+import { Image } from '../../components/common/image'
 import { Container } from "../../components/global"
 import { LogoHalopesa } from "../../components/common/navigation/LogoHalopesa"
 
@@ -47,7 +47,7 @@ const Header = () => {
               width: "100%",
               justifyContent: "end"
             }}
-             />
+            />
             <h1>
               Stay cool
               <br />
@@ -57,20 +57,12 @@ const Header = () => {
               Welcome and Enjoy the digital payments transformation with HaloPesa.
             </h2>
             <div className="flex-row d-flex">
-              <ImageWrapper>
-                <StyledImage width="170px" fluid={data.appstore.childImageSharp.fluid} />
-                <br />
-              </ImageWrapper>
-              <ImageWrapper>
-                <StyledImage width="170px" fluid={data.ggplay.childImageSharp.fluid} />
-                <br />
-              </ImageWrapper>
+              <Image width="170px" fluid={data.appstore.childImageSharp.fluid} />
+              <Image width="170px" fluid={data.ggplay.childImageSharp.fluid} />
             </div>
           </HeaderTextGroup>
-          <ImageWrapper style={{marginRight:"40px"}}>
-            <StyledImage fluid={data.greenSkew.childImageSharp.fluid} />
-            <br />
-          </ImageWrapper>
+          <Image style={{ marginRight: "40px" }} width="680px" fluid={data.greenSkew.childImageSharp.fluid} />
+         
         </Flex>
       </Container>
     </HeaderWrapper>
@@ -126,23 +118,4 @@ const Flex = styled.div`
     grid-template-columns: 1fr;
     grid-gap: 64px;
   }
-`
-
-const ImageWrapper = styled.div`
-  justify-self: end;
-  align-self: center;
-  @media (max-width: ${props => props.theme.screen.md}) {
-    justify-self: center;
-  }
-`
-
-const StyledImage = styled(Img)`
-  width: ${props => props.width ? props.width : "680px"};
-@media(max - width: ${props => props.theme.screen.md}) {
-  width: ${props => props.width ? props.width : "580px"};
-}
-@media(max - width: ${props => props.theme.screen.sm}) {
-  width: ${props => props.width ? props.width : "480px"};
-  display: none;
-}
 `

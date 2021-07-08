@@ -5,10 +5,11 @@ import Img from "gatsby-image"
 import { graphql, useStaticQuery } from "gatsby"
 import { LogoHalopesa } from '../../components/common/navigation/LogoHalopesa'
 import { Button } from '../../components/Button'
+import { Image } from '../../components/common/image'
 const Agent = () => {
-    const corporationbrief = useStaticQuery(graphql`
+  const agentbrief = useStaticQuery(graphql`
     query {
-        corporationbrief: file(sourceInstanceName: { eq: "product" }, name: { eq: "corporation" }) {
+        agentbrief: file(sourceInstanceName: { eq: "product" }, name: { eq: "agent" }) {
         childImageSharp {
           fluid(maxWidth: 1000) {
             ...GatsbyImageSharpFluid_tracedSVG
@@ -17,56 +18,35 @@ const Agent = () => {
       }
     }
   `)
-    return (
-        <StyledSection>
-            <StyledContainer>
-                <Flex className="d-flex flex-row-reverse ">
-                    <div>
-                        <ImageWrapper>
-                            <StyledImage fluid={corporationbrief.corporationbrief.childImageSharp.fluid} />
-                            <br />
-                        </ImageWrapper>
-                    </div>
-                    <div>
-                        <LogoHalopesa style={{ justifyContent: "start!important" }} />
-                        <h2>For Agent</h2>
-                        <div className="w-100">
-                            <div style={{ color: "#7A7A7A", width: "80%" }}>
-                                Becoming an HaloPesa Agent is a great business opportunity that allows Agents to earn their monthly revenue following best competitive  commission rates that HaloPesa offers.
+  return (
+    <StyledSection>
+      <StyledContainer>
+        <Flex className="d-flex flex-row-reverse ">
+          <div>
+          <Image fluid={agentbrief.agentbrief.childImageSharp.fluid} />
+          </div>
+          <div>
+            <LogoHalopesa style={{ justifyContent: "start!important" }} />
+            <h2>For Agent</h2>
+            <div className="w-100">
+              <div style={{ color: "#7A7A7A", width: "80%" }}>
+                Becoming an HaloPesa Agent is a great business opportunity that allows Agents to earn their monthly revenue following best competitive  commission rates that HaloPesa offers.
                             </div>
-                        </div>
-                        <Button name="Read more" className="mt-4" />
-                    </div>
-                </Flex>
-            </StyledContainer>
-        </StyledSection>
-    )
+            </div>
+            <Button name="Read more" className="mt-4" />
+          </div>
+        </Flex>
+      </StyledContainer>
+    </StyledSection>
+  )
 }
 export default Agent
 const StyledContainer = styled(Container)``
 
 const StyledSection = styled(Section)`
+background-color: ${props => props.theme.color.background.light}
 `
 
-
-const ImageWrapper = styled.div`
-  justify-self: end;
-  align-self: center;
-  @media (max-width: ${props => props.theme.screen.md}) {
-    justify-self: center;
-  }
-`
-
-const StyledImage = styled(Img)`
-  width: ${props => props.width ? props.width : "500px"};
-@media(max - width: ${props => props.theme.screen.md}) {
-  width: ${props => props.width ? props.width : "500px"};
-}
-@media(max - width: ${props => props.theme.screen.sm}) {
-  width: ${props => props.width ? props.width : "180px"};
-  display: none;
-}
-`
 const Flex = styled.div`
   display: grid;
   justify-content: space-between;

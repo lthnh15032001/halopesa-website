@@ -4,8 +4,7 @@ import {
     CardTitle, CardSubtitle
 } from 'reactstrap';
 import styled from "styled-components"
-import Img from "gatsby-image"
-
+import { Image } from "../components/common/image"
 export const CardServices = ({ fluid, text, style, className, name }) => {
     return (
         <div style={style && style} className={className && className}>
@@ -13,10 +12,8 @@ export const CardServices = ({ fluid, text, style, className, name }) => {
                 <CardBody>
                     <CardTitle tag="h5" className="d-flex flex-row justify-content-start align-items-center">
                         <div>
-                            <ImageWrapper>
-                                <StyledImage width="35px" fluid={fluid && fluid} />
-                                <br />
-                            </ImageWrapper></div>
+                            <Image width="35px" fluid={fluid && fluid} />
+                        </div>
                         <div style={{ marginLeft: "20px" }}>
                             <H5>{name && name}</H5>
                         </div>
@@ -27,26 +24,6 @@ export const CardServices = ({ fluid, text, style, className, name }) => {
         </div>
     )
 }
-
-
-const ImageWrapper = styled.div`
-  justify-self: end;
-  align-self: center;
-  @media (max-width: ${props => props.theme.screen.md}) {
-    justify-self: center;
-  }
-`
-
-const StyledImage = styled(Img)`
-  width: ${props => props.width ? props.width : "250px"};
-@media(max - width: ${props => props.theme.screen.md}) {
-  width: ${props => props.width ? props.width : "230px"};
-}
-@media(max - width: ${props => props.theme.screen.sm}) {
-  width: ${props => props.width ? props.width : "180px"};
-  display: none;
-}
-`
 
 const H5 = styled.h5`
     color: #090909;

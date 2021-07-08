@@ -5,6 +5,8 @@ import { Section, Container } from "../../components/global"
 import Img from "gatsby-image"
 import { CardServices } from '../../components/CardServices'
 import { Button } from '../../components/Button'
+import { Image } from '../../components/common/image'
+
 const Services = () => {
   const serviceBrief = useStaticQuery(graphql`
     query {
@@ -79,12 +81,9 @@ const Services = () => {
           <CardServices name="QR Scan" fluid={serviceBrief.qrscan.childImageSharp.fluid} text="HaloPesa corporates with all Mobile Financial Service Providers (MFSP) and Banks in Tanzania. Therefore HaloPesa customers can easily send to and receive money from MFSPs (as TigoPesa, M-Pesa, Airtel Money) and Banks (as CRDB, NMB, FINCA). " />
         </div>
         <div className="col-4 justify-content-center align-items-center d-flex flex-column">
-          <ImageWrapper>
-            <StyledImage fluid={serviceBrief.serviceBrief.childImageSharp.fluid} />
-            <br />
-          </ImageWrapper>
+          <Image fluid={serviceBrief.serviceBrief.childImageSharp.fluid} width="280px" />
           <Button name="Tariff" />
-          <div style={{marginTop: 40}}>
+          <div style={{ marginTop: 40 }}>
             <a href="/">How to use</a>
           </div>
         </div>
@@ -105,26 +104,6 @@ const StyledSection = styled(Section)`
 `
 const StyledContainer = styled(Container)``
 
-
-
-const ImageWrapper = styled.div`
-  justify-self: end;
-  align-self: center;
-  @media (max-width: ${props => props.theme.screen.md}) {
-    justify-self: center;
-  }
-`
-
-const StyledImage = styled(Img)`
-  width: ${props => props.width ? props.width : "280px"};
-@media(max - width: ${props => props.theme.screen.md}) {
-  width: ${props => props.width ? props.width : "230px"};
-}
-@media(max - width: ${props => props.theme.screen.sm}) {
-  width: ${props => props.width ? props.width : "180px"};
-  display: none;
-}
-`
 const Flex = styled.div`
   display: grid;
   justify-content: space-between;

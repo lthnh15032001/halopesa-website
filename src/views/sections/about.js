@@ -4,6 +4,7 @@ import { graphql, useStaticQuery } from "gatsby"
 import { Section, Container } from "../../components/global"
 import Img from "gatsby-image"
 import { Button } from "../../components/Button"
+import { Image } from "../../components/common/image"
 const About = () => {
   const aboutBrief = useStaticQuery(graphql`
     query {
@@ -21,10 +22,7 @@ const About = () => {
       <StyledContainer>
         <Flex className="flex-row-reverse d-flex ">
           <div>
-            <ImageWrapper>
-              <StyledImage fluid={aboutBrief.file.childImageSharp.fluid} />
-              <br />
-            </ImageWrapper>
+            <Image fluid={aboutBrief.file.childImageSharp.fluid} width="480px" />
           </div>
           <div className="p-5">
             <h1 style={{ marginBottom: 25 }}>About Halopesa</h1>
@@ -61,25 +59,6 @@ const Small = styled.div`
   font-weight: normal;
   color: #7A7A7A;
   padding-right:40px
-`
-
-const ImageWrapper = styled.div`
-  justify-self: end;
-  align-self: center;
-  @media (max-width: ${props => props.theme.screen.md}) {
-    justify-self: center;
-  }
-`
-
-const StyledImage = styled(Img)`
-  width: ${props => props.width ? props.width : "480px"};
-@media(max - width: ${props => props.theme.screen.md}) {
-  width: ${props => props.width ? props.width : "480px"};
-}
-@media(max - width: ${props => props.theme.screen.sm}) {
-  width: ${props => props.width ? props.width : "380px"};
-  display: none;
-}
 `
 const Flex = styled.div`
   display: grid;

@@ -1,6 +1,6 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
+import styled from "styled-components"
 
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
@@ -13,20 +13,30 @@ import Img from "gatsby-image"
  * - `useStaticQuery`: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-const Image = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      placeholderImage: file(relativePath: { eq: "gatsby-astronaut.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 300) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
+export const Image = ({ fluid, width, onClick, style }) => {
 
-  return <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+  return <ImageWrapper onClick={onClick && onClick} style={style && style}>
+    <StyledImage width={width} fluid={fluid} />
+    <br />
+  </ImageWrapper>
 }
 
-export default Image
+
+const ImageWrapper = styled.div`
+  justify-self: end;
+  align-self: center;
+  @media (max-width: ${props => props.theme.screen.md}) {
+    justify-self: center;
+  }
+`
+
+const StyledImage = styled(Img)`
+  width: ${props => props.width ? props.width : "500px"};
+@media(max-width: ${props => props.theme.screen.md}) {
+  width: ${props => props.width ? props.width : "500px"};
+}
+@media(max-width: ${props => props.theme.screen.sm}) {
+  width: ${props => props.width ? props.width : "180px"};
+  display: none;
+}
+`
