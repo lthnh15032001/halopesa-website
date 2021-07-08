@@ -4,9 +4,9 @@ import styled from "styled-components"
 import { Container, Section } from "../../components/global"
 import { Button } from '../../components/Button'
 import { graphql, useStaticQuery } from "gatsby"
-
+import { Image } from '../../components/common/image'
 const News = () => {
-    const img = useStaticQuery(graphql`
+  const img = useStaticQuery(graphql`
     query {
         img1: file(sourceInstanceName: { eq: "product" }, name: { eq: "img1" }) {
         childImageSharp {
@@ -31,21 +31,45 @@ const News = () => {
       }
     }
   `)
-    return (
-        <StyledSection>
-            <StyledContainer>
-                <Flex className="d-flex align-items-center">
-                    <h1>News and <br /> Promotions</h1>
-                    <Button name="Read more" />
-                </Flex>
-                <Flex className="d-flex align-items-center">
-                    <div>1</div>
-                    <div>23</div>
-                    <div>456</div>
-                </Flex>
-            </StyledContainer>
-        </StyledSection>
-    )
+  return (
+    <StyledSection>
+      <StyledContainer>
+        <Flex className="d-flex align-items-center">
+          <h1>News and <br /> Promotions</h1>
+          <Button name="Read more" />
+        </Flex>
+        <Flex className="d-flex align-items-center mt-4 row flex-row">
+          <div className="col-4">
+            <Image fluid={img.img1.childImageSharp.fluid} width="350px" />
+            <Title>
+              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+            </Title>
+            <Descrip className="mt-3">
+              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+            </Descrip>
+          </div>
+          <div className="col-4">
+            <Image fluid={img.img2.childImageSharp.fluid} width="350px" />
+            <Title>
+              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+            </Title>
+            <Descrip className="mt-3">
+              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+            </Descrip>
+          </div>
+          <div className="col-4">
+            <Image fluid={img.img3.childImageSharp.fluid} width="350px" />
+            <Title>
+              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+            </Title>
+            <Descrip className="mt-3">
+              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+            </Descrip>
+          </div>
+        </Flex>
+      </StyledContainer>
+    </StyledSection>
+  )
 }
 
 export default News
@@ -63,4 +87,13 @@ const Flex = styled.div`
     grid-template-columns: 1fr;
     grid-gap: 64px;
   }
+`
+
+const Title = styled.div`
+  color: #090909;
+  font-weight: 900;
+  font-size: 20px;
+`
+const Descrip = styled.div`
+  color: #7A7A7A;
 `
