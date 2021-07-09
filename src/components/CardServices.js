@@ -5,12 +5,12 @@ import {
 } from 'reactstrap';
 import styled from "styled-components"
 import { Image } from "../components/common/image"
-export const CardServices = ({ fluid, text, style, className, name, imgWidth }) => {
+export const CardServices = ({ fluid, text, style, className, name, imgWidth, vertical }) => {
     return (
         <div style={style && style} className={className && className}>
             <Card className="border-0 shadow-sm">
                 <CardBody>
-                    <CardTitle tag="h5" className="d-flex flex-row justify-content-start align-items-center">
+                    <CardTitle tag="h5" className={`d-flex flex-${vertical ? "column" : "row"} justify-content-start align-items-center`}>
                         <div>
                             <Image width={`${imgWidth ? imgWidth : "35px"}`} fluid={fluid && fluid} />
                         </div>

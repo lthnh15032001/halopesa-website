@@ -31,10 +31,12 @@ export default class Navigation extends Component {
   state = {
     mobileMenuOpen: false,
     hasScrolled: false,
+    active: ""
   }
 
   componentDidMount() {
     window.addEventListener("scroll", this.handleScroll)
+    window.location && this.setState({ active: window.location.pathname })
   }
 
   handleScroll = event => {
@@ -58,7 +60,7 @@ export default class Navigation extends Component {
   }
 
   getNavAnchorLink = item => (
-    <Link to={`${item.link.toLowerCase()}`} onClick={this.closeMobileMenu}>
+    <Link to={`${item.link.toLowerCase()}`} onClick={this.closeMobileMenu} style={{ color: this.state.active === item.link ? "#FF6E2C" : "black" }}>
       {item.name}
     </Link>
   )

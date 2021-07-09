@@ -6,7 +6,7 @@ import Header from "./section/header"
 import AllServices from "./section/allservices"
 const IndexPage = () => (
     <Layout>
-        <SEO title="About" />
+        <SEO title="Services" />
         <Header />
         <AllServices />
     </Layout>

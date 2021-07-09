@@ -67,19 +67,19 @@ const AllServices = () => {
         </Contain>
         <Flex>
           <div>
-            <CardServices imgWidth="80px" fluid={serviceBrief.sendmoney.childImageSharp.fluid} text="123123" />
-            <CardServices imgWidth="80px" fluid={serviceBrief.airtime.childImageSharp.fluid} className="mt-3 mb-3" text="123123" />
-            <CardServices imgWidth="80px" fluid={serviceBrief.sendmoney.childImageSharp.fluid} text="123123" />
+            <CardServices vertical className="text-center" imgWidth="80px" fluid={serviceBrief.sendmoney.childImageSharp.fluid} name="Send Money" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " />
+            <CardServices vertical className="text-center" imgWidth="80px" fluid={serviceBrief.airtime.childImageSharp.fluid} name="Send Money"  className="mt-3 mb-3" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " />
+            <CardServices vertical className="text-center" imgWidth="80px" fluid={serviceBrief.sendmoney.childImageSharp.fluid} name="Send Money"  text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " />
           </div>
           <div>
-            <CardServices imgWidth="80px" fluid={serviceBrief.withdraw.childImageSharp.fluid} text="123123" />
-            <CardServices imgWidth="80px" fluid={serviceBrief.bill.childImageSharp.fluid} className="mt-3 mb-3" text="123123" />
-            <CardServices imgWidth="80px" fluid={serviceBrief.sendmoney.childImageSharp.fluid} text="123123" />
+            <CardServices vertical className="text-center" imgWidth="80px" fluid={serviceBrief.withdraw.childImageSharp.fluid} name="Send Money"  text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " />
+            <CardServices vertical className="text-center" imgWidth="80px" fluid={serviceBrief.bill.childImageSharp.fluid} name="Send Money"  className="mt-3 mb-3" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " />
+            <CardServices vertical className="text-center" imgWidth="80px" fluid={serviceBrief.sendmoney.childImageSharp.fluid} name="Send Money"  text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " />
           </div>
           <div>
-            <CardServices imgWidth="80px" fluid={serviceBrief.qrscan.childImageSharp.fluid} text="123123" />
-            <CardServices imgWidth="80px" fluid={serviceBrief.bank.childImageSharp.fluid} className="mt-3 mb-3" text="123123" />
-            <CardServices imgWidth="80px" fluid={serviceBrief.sendmoney.childImageSharp.fluid} text="123123" />
+            <CardServices vertical className="text-center" imgWidth="80px" fluid={serviceBrief.qrscan.childImageSharp.fluid} name="Send Money"  text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " />
+            <CardServices vertical className="text-center" imgWidth="80px" fluid={serviceBrief.bank.childImageSharp.fluid} name="Send Money"  className="mt-3 mb-3" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " />
+            <CardServices vertical className="text-center" imgWidth="80px" fluid={serviceBrief.sendmoney.childImageSharp.fluid} name="Send Money"  text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " />
           </div>
         </Flex>
       </Container>
