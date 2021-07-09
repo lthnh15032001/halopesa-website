@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from "styled-components"
 import { Container, Section } from "../../components/global"
-import Img from "gatsby-image"
+// import Img from "gatsby-image"
 import { graphql, useStaticQuery } from "gatsby"
 import { LogoHalopesa } from '../../components/common/navigation/LogoHalopesa'
 import { Image } from '../../components/common/image'

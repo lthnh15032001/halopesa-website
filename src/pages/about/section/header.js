@@ -1,5 +1,5 @@
 import React from 'react'
-import { Section, Container } from "../../../components/global"
+import { Container } from "../../../components/global"
 
 const Header = () => {
     return (

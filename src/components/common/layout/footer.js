@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { Container, Section } from "../../global"
+import { Container } from "../../global"
 import { LogoHalopesa } from "../navigation/LogoHalopesa"
 
 

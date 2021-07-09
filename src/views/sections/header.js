@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { graphql, useStaticQuery } from "gatsby"
-import Img from "gatsby-image"
+// import Img from "gatsby-image"
 import { Image } from '../../components/common/image'
 import { Container } from "../../components/global"
 import { LogoHalopesa } from "../../components/common/navigation/LogoHalopesa"
@@ -33,9 +33,9 @@ const Header = () => {
     }
   `)
   // console.log({ data: data })
-  const handleSubmit = event => {
-    event.preventDefault()
-  }
+  // const handleSubmit = event => {
+  //   event.preventDefault()
+  // }
 
   return (
     <HeaderWrapper id="top">

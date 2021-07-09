@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { graphql, useStaticQuery } from "gatsby"
 import { Section, Container } from "../../components/global"
-import Img from "gatsby-image"
+// import Img from "gatsby-image"
 import { CardServices } from '../../components/CardServices'
 import { Button } from '../../components/Button'
 import { Image } from '../../components/common/image'
@@ -17,42 +17,42 @@ const Services = () => {
           }
         }
       }
-      sendmoney: file(sourceInstanceName: { eq: "icon" }, name: { eq: "sendmoney" }) {
+      sendmoney: file(sourceInstanceName: { eq: "product" }, name: { eq: "sendmoney" }) {
         childImageSharp {
           fluid(maxWidth: 1000) {
             ...GatsbyImageSharpFluid_tracedSVG
           }
         }
       }
-      withdraw: file(sourceInstanceName: { eq: "icon" }, name: { eq: "withdraw" }) {
+      withdraw: file(sourceInstanceName: { eq: "product" }, name: { eq: "withdraw" }) {
         childImageSharp {
           fluid(maxWidth: 1000) {
             ...GatsbyImageSharpFluid_tracedSVG
           }
         }
       }
-      qrscan: file(sourceInstanceName: { eq: "icon" }, name: { eq: "qrscan" }) {
+      qrscan: file(sourceInstanceName: { eq: "product" }, name: { eq: "qrscan" }) {
         childImageSharp {
           fluid(maxWidth: 1000) {
             ...GatsbyImageSharpFluid_tracedSVG
           }
         }
       }
-      airtime: file(sourceInstanceName: { eq: "icon" }, name: { eq: "airtime" }) {
+      airtime: file(sourceInstanceName: { eq: "product" }, name: { eq: "airtime" }) {
         childImageSharp {
           fluid(maxWidth: 1000) {
             ...GatsbyImageSharpFluid_tracedSVG
           }
         }
       }
-      bill: file(sourceInstanceName: { eq: "icon" }, name: { eq: "bill" }) {
+      bill: file(sourceInstanceName: { eq: "product" }, name: { eq: "bill" }) {
         childImageSharp {
           fluid(maxWidth: 1000) {
             ...GatsbyImageSharpFluid_tracedSVG
           }
         }
       }
-      bank: file(sourceInstanceName: { eq: "icon" }, name: { eq: "bank" }) {
+      bank: file(sourceInstanceName: { eq: "product" }, name: { eq: "bank" }) {
         childImageSharp {
           fluid(maxWidth: 1000) {
             ...GatsbyImageSharpFluid_tracedSVG

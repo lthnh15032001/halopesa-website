@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { graphql, useStaticQuery } from "gatsby"
 import { Section, Container } from "../../components/global"
-import Img from "gatsby-image"
+// import Img from "gatsby-image"
 import { Button } from "../../components/Button"
 import { Image } from "../../components/common/image"
 const About = () => {

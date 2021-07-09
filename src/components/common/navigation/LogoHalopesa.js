@@ -2,7 +2,7 @@ import React from 'react'
 import Img from "gatsby-image"
 import styled from "styled-components"
 import { graphql, navigate, useStaticQuery } from "gatsby"
-import { Image } from '../../common/image'
+// import { Image } from '../../common/image'
 export const LogoHalopesa = (props) => {
   const style = props.styles ? props.styles : {}
   const halopesaLogo = useStaticQuery(graphql`

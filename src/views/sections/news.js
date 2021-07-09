@@ -1,5 +1,5 @@
 import React from 'react'
-import Img from "gatsby-image"
+// import Img from "gatsby-image"
 import styled from "styled-components"
 import { Container, Section } from "../../components/global"
 import { Button } from '../../components/Button'
