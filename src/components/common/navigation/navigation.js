@@ -93,7 +93,7 @@ export default class Navigation extends Component {
             </div>
           </TopBanner>
         </div>
-        <Nav {...this.props} scrolled={this.state.hasScrolled} className={`${this.state.hasScrolled ? 'shadow' : 'shadow-sm'}`}>
+        <Nav {...this.props} scrolled={this.state.hasScrolled} className={`${this.state.hasScrolled ? 'shadow' : 'shadow'}`}>
           <StyledContainer>
             <LogoHalopesa />
             <Mobile>

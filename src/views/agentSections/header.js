@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container } from "../../../components/global"
+import { Container } from "../../components/global"
 import styled from "styled-components"
 import { graphql, useStaticQuery } from "gatsby"
 import BackgroundImage from 'gatsby-background-image'

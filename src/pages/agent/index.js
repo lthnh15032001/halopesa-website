@@ -1,12 +1,13 @@
 import React from "react"
-
-import Layout from "../../components/common/layout/layout"
-import SEO from "../../components/common/layout/seo"
-import Header from './section/header'
+import Intro from '../../views/agentSections/intro'
+import Header from '../../views/agentSections/header'
+import SEO from '../../components/common/layout/seo'
+import Layout from '../../components/common/layout/layout'
 const IndexPage = () => (
   <Layout>
     <SEO title="For Agent" />
     <Header />
+    <Intro />
   </Layout>
 )
 

@@ -63,13 +63,13 @@ const HowItsWork = () => {
                         <Image fluid={img.img.childImageSharp.fluid} />
                     </div>
                     <div>
-                        <div className="font-weight-bold">Customer to Business</div>
+                        <div styke={{ fontWeight: 900 }}>Customer to Business</div>
                         <div className="mt-3 mb-3">
                             Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
                        </div>
                         <div className="d-flex justify-content-start align-items-center shadow p-2 rounded">
                             <div className="m-3 mb-0">
-                                <Image fluid={img.pdf.childImageSharp.fluid} width="60px"/>
+                                <Image fluid={img.pdf.childImageSharp.fluid} width="60px" />
                             </div>
                             <CardSubtitle tag="h6" className="mb-2 text-muted" >Lorem ipsum dolor sit amet, consectetur.pdf</CardSubtitle>
                         </div>
