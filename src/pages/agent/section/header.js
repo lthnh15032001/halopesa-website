@@ -6,7 +6,7 @@ import BackgroundImage from 'gatsby-background-image'
 const Header = () => {
     const img = useStaticQuery(graphql`
     query {
-        bg: file(sourceInstanceName: { eq: "product" }, name: { eq: "forcorporation" }) {
+        bg: file(sourceInstanceName: { eq: "product" }, name: { eq: "agentheader" }) {
         childImageSharp {
           fluid(maxWidth: 1000) {
             ...GatsbyImageSharpFluid_tracedSVG
@@ -18,8 +18,8 @@ const Header = () => {
     return (
         <BackgroundImageContainer fluid={img.bg.childImageSharp.fluid}>
             <HeaderWrapper>
-                <h1>For Corpration</h1>
-                <div>Home/For Corpration</div>
+                <h1>For Agent</h1>
+                <div>Home/For Agent</div>
             </HeaderWrapper>
         </BackgroundImageContainer>
     )

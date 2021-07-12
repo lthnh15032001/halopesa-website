@@ -1,9 +1,9 @@
 import React from 'react'
-import { Container, Section } from "../../../components/global"
+import { Container, Section } from "../../components/global"
 import styled from 'styled-components';
-import { Image } from "../../../components/common/image"
+import { Image } from "../../components/common/image"
 import { graphql, useStaticQuery } from "gatsby"
-import { Button } from "../../../components/Button"
+import { Button } from "../../components/Button"
 const BecomePartner = () => {
     const corporationbrief = useStaticQuery(graphql`
     query {

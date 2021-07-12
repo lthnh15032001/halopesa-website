@@ -1,13 +1,12 @@
 import React from 'react'
-import { Container } from "../../../components/global"
+import { Container } from "../../components/global"
 import styled from "styled-components"
-// import { Image } from "../../../components/common/image"
 import { graphql, useStaticQuery } from "gatsby"
 import BackgroundImage from 'gatsby-background-image'
 const Header = () => {
     const img = useStaticQuery(graphql`
     query {
-        bg: file(sourceInstanceName: { eq: "product" }, name: { eq: "backgroundservices" }) {
+        bg: file(sourceInstanceName: { eq: "product" }, name: { eq: "forcorporation" }) {
         childImageSharp {
           fluid(maxWidth: 1000) {
             ...GatsbyImageSharpFluid_tracedSVG
@@ -19,8 +18,8 @@ const Header = () => {
     return (
         <BackgroundImageContainer fluid={img.bg.childImageSharp.fluid}>
             <HeaderWrapper>
-                <h1>Services</h1>
-                <div>Home/Services</div>
+                <h1>For Corpration</h1>
+                <div>Home/For Corpration</div>
             </HeaderWrapper>
         </BackgroundImageContainer>
     )

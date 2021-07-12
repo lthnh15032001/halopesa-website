@@ -13,9 +13,9 @@ import styled from "styled-components"
  * - `useStaticQuery`: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-export const Image = ({ fluid, width, onClick, style }) => {
+export const Image = ({ fluid, width, onClick, style, className }) => {
 
-  return <ImageWrapper onClick={onClick && onClick} style={style && style}>
+  return <ImageWrapper onClick={onClick && onClick} style={style && style} className={className && className}>
     <StyledImage width={width} fluid={fluid} />
     <br />
   </ImageWrapper>

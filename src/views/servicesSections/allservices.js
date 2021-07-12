@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
-import { Container, Section } from "../../../components/global"
-import { CardServices } from '../../../components/CardServices'
+import { Container, Section } from "../../components/global"
+import { CardServices } from '../../components/CardServices'
 import { graphql, useStaticQuery } from "gatsby"
 
 const AllServices = () => {
@@ -68,17 +68,17 @@ const AllServices = () => {
         <Flex>
           <div>
             <CardServices vertical className="text-center" imgWidth="80px" fluid={serviceBrief.sendmoney.childImageSharp.fluid} name="Send Money" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " />
-            <CardServices vertical className="text-center" imgWidth="80px" fluid={serviceBrief.airtime.childImageSharp.fluid} name="Send Money"  className="mt-3 mb-3" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " />
+            <CardServices vertical className="text-center mt-3 mb-3" imgWidth="80px" fluid={serviceBrief.airtime.childImageSharp.fluid} name="Send Money"  text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " />
             <CardServices vertical className="text-center" imgWidth="80px" fluid={serviceBrief.sendmoney.childImageSharp.fluid} name="Send Money"  text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " />
           </div>
           <div>
             <CardServices vertical className="text-center" imgWidth="80px" fluid={serviceBrief.withdraw.childImageSharp.fluid} name="Send Money"  text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " />
-            <CardServices vertical className="text-center" imgWidth="80px" fluid={serviceBrief.bill.childImageSharp.fluid} name="Send Money"  className="mt-3 mb-3" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " />
+            <CardServices vertical className="text-center mt-3 mb-3" imgWidth="80px" fluid={serviceBrief.bill.childImageSharp.fluid} name="Send Money"  text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " />
             <CardServices vertical className="text-center" imgWidth="80px" fluid={serviceBrief.sendmoney.childImageSharp.fluid} name="Send Money"  text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " />
           </div>
           <div>
             <CardServices vertical className="text-center" imgWidth="80px" fluid={serviceBrief.qrscan.childImageSharp.fluid} name="Send Money"  text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " />
-            <CardServices vertical className="text-center" imgWidth="80px" fluid={serviceBrief.bank.childImageSharp.fluid} name="Send Money"  className="mt-3 mb-3" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " />
+            <CardServices vertical className="text-center mt-3 mb-3" imgWidth="80px" fluid={serviceBrief.bank.childImageSharp.fluid} name="Send Money"  text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " />
             <CardServices vertical className="text-center" imgWidth="80px" fluid={serviceBrief.sendmoney.childImageSharp.fluid} name="Send Money"  text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " />
           </div>
         </Flex>
