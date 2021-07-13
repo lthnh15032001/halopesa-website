@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from "styled-components"
 
-export const Button = ({name, className}) => {
+export const Button = ({name, className, style}) => {
     return (
-        <ButtonStyle className={`${className && className} shadow`} >
+        <ButtonStyle style={style && style} className={`${className && className} shadow`} >
             <div>{name && name}</div>
         </ButtonStyle>
     )
