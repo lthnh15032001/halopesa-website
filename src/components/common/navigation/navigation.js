@@ -2,19 +2,16 @@ import React, { Component } from "react"
 // import AnchorLink from "react-anchor-link-smooth-scroll"
 import Scrollspy from "react-scrollspy"
 import { Menu, X } from "react-feather"
-// import { imageStatic } from "../../../images"
 import { Link } from "gatsby"
 import { Container } from "../../global"
 import { LogoHalopesa } from './LogoHalopesa'
 import {
   Nav,
   NavItem,
-  // Brand,
   StyledContainer,
   NavListWrapper,
   MobileMenu,
   Mobile,
-  // ActionsContainer,
   TopBanner
 } from "./style"
 

@@ -31,7 +31,7 @@ export const Nav = styled.nav`
   width: 100%;
   top: ${props => (props.scrolled ? `0` : `61px`)};;
   z-index: 1000;
-  background: ${props => (props.scrolled ? `white` : null)};
+  background: white;
   transition: 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
 `
 

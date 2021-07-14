@@ -32,11 +32,6 @@ const Header = () => {
       }
     }
   `)
-  // console.log({ data: data })
-  // const handleSubmit = event => {
-  //   event.preventDefault()
-  // }
-
   return (
     <HeaderWrapper id="top">
       <Container>
