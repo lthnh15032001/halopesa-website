@@ -27,7 +27,7 @@ const NAV_ITEMS = [
 ]
 
 export default class Navigation extends Component {
-
+  _isMounted = false;
   state = {
     mobileMenuOpen: false,
     hasScrolled: false,
@@ -35,10 +35,15 @@ export default class Navigation extends Component {
   }
 
   componentDidMount() {
+    this._isMounted = true;
     window.addEventListener("scroll", this.handleScroll)
-    window.location && this.setState({ active: window.location.pathname })
+    window.location && this.setState({ active: window.location.pathname })  
   }
-
+  componentWillUnmount() {
+    this.setState = (state,callback)=>{
+      return;
+  };
+  }
   handleScroll = event => {
     const scrollTop = window.pageYOffset
 
