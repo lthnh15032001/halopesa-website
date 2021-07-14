@@ -3,9 +3,6 @@ import { Container, Section } from "../../components/global"
 import { graphql, useStaticQuery } from "gatsby"
 import styled from 'styled-components'
 import { Image } from '../../components/common/image'
-import {
-    Card, CardText, CardBody, CardTitle, CardSubtitle
-} from 'reactstrap';
 
 const News = () => {
     const img = useStaticQuery(graphql`
@@ -87,15 +84,4 @@ export default News
 
 const SectionStyled = styled(Section)`
     background-color: ${props => props.theme.color.background.light};
-`
-const Flex = styled.div`
-    display: grid;
-    grid-template-columns: repeat(${props => props.col}, 1fr);
-    grid-column-gap: 30px;
-    justify-content: start;
-    padding-top: 20px;
-    @media (max-width: ${props => props.theme.screen.sm}) {
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 32px;
-    }
 `

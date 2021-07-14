@@ -43,10 +43,10 @@ const HowItsWork = () => {
                     </div>
                 </div>
                 <div className=" d-flex flex-column justify-content-center align-items-center mt-5 mb-5">
-                    <ul className="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <ul className="nav nav-pills mb-3" id="pills-tab">
                         {tabs.map((x, i) => {
                             return (
-                                <li key={i.toString()} className="nav-item" role="presentation">
+                                <li key={i.toString()} className="nav-item">
                                     <button onClick={() => {
                                         setActive(i)
                                     }} className={`nav-link ${i === active ? "active" : ""} ${i !== active ? "text-dark" : "text-white"}`} style={{

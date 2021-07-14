@@ -3,7 +3,6 @@ import React from 'react'
 import { Container, Section } from "../../components/global"
 import styled from 'styled-components'
 import { graphql, useStaticQuery } from "gatsby"
-import { CardServices } from '../../components/CardServices'
 import { Image } from '../../components/common/image'
 const Download = () => {
     const img = useStaticQuery(graphql`

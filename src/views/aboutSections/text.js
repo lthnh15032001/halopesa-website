@@ -1,7 +1,6 @@
 import React from 'react'
 import { Container, Section } from "../../components/global"
 import styled from 'styled-components'
-import { CardServices } from '../../components/CardServices'
 const Text = () => {
 
     return (

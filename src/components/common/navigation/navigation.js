@@ -74,7 +74,7 @@ export default class Navigation extends Component {
         offset={-64}
       >
         {NAV_ITEMS.map((navItem, i) => (
-          <NavItem last={i === NAV_ITEMS.length - 1 ? true : false} >{this.getNavAnchorLink(navItem)}</NavItem>
+          <NavItem key={i.toString()} last={i === NAV_ITEMS.length - 1 ? true : false} >{this.getNavAnchorLink(navItem)}</NavItem>
         ))}
       </Scrollspy>
     </NavListWrapper>

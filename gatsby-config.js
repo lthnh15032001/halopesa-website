@@ -3,6 +3,9 @@ require("dotenv").config({
 })
 
 module.exports = {
+  flags: {
+    DEV_SSR: false,
+  },
   siteMetadata: {
     title: `Halopesa`,
     description: `Welcome and Enjoy the digital payments transformation with HaloPesa.`,
