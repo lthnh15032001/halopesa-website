@@ -2,21 +2,19 @@ import React from "react"
 
 import Layout from "../../components/common/layout/layout"
 import SEO from "../../components/common/layout/seo"
-
-// import Header from "../../views/homeSections/header"
-import About from "../../views/homeSections/about"
-import Services from "../../views/homeSections/services"
-import Corporation from "../../views/homeSections/corporation"
-import Agent from "../../views/homeSections/agent"
-import News from "../../views/homeSections/news"
+import Header from "../../views/aboutSections/header"
+import Text from "../../views/aboutSections/text"
+import ImgDescription from "../../views/aboutSections/imgdescription"
+import SocialContribute from "../../views/aboutSections/socialcontribute"
+import Download from "../../views/aboutSections/download"
 const IndexPage = () => (
   <Layout>
     <SEO title="About" />
-    <About />
-    <Services />
-    <Corporation />
-    <Agent />
-    <News />
+    <Header />
+    <Text />
+    <ImgDescription />
+    <SocialContribute />
+    <Download />
   </Layout>
 )
 

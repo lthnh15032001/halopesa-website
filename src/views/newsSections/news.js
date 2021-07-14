@@ -44,35 +44,39 @@ const News = () => {
                         </div>
                     </div>
                     <div className="mt-4 col-6">
-                        <div className="bg-white">
-                            <div>
-                                <Image fluid={img.newsImg.childImageSharp.fluid} width="130px" />
-                            </div>
-                            <div className="p-3 pt-0">
-                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-                            </div>
-                        </div>
-                        <div className="d-flex flex-row justify-content-center align-items-center mt-4 bg-white">
-                            <div>
-                                <Image fluid={img.newsImg.childImageSharp.fluid} width="200px" />
-                            </div>
-                            <div className="p-3 pt-0">
+                        <div className="bg-white mb-4" style={{height: "150px"}}>
+                            <div className="d-flex justify-content-center align-items-center">
                                 <div>
+                                    <Image fluid={img.newsImg.childImageSharp.fluid} width="150px" />
+                                </div>
+                                <div className="p-3 pt-0">
                                     Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
                                 </div>
                             </div>
                         </div>
-                        <div className="d-flex flex-row justify-content-center align-items-center mt-4 bg-white">
-                            <div>
-                                <Image fluid={img.newsImg.childImageSharp.fluid} width="200px" />
-                            </div>
-                            <div className="p-3 pt-0">
+                        <div className="bg-white mb-4" style={{height: "150px"}}>
+                            <div className="d-flex justify-content-center align-items-center">
                                 <div>
+                                    <Image fluid={img.newsImg.childImageSharp.fluid} width="150px" />
+                                </div>
+                                <div className="p-3 pt-0">
                                     Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
                                 </div>
                             </div>
                         </div>
+                        <div className="bg-white mb-4" style={{height: "150px"}}>
+                            <div className="d-flex justify-content-center align-items-center">
+                                <div>
+                                    <Image fluid={img.newsImg.childImageSharp.fluid} width="150px" />
+                                </div>
+                                <div className="p-3 pt-0">
+                                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                                </div>
+                            </div>
+                        </div>
+                        
                     </div>
+                    
                 </div>
             </Container>
         </SectionStyled>
