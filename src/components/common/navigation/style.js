@@ -29,9 +29,9 @@ export const Nav = styled.nav`
   padding: ${props => (props.scrolled ? `16px 0` : `24px 0`)};
   position: fixed;
   width: 100%;
-  top: ${props => (props.scrolled ? `0` : `61px`)};;
+  top: ${props => (props.scrolled ? `0` : `61px`)};
   z-index: 1000;
-  background: white;
+  background: ${props => props.scrolled ? 'white' : props.theme.color.light};
   transition: 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
 `
 
@@ -64,7 +64,7 @@ export const NavListWrapper = styled.div`
 `
 
 export const NavItem = styled.li`
-  margin: ${props => props.last ? "0 0 0em 2.25em": "0 2.25em;"};
+  margin: ${props => props.last ? "0 0 0em 2.25em" : "0 2.25em;"};
   font-family: ${props => props.theme.font.medium};
   ${props => props.theme.font_size.xsmall};
 

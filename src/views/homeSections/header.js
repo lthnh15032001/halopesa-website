@@ -5,7 +5,9 @@ import { graphql, useStaticQuery } from "gatsby"
 import { Image } from '../../components/common/image'
 import { Container } from "../../components/global"
 import { LogoHalopesa } from "../../components/common/navigation/LogoHalopesa"
-
+import {
+  isMobile
+} from "react-device-detect";
 const Header = () => {
   const data = useStaticQuery(graphql`
     query {
@@ -35,14 +37,14 @@ const Header = () => {
   return (
     <HeaderWrapper id="top">
       <Container>
-        <Flex className="flex-row-reverse d-flex ">
+        <Flex className="flex-md-row-reverse flex-column d-flex ">
           <HeaderTextGroup className="d-flex flex-column justify-content-center">
-            <LogoHalopesa styles={{
+            {!isMobile && <LogoHalopesa styles={{
               marginBottom: 0,
               width: "100%",
-              justifyContent: "end"
+              justifyContent: "end",
             }}
-            />
+            />}
             <h1>
               Stay cool
               <br />
@@ -56,8 +58,8 @@ const Header = () => {
               <Image width="170px" fluid={data.ggplay.childImageSharp.fluid} />
             </div>
           </HeaderTextGroup>
-          <Image style={{ marginRight: "40px" }} width="680px" fluid={data.greenSkew.childImageSharp.fluid} />
-         
+          <Image display width="680px" smWidth="360px" fluid={data.greenSkew.childImageSharp.fluid} />
+
         </Flex>
       </Container>
     </HeaderWrapper>
@@ -71,7 +73,8 @@ const HeaderWrapper = styled.header`
   padding: 100px 0 80px 0;
   position: relative;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 5vw));
-  @media (max-width: ${props => props.theme.screen.md}) {
+  @media (max-width: ${props => props.theme.screen.xs}) {
+    padding: 100px 0 0px 0;
   }
 `
 
@@ -109,8 +112,12 @@ const Flex = styled.div`
   justify-content: space-between;
   align-content: center;
   grid-template-columns: 1fr 1fr;
-  @media (max-width: ${props => props.theme.screen.md}) {
+  @media (min-width: ${props => props.theme.screen.lg}) {
     grid-template-columns: 1fr;
-    grid-gap: 64px;
+    grid-gap: 40px;
+  }
+  @media (max-width: ${props => props.theme.screen.xs}) {
+    grid-template-columns: 1fr;
+    grid-gap: 0px;
   }
 `

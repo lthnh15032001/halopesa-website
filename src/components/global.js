@@ -32,6 +32,22 @@ export const Container = styled.div`
 export const Section = styled.section`
   padding: 80px 0;
   overflow: hidden;
+
+  @media (min-width: ${props => props.theme.screen.xs}) {
+    padding: 0px 0;
+  }
+
+  @media (min-width: ${props => props.theme.screen.sm}) {
+    padding: 0px 0;
+
+  }
+
+  @media (min-width: ${props => props.theme.screen.md}) {
+  }
+
+  @media (min-width: ${props => props.theme.screen.lg}) {
+  }
+
   background-color: ${props => {
     switch (props.accent) {
       case "secondary":
@@ -49,9 +65,8 @@ export const Section = styled.section`
 
   ${props =>
     props.accent &&
-    `background-color: ${
-      props.accent === "secondary"
-        ? props.theme.color.white.dark
-        : props.theme.color.primary
+    `background-color: ${props.accent === "secondary"
+      ? props.theme.color.white.dark
+      : props.theme.color.primary
     }`};
 `

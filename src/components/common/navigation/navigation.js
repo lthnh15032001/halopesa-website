@@ -34,12 +34,12 @@ export default class Navigation extends Component {
   componentDidMount() {
     this._isMounted = true;
     window.addEventListener("scroll", this.handleScroll)
-    window.location && this.setState({ active: window.location.pathname })  
+    window.location && this.setState({ active: window.location.pathname })
   }
   componentWillUnmount() {
-    this.setState = (state,callback)=>{
+    this.setState = (state, callback) => {
       return;
-  };
+    };
   }
   handleScroll = event => {
     const scrollTop = window.pageYOffset
@@ -95,7 +95,7 @@ export default class Navigation extends Component {
             </div>
           </TopBanner>
         </div>
-        <Nav {...this.props} scrolled={this.state.hasScrolled} className={`${this.state.hasScrolled ? 'shadow' : 'shadow'}`}>
+        <Nav {...this.props} scrolled={this.state.hasScrolled} className={`${this.state.hasScrolled ? 'shadow' : ''}`}>
           <StyledContainer>
             <LogoHalopesa />
             <Mobile>

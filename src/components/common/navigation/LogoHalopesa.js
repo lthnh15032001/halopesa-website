@@ -41,8 +41,4 @@ const StyledImage = styled(Img)`
   @media (max-width: ${props => props.theme.screen.md}) {
     width: 130px;
   }
-  @media (max-width: ${props => props.theme.screen.sm}) {
-    width: 130px;
-    display: none;
-  }
 `
