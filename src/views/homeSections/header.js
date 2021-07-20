@@ -45,17 +45,23 @@ const Header = () => {
               justifyContent: "end",
             }}
             />}
-            <h1>
+            {
+              isMobile && <div className="introduce">
+                Introducing halopesa website
+              </div>
+            }
+            <h1 className="text1 ">
               Stay cool
-              <br />
+            </h1>
+            <h1 className="text1 ">
               stay convenient
             </h1>
             <h2>
               Welcome and Enjoy the digital payments transformation with HaloPesa.
             </h2>
-            <div className="flex-row d-flex">
-              <Image width="170px" fluid={data.appstore.childImageSharp.fluid} />
-              <Image width="170px" fluid={data.ggplay.childImageSharp.fluid} />
+            <div className="flex-row d-flex img-res">
+              <Image display smWidth='142px' width="170px" fluid={data.appstore.childImageSharp.fluid} />
+              <Image display smWidth='142px' width="170px" fluid={data.ggplay.childImageSharp.fluid} />
             </div>
           </HeaderTextGroup>
           <Image display width="680px" smWidth="360px" fluid={data.greenSkew.childImageSharp.fluid} />
@@ -74,14 +80,36 @@ const HeaderWrapper = styled.header`
   position: relative;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 5vw));
   @media (max-width: ${props => props.theme.screen.xs}) {
-    padding: 100px 0 0px 0;
+    padding: 85px 0 0px 0;
   }
 `
 
 
 const HeaderTextGroup = styled.div`
   margin: 0;
-
+  @media (max-width: ${props => props.theme.screen.xs}) {
+    align-items: center;
+    .img-res {
+      justify-content: center
+    }
+    .introduce { 
+        padding: 0 0 15px 0;
+        text-align: center;
+        color: #747474;
+        font-size: 18px;
+        font-weight: 500;
+    }
+    .text1 { 
+      font-size: 30px;
+      line-height: 30px;
+      font-weight: bold;
+    }
+    h2 { 
+      text-align: center;
+      color: #747474;
+      padding-top: 13px;
+    }
+  }
   > div {
     width: 120%;
     margin-bottom: -4.5%;
@@ -92,7 +120,6 @@ const HeaderTextGroup = styled.div`
   }
 
   h1 {
-    margin: 0 0 24px;
     color: ${props => props.theme.color.primary};
     text-transform: uppercase;
   }

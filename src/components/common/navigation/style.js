@@ -3,7 +3,9 @@ import styled from "styled-components"
 import { Container } from "../../global"
 
 export const TopBanner = styled(Container)`
- 
+ @media (max-width: ${props => props.theme.screen.xs}) {
+  height: 50px;
+  }
   margin: 0 auto;
   height: 61px;
   width: 100%;
@@ -26,6 +28,9 @@ export const TopBanner = styled(Container)`
 `
 
 export const Nav = styled.nav`
+  @media (max-width: ${props => props.theme.screen.xs}) {
+    top: ${props => (props.scrolled ? `0` : `50px`)};
+  }
   padding: ${props => (props.scrolled ? `16px 0` : `24px 0`)};
   position: fixed;
   width: 100%;

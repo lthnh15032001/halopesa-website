@@ -44,7 +44,7 @@ export default class Navigation extends Component {
   handleScroll = event => {
     const scrollTop = window.pageYOffset
 
-    if (scrollTop > 32) {
+    if (scrollTop > 10) {
       this.setState({ hasScrolled: true })
     } else {
       this.setState({ hasScrolled: false })
@@ -95,7 +95,7 @@ export default class Navigation extends Component {
             </div>
           </TopBanner>
         </div>
-        <Nav {...this.props} scrolled={this.state.hasScrolled} className={`${this.state.hasScrolled ? 'shadow' : ''}`}>
+        <Nav {...this.props} scrolled={this.state.hasScrolled} className={`${this.state.hasScrolled ? 'shadow' : ''} ${mobileMenuOpen ? "bg-white" : "bg-light"}`}>
           <StyledContainer>
             <LogoHalopesa />
             <Mobile>
