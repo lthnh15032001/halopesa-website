@@ -24,7 +24,7 @@ const Agent = () => {
   return (
     <StyledSection>
       <StyledContainer>
-        <Flex className="flex-row-md">
+        <Flex className="flex-md-row-reverse d-md-flex">
           <div>
             {!isMobile && <Image display smWidth="340px" fluid={agentbrief.agentbrief.childImageSharp.fluid} />}
           </div>
@@ -43,7 +43,7 @@ const Agent = () => {
                   Becoming an HaloPesa Agent is a great business opportunity that allows Agents to earn their monthly revenue following best competitive  commission rates that HaloPesa offers.
             </div> </>}
             {isMobile && <Image display smWidth="340px" fluid={agentbrief.agentbrief.childImageSharp.fluid} />}
-            <div className="text-center d-flex justify-content-center align-items-centerr">
+            <div className="d-md-block d-flex justify-content-center align-items-centerr">
               <Button name="Read more" className="mt-md-4 " />
             </div>
           </div>

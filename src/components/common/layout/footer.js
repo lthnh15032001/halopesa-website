@@ -10,7 +10,11 @@ const Footer = () => (
       sdadas
     </Container>
     <FooterColumnContainer className="pt-2">
-      <div>About us</div>
+      <div>
+        <ul>
+          <li>About us</li>
+        </ul>
+      </div>
       <div>
         <ul>
           <li>Product & Services</li>
@@ -39,7 +43,7 @@ const Footer = () => (
           <li></li>
         </ul>
       </div>
-      <div style={{marginLeft: "40px"}}>
+      <div >
         <ul>
           <li>My Halotel App</li>
           <li>
