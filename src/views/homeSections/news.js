@@ -35,34 +35,34 @@ const News = () => {
     <StyledSection>
       <StyledContainer>
         <Flex className="d-flex align-items-center">
-          <h1>News and <br /> Promotions</h1>
+          <h1 className="text1">News and <br /> Promotions</h1>
           <Button name="Read more" />
         </Flex>
         <Flex className="d-flex align-items-center mt-4 row flex-row">
-          <div className="col-4">
-            <Image fluid={img.img1.childImageSharp.fluid} width="350px" />
+          <div className="col-12 col-md-4 mb-md-0 mb-3">
+            <Image className="d-flex d-md-block justify-content-center align-items-center" display smWidth="340px"  fluid={img.img1.childImageSharp.fluid} width="350px" />
             <Title>
               Sed ut perspiciatis unde omnis iste natus error sit voluptatem
             </Title>
-            <Descrip className="mt-3">
+            <Descrip className="mt-md-3 mt-2">
               Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
             </Descrip>
           </div>
-          <div className="col-4">
-            <Image fluid={img.img2.childImageSharp.fluid} width="350px" />
+          <div className="col-12 col-md-4 mb-md-0 mb-3">
+            <Image className="d-flex d-md-block justify-content-center align-items-center" display smWidth="340px"  fluid={img.img2.childImageSharp.fluid} width="350px" />
             <Title>
               Sed ut perspiciatis unde omnis iste natus error sit voluptatem
             </Title>
-            <Descrip className="mt-3">
+            <Descrip className="mt-md-3 mt-2">
               Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
             </Descrip>
           </div>
-          <div className="col-4">
-            <Image fluid={img.img3.childImageSharp.fluid} width="350px" />
+          <div className="col-12 col-md-4 mb-md-0 mb-3">
+            <Image className="d-flex d-md-block justify-content-center align-items-center" display smWidth="340px" fluid={img.img3.childImageSharp.fluid} width="350px" />
             <Title>
               Sed ut perspiciatis unde omnis iste natus error sit voluptatem
             </Title>
-            <Descrip className="mt-3">
+            <Descrip className="mt-md-3 mt-2">
               Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
             </Descrip>
           </div>
@@ -87,12 +87,24 @@ const Flex = styled.div`
     grid-template-columns: 1fr;
     grid-gap: 64px;
   }
+  @media (max-width: ${props => props.theme.screen.xs}) {
+    grid-template-columns: 1fr;
+    grid-gap: 0px;
+    .text1 { 
+      font-size: 30px;
+      line-height: 30px;
+      font-weight: bold;
+    }
+  }
 `
 
 const Title = styled.div`
   color: #090909;
   font-weight: 900;
   font-size: 20px;
+  @media (max-width: ${props => props.theme.screen.xs}) {
+    margin-top: 12px
+  }
 `
 const Descrip = styled.div`
   color: #7A7A7A;

@@ -18,7 +18,7 @@ const Header = () => {
     return (
         <BackgroundImageContainer fluid={img.bg.childImageSharp.fluid}>
             <HeaderWrapper>
-                <h1 className="text">NEWS AND PROMOTIONS</h1>
+                <h1>NEWS AND PROMOTIONS</h1>
                 <div>Home/News and Promotions</div>
             </HeaderWrapper>
         </BackgroundImageContainer>
@@ -38,13 +38,6 @@ const HeaderWrapper = styled(Container)`
   position: relative;
   height: 100px;
   width: 100%;
-  @media (max-width: ${props => props.theme.screen.xs}) {
-    .text { 
-      font-size: 30px;
-      line-height: 30px;
-      font-weight: bold;
-    }
-  }
   h1 {
     color:  #F26522;
   }
