@@ -25,4 +25,13 @@ const ButtonStyle = styled.div`
     font-weight: 600;
     font-size: 20.2057px
   }
+  @media (max-width: ${props => props.theme.screen.sm}) {
+    width: 150.12px;
+    height: 42.82px;
+    div {
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 17.2057px
+  }
+  }
 `

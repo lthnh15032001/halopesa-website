@@ -66,7 +66,7 @@ export default About
 const StyledContainer = styled(Container)``
 
 const Small = styled.div`
-  font-size: 18px;
+  font-size: 16px;
   font-weight: normal;
   color: #7A7A7A;
   padding-right:40px;
