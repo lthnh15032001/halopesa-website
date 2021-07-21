@@ -5,9 +5,7 @@ import { graphql, useStaticQuery } from "gatsby"
 import { Image } from '../../components/common/image'
 import { Container } from "../../components/global"
 import { LogoHalopesa } from "../../components/common/navigation/LogoHalopesa"
-import {
-  isMobile
-} from "react-device-detect";
+
 const Header = () => {
   const data = useStaticQuery(graphql`
     query {
@@ -39,17 +37,17 @@ const Header = () => {
       <Container>
         <Flex className="flex-md-row-reverse flex-column d-flex ">
           <HeaderTextGroup className="d-flex flex-column justify-content-center">
-            {!isMobile && <LogoHalopesa styles={{
-              marginBottom: 0,
-              width: "100%",
-              justifyContent: "end",
-            }}
-            />}
-            {
-              isMobile && <div className="introduce">
-                Introducing halopesa website
-              </div>
-            }
+            <div className="d-md-block d-none">
+              <LogoHalopesa styles={{
+                marginBottom: "14px",
+                width: "100%",
+                justifyContent: "end",
+              }}
+              />
+            </div>
+            <div className="introduce">
+              Introducing halopesa website
+            </div>
             <h1 className="text1 ">
               Stay cool
             </h1>
@@ -87,17 +85,21 @@ const HeaderWrapper = styled.header`
 
 const HeaderTextGroup = styled.div`
   margin: 0;
+  .introduce { 
+    display: none
+  }
   @media (max-width: ${props => props.theme.screen.xs}) {
     align-items: center;
     .img-res {
       justify-content: center
     }
-    .introduce { 
+   .introduce { 
         padding: 0 0 15px 0;
         text-align: center;
         color: #747474;
         font-size: 18px;
         font-weight: 500;
+        display: block
     }
     .text1 { 
       font-size: 30px;

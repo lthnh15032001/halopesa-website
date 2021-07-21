@@ -5,9 +5,7 @@ import { graphql, useStaticQuery } from "gatsby"
 import { LogoHalopesa } from '../../components/common/navigation/LogoHalopesa'
 import { Button } from '../../components/Button'
 import { Image } from '../../components/common/image'
-import {
-  isMobile
-} from "react-device-detect";
+
 import { TitleRes } from '../../components/TitleRes'
 const Agent = () => {
   const agentbrief = useStaticQuery(graphql`
@@ -24,25 +22,25 @@ const Agent = () => {
   return (
     <StyledSection>
       <StyledContainer>
+        <TitleRes
+          className="mb-3 d-md-none d-block"
+          name="For Agent"
+          des="Becoming an HaloPesa Agent is a great business opportunity that allows Agents to earn their monthly revenue following best competitive  commission rates that HaloPesa offers.
+"
+        />
         <Flex className="flex-md-row-reverse d-md-flex">
-          <div>
-            {!isMobile && <Image display smWidth="340px" fluid={agentbrief.agentbrief.childImageSharp.fluid} />}
+          <div className="d-md-block d-none">
+            <Image display smWidth="340px" fluid={agentbrief.agentbrief.childImageSharp.fluid} />
           </div>
           <div className="d-sm-flex d-md-block justify-content-center align-items-center flex-column">
-            {!isMobile && <LogoHalopesa style={{ justifyContent: "start!important" }} />}
-            {isMobile && <TitleRes
-              className="mb-3"
-              name="For Agent"
-              des="Becoming an HaloPesa Agent is a great business opportunity that allows Agents to earn their monthly revenue following best competitive  commission rates that HaloPesa offers.
-"
-            />}
-            {!isMobile &&
-              <>
-                <h2>For Agent</h2>
-                <div style={{ color: "#7A7A7A" }}>
-                  Becoming an HaloPesa Agent is a great business opportunity that allows Agents to earn their monthly revenue following best competitive  commission rates that HaloPesa offers.
-            </div> </>}
-            {isMobile && <Image display smWidth="340px" fluid={agentbrief.agentbrief.childImageSharp.fluid} />}
+            <LogoHalopesa className="d-md-flex d-none" style={{ justifyContent: "start!important" }} />
+            <div className="d-md-block d-none">
+              <h2>For Agent</h2>
+              <div style={{ color: "#7A7A7A" }}>
+                Becoming an HaloPesa Agent is a great business opportunity that allows Agents to earn their monthly revenue following best competitive  commission rates that HaloPesa offers.
+                </div>
+            </div>
+            <Image className="d-md-none d-block" display smWidth="340px" fluid={agentbrief.agentbrief.childImageSharp.fluid} />
             <div className="d-md-block d-flex justify-content-center align-items-centerr">
               <Button name="Read more" className="mt-md-4 " />
             </div>

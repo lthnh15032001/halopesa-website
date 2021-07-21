@@ -18,7 +18,7 @@ const Container = styled.div`
     .des {
         width: 60%;
     }
-    @media (max-width: ${props => props.theme.screen.xs}) {
+    @media (max-width: 575px) {
         .text1 {
         font-size: 30px;
         line-height: 30px;

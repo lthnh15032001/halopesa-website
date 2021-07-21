@@ -5,6 +5,7 @@ import { graphql, navigate, useStaticQuery } from "gatsby"
 // import { Image } from '../../common/image'
 export const LogoHalopesa = (props) => {
   const style = props.styles ? props.styles : {}
+  const className = props.className ? props.className : ""
   const halopesaLogo = useStaticQuery(graphql`
     query {
       file(sourceInstanceName: { eq: "product" }, name: { eq: "halopesa-logo" }) {
@@ -20,6 +21,7 @@ export const LogoHalopesa = (props) => {
     <ImageWrapper
       style={style}
       onClick={() => navigate("/")}
+      className={className}
     >
       <StyledImage fluid={halopesaLogo.file.childImageSharp.fluid} />
       <br />

@@ -5,9 +5,6 @@ import { Section, Container } from "../../components/global"
 // import Img from "gatsby-image"
 import { Button } from "../../components/Button"
 import { Image } from "../../components/common/image"
-import {
-  isMobile
-} from "react-device-detect";
 const About = () => {
   const aboutBrief = useStaticQuery(graphql`
     query {
@@ -26,14 +23,12 @@ const About = () => {
         <Flex col={1} className="flex-md-row-reverse flex-column-reverse d-flex ">
           <div>
             <Image display smWidth="340px" fluid={aboutBrief.file.childImageSharp.fluid} width="480px" />
-            {
-              isMobile && <Flex col={1} className="d-flex flex-column-reverse justify-content-center align-items-center" style={{ marginTop: 20 }}>
-                <Button className="" name="Read more" />
-                <div className="d-flex align-items-center pb-3" >
-                  <a href="/" style={{ fontWeight: 'bold' }}> How to use</a>
-                </div>
-              </Flex>
-            }
+            <Flex col={1} className="d-flex d-md-none flex-column-reverse justify-content-center align-items-center" style={{ marginTop: 20 }}>
+              <Button className="" name="Read more" />
+              <div className="d-flex align-items-center pb-3" >
+                <a href="/" style={{ fontWeight: 'bold' }}> How to use</a>
+              </div>
+            </Flex>
           </div>
           <div className="p-md-5 p-xs-2">
             <h1 className="text1">About Halopesa</h1>
@@ -48,12 +43,12 @@ const About = () => {
                 <div className="des">Customers</div>
               </Number>
             </Flex>
-            {!isMobile && <Flex col={2} className="" style={{ marginTop: 30 }}>
+            <Flex col={2} className="d-none d-md-grid" style={{ marginTop: 30 }}>
               <Button className="" name="Read more" />
               <div className="d-flex align-items-center " >
                 <a href="/" style={{ fontWeight: 'bold' }}> How to use</a>
               </div>
-            </Flex>}
+            </Flex>
           </div>
         </Flex>
       </StyledContainer>
