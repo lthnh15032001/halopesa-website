@@ -4,6 +4,7 @@ import { graphql, useStaticQuery } from "gatsby"
 import styled from 'styled-components'
 import { Image } from '../../components/common/image'
 import { Button } from '../../components/Button'
+import { TitleRes } from '../../components/TitleRes'
 const Intro = () => {
     const img = useStaticQuery(graphql`
     query {
@@ -19,9 +20,14 @@ const Intro = () => {
     return (
         <Section>
             <Container>
-                <div>HaloPesa Agents are spread throughout the country. HaloPesa welcomes every interested individual to join our HaloPesa Family by becoming an Agents as it is exciting and rewarding too. <br /> <br />Becoming an HaloPesa Agent is a great business opportunity that allows Agents to earn their monthly revenue following best competitive  commission rates that HaloPesa offers.
+                <TitleRes 
+                    name="For Agent"
+                    des="HaloPesa Agents are spread throughout the country. HaloPesa welcomes every interested individual to join our HaloPesa Family by becoming an Agents as it is exciting and rewarding too. Becoming an HaloPesa Agent is a great business opportunity that allows Agents to earn their monthly revenue following best competitive  commission rates that HaloPesa offers."
+                    className="d-block d-md-none"
+                />
+                <div className="d-md-block d-none">HaloPesa Agents are spread throughout the country. HaloPesa welcomes every interested individual to join our HaloPesa Family by becoming an Agents as it is exciting and rewarding too. <br /> <br />Becoming an HaloPesa Agent is a great business opportunity that allows Agents to earn their monthly revenue following best competitive  commission rates that HaloPesa offers.
                 </div>
-                <Flex col={3}>
+                <Flex col={3} className="d-none d-md-grid">
                     <div className="d-flex align-items-center flex-column justify-content-center" >
                         <Number>
                             <div className="number">100,000 +</div>
@@ -33,10 +39,10 @@ const Intro = () => {
                         </Number>
                     </div>
                     <div className="d-flex align-items-center flex-column justify-content-center" >
-                        <Image fluid={img.img.childImageSharp.fluid} />
-                        <div>
+                        <Image display smWidth="345px" fluid={img.img.childImageSharp.fluid} />
+                        <div> 
                             <Button name="Become an Agent" />
-                        </div>
+                        </div> 
                     </div>
                     <div className="d-flex align-items-center flex-column justify-content-center">
                         <Number>
@@ -77,11 +83,12 @@ const Flex = styled.div`
     grid-column-gap: 30px;
     justify-content: start;
     padding-top: 20px;
-    @media (max-width: ${props => props.theme.screen.sm}) {
-        grid-template-columns: 1fr 1fr;
+    @media (max-width: ${props => props.theme.screen.xs}) {
+        grid-template-columns: repeat(2, 1fr);
         grid-gap: 32px;
     }
 `
+
 
 const Number = styled.div`
   .number {
@@ -89,9 +96,16 @@ const Number = styled.div`
     font-size: 40.3929px;
     letter-spacing: -1.59256px;
     color: #F36000;
-    margin-top: 30px
+    margin-top: 30px;
+    @media (max-width: ${props => props.theme.screen.xs}) {
+      margin-top: 10px;
+      font-size: 32.3929px;
+    }
   }
   .des {
     font-size: 20.8977px;
+    @media (max-width: ${props => props.theme.screen.xs}) {
+      font-size: 17.8977px;
+    }
   }
 `
