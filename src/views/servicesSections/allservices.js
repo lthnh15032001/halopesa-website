@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Container, Section } from "../../components/global"
 import { CardServices } from '../../components/CardServices'
 import { graphql, useStaticQuery } from "gatsby"
-
+import { TitleRes } from '../../components/TitleRes'
 const AllServices = () => {
   const serviceBrief = useStaticQuery(graphql`
     query {
@@ -61,25 +61,26 @@ const AllServices = () => {
   return (
     <Section>
       <Container>
-        <Contain className="d-flex flex-column justify-content-center align-items-center w-100">
-          <h1>All Services</h1>
-          <div className="text-center" style={{ width: "60%", color: "#7A7A7A" }}>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</div>
-        </Contain>
+        <TitleRes
+        className="m-md-3"
+          name="All Services"
+          des="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
+        />
         <Flex>
           <div>
             <CardServices vertical className="text-center" imgWidth="80px" fluid={serviceBrief.sendmoney.childImageSharp.fluid} name="Send Money" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " />
-            <CardServices vertical className="text-center mt-3 mb-3" imgWidth="80px" fluid={serviceBrief.airtime.childImageSharp.fluid} name="Send Money"  text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " />
-            <CardServices vertical className="text-center" imgWidth="80px" fluid={serviceBrief.sendmoney.childImageSharp.fluid} name="Send Money"  text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " />
+            <CardServices vertical className="text-center mt-3 mb-3" imgWidth="80px" fluid={serviceBrief.airtime.childImageSharp.fluid} name="Send Money" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " />
+            <CardServices vertical className="text-center" imgWidth="80px" fluid={serviceBrief.sendmoney.childImageSharp.fluid} name="Send Money" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " />
           </div>
           <div>
-            <CardServices vertical className="text-center" imgWidth="80px" fluid={serviceBrief.withdraw.childImageSharp.fluid} name="Send Money"  text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " />
-            <CardServices vertical className="text-center mt-3 mb-3" imgWidth="80px" fluid={serviceBrief.bill.childImageSharp.fluid} name="Send Money"  text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " />
-            <CardServices vertical className="text-center" imgWidth="80px" fluid={serviceBrief.sendmoney.childImageSharp.fluid} name="Send Money"  text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " />
+            <CardServices vertical className="text-center" imgWidth="80px" fluid={serviceBrief.withdraw.childImageSharp.fluid} name="Send Money" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " />
+            <CardServices vertical className="text-center mt-3 mb-3" imgWidth="80px" fluid={serviceBrief.bill.childImageSharp.fluid} name="Send Money" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " />
+            <CardServices vertical className="text-center" imgWidth="80px" fluid={serviceBrief.sendmoney.childImageSharp.fluid} name="Send Money" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " />
           </div>
           <div>
-            <CardServices vertical className="text-center" imgWidth="80px" fluid={serviceBrief.qrscan.childImageSharp.fluid} name="Send Money"  text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " />
-            <CardServices vertical className="text-center mt-3 mb-3" imgWidth="80px" fluid={serviceBrief.bank.childImageSharp.fluid} name="Send Money"  text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " />
-            <CardServices vertical className="text-center" imgWidth="80px" fluid={serviceBrief.sendmoney.childImageSharp.fluid} name="Send Money"  text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " />
+            <CardServices vertical className="text-center" imgWidth="80px" fluid={serviceBrief.qrscan.childImageSharp.fluid} name="Send Money" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " />
+            <CardServices vertical className="text-center mt-3 mb-3" imgWidth="80px" fluid={serviceBrief.bank.childImageSharp.fluid} name="Send Money" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " />
+            <CardServices vertical className="text-center" imgWidth="80px" fluid={serviceBrief.sendmoney.childImageSharp.fluid} name="Send Money" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " />
           </div>
         </Flex>
       </Container>
@@ -89,9 +90,6 @@ const AllServices = () => {
 
 export default AllServices;
 
-const Contain = styled.div`
-
-`
 
 const Flex = styled.div`
     display: grid;
@@ -100,7 +98,8 @@ const Flex = styled.div`
   justify-content: start;
   padding-top: 20px;
   @media (max-width: ${props => props.theme.screen.sm}) {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(1, 1fr);
     grid-gap: 32px;
   }
+  
 `

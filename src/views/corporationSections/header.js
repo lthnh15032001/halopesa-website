@@ -27,11 +27,14 @@ const Header = () => {
 export default Header
 
 
+
 const BackgroundImageContainer = styled(BackgroundImage)`
   height: 400px;
   min-width: 100%;
   margin-top: 82px;
-
+  @media (max-width: ${props => props.theme.screen.sm}) {
+    height: 180px;
+  }
 `
 const HeaderWrapper = styled(Container)`
   padding: 140px 0 80px 0;
@@ -44,6 +47,14 @@ const HeaderWrapper = styled(Container)`
   div {
     color: white;
   }
-  @media (max-width: ${props => props.theme.screen.md}) {
+  @media (max-width: ${props => props.theme.screen.sm}) {
+    padding: 50px 0 80px 30px;
+    h1 {
+      font-size: 30px;
+      line-height: 30px;
+      font-weight: bold;
+    }
+
   }
 `
+
