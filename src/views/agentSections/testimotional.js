@@ -5,6 +5,8 @@ import styled from 'styled-components'
 import { Button } from '../../components/Button'
 import BackgroundImage from 'gatsby-background-image'
 import { Image } from '../../components/common/image'
+import { TitleRes } from '../../components/TitleRes'
+import { CardServices } from '../../components/CardServices'
 const Testimotional = () => {
     const img = useStaticQuery(graphql`
     query {
@@ -27,7 +29,26 @@ const Testimotional = () => {
     return (
         <SectionStyled>
             <Container>
-                <Flex col={2}>
+                <TitleRes
+                    name="Testimonials"
+                    des="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa qu"
+                    className="d-block d-md-none mt-4"
+                />
+                <Flex col={1} className="d-md-none d-grid mt-4 mb-5">
+                    <div>
+                        <CardServices vertical className="text-center" smWidth="100px" imgWidth="80px" fluid={img.avatar.childImageSharp.fluid} name="Testimonial 1" text="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa qu" />
+                    </div>
+                    <div>
+                        <CardServices vertical className="text-center" smWidth="100px" imgWidth="80px" fluid={img.avatar.childImageSharp.fluid} name="Testimonial 1" text="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa qu" />
+                    </div>
+                    <div>
+                        <CardServices vertical className="text-center" smWidth="100px" imgWidth="80px" fluid={img.avatar.childImageSharp.fluid} name="Testimonial 1" text="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa qu" />
+                    </div>
+                    <div className="d-flex justify-content-center align-items-center">
+                        <Button name="Become a Partner" />
+                    </div>
+                </Flex>
+                <Flex col={2} className="d-md-grid d-none">
                     <div className="bg-white" style={{ width: "130%", paddingTop: "80px" }}>
                         <h1>Testimonials</h1>
                         <div className="w-100">
@@ -52,7 +73,7 @@ const Testimotional = () => {
                                 </Card>
                             </Flex>
                         </Position>
-                        <Button name="Become a Partner" style={{marginTop: "525px"}}/>
+                        <Button name="Become a Partner" style={{ marginTop: "525px" }} />
                     </div>
                     <BG fluid={img.bg.childImageSharp.fluid} />
                 </Flex>
@@ -81,7 +102,6 @@ const BG = styled(BackgroundImage)`
     padding-bottom: 824px;
 `
 const SectionStyled = styled(Section)`
-    height: 760px;
     padding: 0
 `
 const Flex = styled.div`
@@ -91,7 +111,7 @@ const Flex = styled.div`
     grid-column-gap: ${props => props.gap ? props.gap : "0px"};
     justify-content: start;
     @media (max-width: ${props => props.theme.screen.sm}) {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(1, 1fr);
         grid-gap: 32px;
     }
 `

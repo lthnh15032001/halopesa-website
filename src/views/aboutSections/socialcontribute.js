@@ -3,8 +3,9 @@ import { Container, Section } from "../../components/global"
 import styled from 'styled-components'
 import { graphql, useStaticQuery } from "gatsby"
 import { Image } from '../../components/common/image'
+import { TitleRes } from '../../components/TitleRes'
 const SocialContribute = () => {
-    const img = useStaticQuery(graphql`
+  const img = useStaticQuery(graphql`
     query {
         imgsocial1: file(sourceInstanceName: { eq: "product" }, name: { eq: "imgsocial1" }) {
         childImageSharp {
@@ -22,31 +23,32 @@ const SocialContribute = () => {
       }
     }
   `)
-    return (
-        <>
-            <SectionStyled>
-                <Container>
-                    <div className="d-flex flex-column justify-content-center align-items-center w-100">
-                        <h1>Social Contributions</h1>
-                        <div className="text-center" style={{ width: "60%", color: "#7A7A7A" }}>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</div>
+  return (
+    <>
+      <SectionStyled>
+        <Container>
+          <TitleRes
+            name="Social Contributions"
+            des="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
+
+          />
+          <Flex col={2} gap="20px" className="mt-5 mb-md-5">
+            <div>
+              <Image display smWidth="340px" fluid={img.imgsocial1.childImageSharp.fluid} />
+            </div>
+            <div>
+              <Image display smWidth="340px" fluid={img.imgsocial2.childImageSharp.fluid} />
+            </div>
+          </Flex>
+          <div className="w-100 text-center d-flex justify-content-center align-items-center">
+            <div className="text-center des" >
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
                     </div>
-                    <Flex col={2} gap="20px" className="mt-5 mb-5">
-                        <div>
-                            <Image fluid={img.imgsocial1.childImageSharp.fluid} />
-                        </div>
-                        <div>
-                            <Image fluid={img.imgsocial2.childImageSharp.fluid} />
-                        </div>
-                    </Flex>
-                    <div className="w-100 text-center d-flex justify-content-center align-items-center">
-                        <div className="text-center" style={{width: "70%"}}>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-                    </div>
-                    </div>
-                </Container>
-            </SectionStyled>
-        </>
-    )
+          </div>
+        </Container>
+      </SectionStyled>
+    </>
+  )
 }
 export default SocialContribute
 
@@ -61,7 +63,13 @@ const Flex = styled.div`
     justify-content: start;
 
     @media (max-width: ${props => props.theme.screen.sm}) {
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 32px;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 20px;
+        .des {
+            width: 100%;
+            font-size: 16px;
+            font-weight: normal;
+            color: #7A7A7A;
+        }
     }
 `

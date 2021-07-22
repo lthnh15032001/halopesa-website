@@ -4,6 +4,7 @@ import { Container, Section } from "../../components/global"
 import styled from 'styled-components'
 import { graphql, useStaticQuery } from "gatsby"
 import { Image } from '../../components/common/image'
+import { TitleRes } from '../../components/TitleRes'
 const Download = () => {
     const img = useStaticQuery(graphql`
     query {
@@ -20,20 +21,20 @@ const Download = () => {
         <>
             <SectionStyled>
                 <Container>
-                    <div className="d-flex flex-column justify-content-center align-items-center w-100">
-                        <h1>Download Documents</h1>
-                    </div>
+                    <TitleRes
+                        name="Download Documents"
+                    />
                     <Flex col={3} className="mt-5">
                         <div className="shadow rounded p-5 d-flex justify-content-center align-items-center flex-column">
-                            <Image fluid={img.pdf.childImageSharp.fluid} width="140px"/>
+                            <Image display smWidth="100px" fluid={img.pdf.childImageSharp.fluid} width="140px" />
                             <div className="text-center">Lorem ipsum dolor sit amet, consectetur.pdf</div>
                         </div>
                         <div className="shadow rounded p-5 d-flex justify-content-center align-items-center flex-column">
-                            <Image fluid={img.pdf.childImageSharp.fluid} width="140px"/>
+                            <Image display smWidth="100px" fluid={img.pdf.childImageSharp.fluid} width="140px" />
                             <div className="text-center">Lorem ipsum dolor sit amet, consectetur.pdf</div>
                         </div>
                         <div className="shadow rounded p-5 d-flex justify-content-center align-items-center flex-column">
-                            <Image fluid={img.pdf.childImageSharp.fluid} width="140px"/>
+                            <Image display smWidth="100px" fluid={img.pdf.childImageSharp.fluid} width="140px" />
                             <div className="text-center">Lorem ipsum dolor sit amet, consectetur.pdf</div>
                         </div>
                     </Flex>
@@ -54,7 +55,7 @@ const Flex = styled.div`
     justify-content: start;
 
     @media (max-width: ${props => props.theme.screen.sm}) {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(1, 1fr);
         grid-gap: 32px;
     }
 `

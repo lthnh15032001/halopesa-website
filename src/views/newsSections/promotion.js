@@ -6,6 +6,7 @@ import { Image } from '../../components/common/image'
 import {
     Card, CardText, CardBody,
 } from 'reactstrap';
+import { TitleRes } from '../../components/TitleRes'
 
 const Promotion = () => {
     const img = useStaticQuery(graphql`
@@ -22,60 +23,35 @@ const Promotion = () => {
     return (
         <Section>
             <Container>
-                <div className="d-flex flex-column justify-content-center align-items-center w-100">
-                    <h1>Promotions</h1>
-                    <div className="text-center" style={{ width: "60%", color: "#7A7A7A" }}>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</div>
-                </div>
+            <TitleRes
+                name="Promotions"
+                des="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
+             />
                 <Flex col={3}>
                     <Card className="shadow border-0 mt-4">
-                        <Image fluid={img.news.childImageSharp.fluid} width="368px" />
+                        <Image display smWidth="340px" fluid={img.news.childImageSharp.fluid} width="368px" />
                         <CardBody className="pt-0">
                             <CardText>Lorem ipsum dolor sit amet, consectetur adipiscing elit</CardText>
                         </CardBody>
                     </Card>
                     <Card className="shadow border-0 mt-4">
-                        <Image fluid={img.news.childImageSharp.fluid} width="368px" />
+                        <Image display smWidth="340px" fluid={img.news.childImageSharp.fluid} width="368px" />
                         <CardBody className="pt-0">
                             <CardText>Lorem ipsum dolor sit amet, consectetur adipiscing elit</CardText>
                         </CardBody>
                     </Card>
                     <Card className="shadow border-0 mt-4">
-                        <Image fluid={img.news.childImageSharp.fluid} width="368px" />
+                        <Image display smWidth="340px" fluid={img.news.childImageSharp.fluid} width="368px" />
                         <CardBody className="pt-0">
                             <CardText>Lorem ipsum dolor sit amet, consectetur adipiscing elit</CardText>
                         </CardBody>
                     </Card>
                     <Card className="shadow border-0 mt-4">
-                        <Image fluid={img.news.childImageSharp.fluid} width="368px" />
+                        <Image display smWidth="340px" fluid={img.news.childImageSharp.fluid} width="368px" />
                         <CardBody className="pt-0">
                             <CardText>Lorem ipsum dolor sit amet, consectetur adipiscing elit</CardText>
                         </CardBody>
                     </Card>
-                    <Card className="shadow border-0 mt-4">
-                        <Image fluid={img.news.childImageSharp.fluid} width="368px" />
-                        <CardBody className="pt-0">
-                            <CardText>Lorem ipsum dolor sit amet, consectetur adipiscing elit</CardText>
-                        </CardBody>
-                    </Card>
-                    <Card className="shadow border-0 mt-4">
-                        <Image fluid={img.news.childImageSharp.fluid} width="368px" />
-                        <CardBody className="pt-0">
-                            <CardText>Lorem ipsum dolor sit amet, consectetur adipiscing elit</CardText>
-                        </CardBody>
-                    </Card>
-                    <Card className="shadow border-0 mt-4">
-                        <Image fluid={img.news.childImageSharp.fluid} width="368px" />
-                        <CardBody className="pt-0">
-                            <CardText>Lorem ipsum dolor sit amet, consectetur adipiscing elit</CardText>
-                        </CardBody>
-                    </Card>
-                    <Card className="shadow border-0 mt-4">
-                        <Image fluid={img.news.childImageSharp.fluid} width="368px" />
-                        <CardBody className="pt-0">
-                            <CardText>Lorem ipsum dolor sit amet, consectetur adipiscing elit</CardText>
-                        </CardBody>
-                    </Card>
-
                 </Flex>
 
             </Container>
@@ -92,7 +68,7 @@ const Flex = styled.div`
     justify-content: start;
     padding-top: 20px;
     @media (max-width: ${props => props.theme.screen.sm}) {
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 32px;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 15px;
     }
 `
