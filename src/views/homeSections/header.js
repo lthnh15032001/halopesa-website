@@ -5,8 +5,11 @@ import { graphql, useStaticQuery } from "gatsby"
 import { Image } from '../../components/common/image'
 import { Container } from "../../components/global"
 import { LogoHalopesa } from "../../components/common/navigation/LogoHalopesa"
-
+import { useTranslation } from 'react-i18next';
+// import i18next from 'i18next'
+import { changeLocalize } from '../../utils/localize'
 const Header = () => {
+  const { t } = useTranslation();
   const data = useStaticQuery(graphql`
     query {
       greenSkew: file(sourceInstanceName: { eq: "product" }, name: { eq: "HeaderPic" }) {
@@ -49,10 +52,10 @@ const Header = () => {
               Introducing halopesa website
             </div>
             <h1 className="text1 ">
-              Stay cool
+              {t('Stay cool')}
             </h1>
             <h1 className="text1 ">
-              stay convenient
+              {t('stay convenient')}
             </h1>
             <h2>
               Welcome and Enjoy the digital payments transformation with HaloPesa.

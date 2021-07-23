@@ -5,13 +5,15 @@ import { ThemeProvider } from "styled-components"
 import theme from "../../../styles/theme"
 import GlobalStyles from "../../../styles/GlobalStyles"
 import "../../../static/Roboto/font.css"
+import Localize from '../../../localization/locales';
+import { getCurrentLocale } from "../../../utils/localize"
 
 const ContainerCommon = ({ children }) => (
   <ThemeProvider theme={theme}>
-    <>
+    <Localize lng={getCurrentLocale()}>
       <GlobalStyles />
       {children}
-    </>
+    </Localize>
   </ThemeProvider>
 )
 

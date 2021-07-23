@@ -14,7 +14,7 @@ import {
   Mobile,
   TopBanner
 } from "./style"
-
+import Language from './Language'
 const NAV_ITEMS = [
   { name: "Services", link: "/services" },
   { name: "For Corporation", link: "/corporation" },
@@ -91,7 +91,9 @@ export default class Navigation extends Component {
           <TopBanner>
             <div className="contain-top">
               <div className="hotline">Hotline: 0123 456 789</div>
-              <div className="i8n">English</div>
+              <div className="i8n">
+                <Language />
+              </div>
             </div>
           </TopBanner>
         </div>

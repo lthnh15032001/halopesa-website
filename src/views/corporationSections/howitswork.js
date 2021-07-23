@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { Container, Section } from "../../components/global"
+import { Container } from "../../components/global"
 import { Image } from "../../components/common/image"
 import { graphql, useStaticQuery } from "gatsby"
 import {
