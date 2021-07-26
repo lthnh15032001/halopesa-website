@@ -5,23 +5,23 @@ export const changeLocalize = (lang) => {
     if (lang) {
         i18next.changeLanguage(lang, (err, t) => {
             if (err) return console.log('something went wrong loading', err);
-            localStorage.setItem('lng', lang)
+            typeof window !== 'undefined' && localStorage.setItem('lng', lang)
         });
     } else {
         if (getCurrentLocale() === "en") {
             i18next.changeLanguage("vi", (err, t) => {
                 if (err) return console.log('something went wrong loading', err);
-                localStorage.setItem('lng', "vi")
+                typeof window !== 'undefined' && localStorage.setItem('lng', "vi")
             });
         } else {
             i18next.changeLanguage("en", (err, t) => {
                 if (err) return console.log('something went wrong loading', err);
-                localStorage.setItem('lng', "en")
+                typeof window !== 'undefined' && localStorage.setItem('lng', "en")
             });
         }
     }
 }
 
 export const getCurrentLocale = () => {
-    return localStorage.getItem('lng')
+    return typeof window !== 'undefined' && localStorage.getItem('lng')
 }

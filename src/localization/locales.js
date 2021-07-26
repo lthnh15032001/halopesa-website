@@ -4,6 +4,7 @@ import { initReactI18next } from "react-i18next";
 
 import en from "./data/en";
 import vi from "./data/vi";
+import { getCurrentLocale } from '../utils/localize';
 // import { getCurrentLocale } from '../utils/localize';
 
 export const resources = {
@@ -28,11 +29,11 @@ const Localize = ({ children, lng }) => {
         checkLocalizeStorage();
     }, [])
     const checkLocalizeStorage = () => {
-        const lng = localStorage.getItem('lng')
+        const lng = getCurrentLocale()
         if (lng) {
-            console.log(lng)
+            // console.log(lng)
         } else {
-            localStorage.setItem('lng', defaultLanguage)
+            typeof window !== 'undefined' && localStorage.setItem('lng', defaultLanguage)
         }
     }
 
