@@ -6,8 +6,12 @@ import { Image } from '../../components/common/image'
 import { Container } from "../../components/global"
 import { LogoHalopesa } from "../../components/common/navigation/LogoHalopesa"
 import { useTranslation } from 'react-i18next';
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 // import i18next from 'i18next'
-import { changeLocalize } from '../../utils/localize'
+// import { changeLocalize } from '../../utils/localize'
+import Slider from "react-slick";
 const Header = () => {
   const { t } = useTranslation();
   const data = useStaticQuery(graphql`
@@ -35,6 +39,15 @@ const Header = () => {
       }
     }
   `)
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    adaptiveHeight: true,
+    autoplay: true
+  };
   return (
     <HeaderWrapper id="top">
       <Container>
@@ -42,7 +55,7 @@ const Header = () => {
           <HeaderTextGroup className="d-flex flex-column justify-content-center">
             <div className="d-md-block d-none">
               <LogoHalopesa styles={{
-                marginBottom: "14px",
+                marginBottom: "22px",
                 width: "100%",
                 justifyContent: "end",
               }}
@@ -57,10 +70,27 @@ const Header = () => {
             <h1 className="text1 ">
               {t('stay convenient')}
             </h1>
-            <h2>
-              Welcome and Enjoy the digital payments transformation with HaloPesa.
-            </h2>
-            <div className="flex-row d-flex img-res">
+            <Slider {...settings} className="slick">
+              <div className="w-100">
+                <h2 className="h2">
+                  Welcome and Enjoy the digital payments transformation with HaloPesa.
+                </h2>
+              </div>
+              <div className="w-100">
+                <h2 className="h2">
+                  Our customers can access the HaloPesa service through the USSD code *150*88# OR the Android/iOs Application namely the HaloPesa App and enjoy the HaloPesa service to the fullest.
+                </h2>
+              </div>
+              <div className="w-100">
+                <h2 className="h2">
+                  The HaloPesa App brings to our customers one of its kind and the best user experience with  bundles of services including Send Money , withdraw , Pay for goods & Services,  Personal Savings, Transfers to Bank accounts etc.</h2>
+              </div>
+              <div className="w-100">
+                <h2 className="h2">
+                  The HaloPesa customers are in for a treat due for easier, better and safer and affordable services. </h2>
+              </div>
+            </Slider>
+            <div className="flex-row d-flex img-res pt-md-5 pt-4">
               <Image display smWidth='142px' width="170px" fluid={data.appstore.childImageSharp.fluid} />
               <Image display smWidth='142px' width="170px" fluid={data.ggplay.childImageSharp.fluid} />
             </div>
@@ -91,7 +121,21 @@ const HeaderTextGroup = styled.div`
   .introduce { 
     display: none
   }
+  .slick {
+    width: 408px
+  }
+  .h2 {
+    font-size: 15px;
+    margin-bottom: 0
+  }
   @media (max-width: ${props => props.theme.screen.xs}) {
+
+  .slick {
+    width: 102%
+  }
+  .h2 {
+    font-size: 15px;
+  }
     align-items: center;
     .img-res {
       justify-content: center

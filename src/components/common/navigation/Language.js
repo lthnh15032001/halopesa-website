@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby';
 import styled from 'styled-components'
 import { Image } from '../image'
-import { graphql, navigate, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import { changeLocalize, getCurrentLocale } from '../../../utils/localize';
 const Language = () => {
     const lang = useStaticQuery(graphql`

@@ -5,7 +5,7 @@ description: Các yếu tố ảnh hưởng đến tỷ giá hối đoái
 category: Financial Personal
 background: '#353b48'
 image: '/assets/img/yeutoanhhuong1.jpg'
-slug: '/blog/123'
+slug: '/blog/lethanhdat'
 ---
 
   

@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, navigate, useStaticQuery } from "gatsby"
 import { Section, Container } from "../../components/global"
 // import Img from "gatsby-image"
 import { Button } from "../../components/Button"
@@ -44,7 +44,7 @@ const About = () => {
               </Number>
             </Flex>
             <Flex col={2} className="d-none d-md-grid" style={{ marginTop: 30 }}>
-              <Button className="" name="Read more" />
+              <Button onClick={() => navigate("/about")} className="" name="Read more" />
               <div className="d-flex align-items-center " >
                 <a href="/" style={{ fontWeight: 'bold' }}> How to use</a>
               </div>

@@ -70,7 +70,6 @@ export const NavListWrapper = styled.div`
 
 export const NavItem = styled.li`
   margin: ${props => props.last ? "0 0 0em 2.25em" : "0 2.25em;"};
-  font-family: ${props => props.theme.font.medium};
   ${props => props.theme.font_size.xsmall};
 
   a {

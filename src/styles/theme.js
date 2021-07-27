@@ -2,14 +2,14 @@
 
 const theme = {
   font: {
-    primary: `'HK Grotesk Normal'`,
-    secondary: `'HK Grotesk Medium'`,
-    light: `'HK Grotesk Light'`,
-    normal: `'HK Grotesk Normal'`,
-    medium: `'HK Grotesk Medium'`,
-    semibold: `'HK Grotesk Semibold'`,
-    bold: `'HK Grotesk Bold'`,
-    extrabold: `'HK Grotesk Extra Bold'`,
+    primary: `'RobotoSlab-Regular'`,
+    secondary: `'RobotoSlab-Medium'`,
+    light: `'RobotoSlab-Light'`,
+    normal: `'RobotoSlab-Regular'`,
+    medium: `'RobotoSlab-Medium'`,
+    semibold: `'RobotoSlab-SemiBold'`,
+    bold: `'RobotoSlab-Bold'`,
+    extrabold: `'RobotoSlab-ExtraBold'`,
   },
   font_size: {
     xxxsmall: "font-size: 12px;",
