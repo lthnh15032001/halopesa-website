@@ -16,13 +16,16 @@ const Language = () => {
       }
     }
   `)
+  const checkCurrentLocale = (lang) => {
+    return getCurrentLocale() === lang ? "true" : undefined
+  }
     return (<div className=" d-flex flex-row pl-3 pr-3">
         <Image display smWidth="18px" className="d-flex justify-content-center align-items-center" width="20px" fluid={lang.file.childImageSharp.fluid} />
         <div className="mr-2">
-            <LinkStyle onClick={() => changeLocalize()} lang={getCurrentLocale() === "en"} first className="english" to="/">English</LinkStyle>
+            <LinkStyle onClick={() => changeLocalize()} lang={checkCurrentLocale("en")} first="true" className="english" to="/">English</LinkStyle>
         </div>
         <div>
-            <LinkStyle onClick={() => changeLocalize()} lang={getCurrentLocale() === "vi"} to="/">Vietnamese</LinkStyle>
+            <LinkStyle onClick={() => changeLocalize()} lang={checkCurrentLocale("vi")} to="/">Vietnamese</LinkStyle>
         </div>
     </div>)
 }

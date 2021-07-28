@@ -9,16 +9,20 @@ import Services from "../views/homeSections/services"
 import Corporation from "../views/homeSections/corporation"
 import Agent from "../views/homeSections/agent"
 import News from "../views/homeSections/news"
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <Header />
-    <About />
-    <Services />
-    <Corporation />
-    <Agent />
-    <News />
-  </Layout>
-)
+// const GetAllBlog  =  require("../hooks/use-site-metadata");
+const IndexPage = () => {
+  // console.log({ site: GetAllBlog() })
+  return (
+    <Layout>
+      <SEO title="Home" />
+      <Header />
+      <About />
+      <Services />
+      <Corporation />
+      <Agent />
+      <News />
+    </Layout>
+  )
+}
 
 export default IndexPage

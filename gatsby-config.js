@@ -47,25 +47,22 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`,
       },
     },
-    {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
-      options: {
-        fonts: [
-          {
-            family: `Roboto`,
-            variants: [`400`, `500`, `600`],
-          },
-        ],
-      },
-    },
+    `gatsby-plugin-mdx`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `markdown-pages`,
         path: `${__dirname}/blog`,
+        name: `content`,
       },
     },
-    `gatsby-transformer-remark`,
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     name: `markdown-pages`,
+    //     path: `${__dirname}/blog`,
+    //   },
+    // },
+    // `gatsby-transformer-remark`,
 
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

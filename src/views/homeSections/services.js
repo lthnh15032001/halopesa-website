@@ -137,7 +137,7 @@ const Services = () => {
             <a href="/">How to use</a>
           </div>
           <Button name="Tariff" onClick={() => {
-            navigate("/tariff")
+            navigate("/blog/tariff")
           }} />
         </div>
       </StyledContainer>
