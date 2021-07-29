@@ -15,6 +15,7 @@ exports.createPages = async ({ graphql, actions }) => {
                     }
                     slug
                     timeToRead
+                    body
                     mdxAST
                 }
             }
@@ -35,7 +36,8 @@ exports.createPages = async ({ graphql, actions }) => {
                     description: edge.frontmatter.description,
                     image: edge.frontmatter.image,
                     mdxAST: edge.mdxAST,
-                    timeToRead: edge.timeToRead
+                    timeToRead: edge.timeToRead,
+                    body: edge.body
                 },
             })
         })
