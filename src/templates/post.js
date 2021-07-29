@@ -40,4 +40,17 @@ const MDX = styled.div`
   @media (max-width: 575px) {
     margin-top: 5rem
   }
+  table { 
+    border-collapse: collapse;
+    width: 100%;
+  }
+  tr { 
+    th { 
+      font-weight: bold;
+      text-align: center
+    }
+  }
+  table, td, th {  
+      border: 1px solid black;
+  }
 `

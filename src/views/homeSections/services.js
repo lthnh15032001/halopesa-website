@@ -100,7 +100,10 @@ const Services = () => {
             navigate("/blog/tariff")
           }} />
             <div style={{ marginTop: 40 }}>
-              <a href="/">How to use</a>
+              <a href="/" onClick={(e) => {
+                e.preventDefault();
+                navigate("/blog/how-to-send")
+              }}>How to use</a>
             </div>
           </div>
           <div className="col-6 col-md-4">
@@ -134,7 +137,10 @@ const Services = () => {
         </div>
         <div className="d-flex justify-content-center align-items-center flex-column mt-4 d-md-none">
           <div className="mb-2">
-            <a href="/">How to use</a>
+            <a href="/" onClick={(e) => {
+                e.preventDefault();
+                navigate("/blog/how-to-send")
+              }}>How to use</a>
           </div>
           <Button name="Tariff" onClick={() => {
             navigate("/blog/tariff")
