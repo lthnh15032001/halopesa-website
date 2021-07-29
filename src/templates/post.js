@@ -19,9 +19,7 @@ export default function Template(data) {
             <MDX className="blog-post">
               <h2 className="">{pageContext.title}</h2>
               <p>
-                <strong>
                   {pageContext.description}
-                </strong>
               </p>
               <MDXRenderer title="My Stuff!">{pageContext.body}</MDXRenderer>
             </MDX>

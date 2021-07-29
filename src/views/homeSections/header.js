@@ -72,9 +72,9 @@ const Header = () => {
             </h1>
             <Slider {...settings} className="slick">
               <div className="w-100">
-                <h2 className="h2">
+                <div className="h2">
                   Welcome and Enjoy the digital payments transformation with HaloPesa.
-                </h2>
+                </div>
               </div>
               <div className="w-100">
                 <h2 className="h2">
@@ -126,7 +126,8 @@ const HeaderTextGroup = styled.div`
   }
   .h2 {
     font-size: 15px;
-    margin-bottom: 0
+    margin-bottom: 0;
+    color: #7A7A7A;
   }
   @media (max-width: ${props => props.theme.screen.xs}) {
 

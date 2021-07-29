@@ -71,7 +71,7 @@ export const NavListWrapper = styled.div`
 export const NavItem = styled.li`
   margin: ${props => props.last ? "0 0 0em 2.25em" : "0 2.25em;"};
   ${props => props.theme.font_size.xsmall};
-
+  font-weight: 500;
   a {
     text-decoration: none;
     opacity: 0.9;
