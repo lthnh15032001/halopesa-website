@@ -51,9 +51,9 @@ const Header = () => {
   return (
     <HeaderWrapper id="top">
       <Container>
-        <Flex className="flex-md-row-reverse flex-column d-flex ">
+        <Flex className="flex-lg-row-reverse flex-column flex-md-column d-flex ">
           <HeaderTextGroup className="d-flex flex-column justify-content-center">
-            <div className="d-md-block d-none">
+            <div className="d-lg-block d-md-none d-none">
               <LogoHalopesa styles={{
                 marginBottom: "22px",
                 width: "100%",
@@ -61,7 +61,7 @@ const Header = () => {
               }}
               />
             </div>
-            <div className="introduce">
+            <div className="introduce d-block d-md-block d-lg-none">
               Introducing halopesa website
             </div>
             <h1 className="text1 ">
@@ -129,19 +129,8 @@ const HeaderTextGroup = styled.div`
     margin-bottom: 0;
     color: #7A7A7A;
   }
-  @media (max-width: ${props => props.theme.screen.xs}) {
 
-  .slick {
-    width: 102%
-  }
-  .h2 {
-    font-size: 15px;
-  }
-    align-items: center;
-    .img-res {
-      justify-content: center
-    }
-   .introduce { 
+  .introduce { 
         padding: 0 0 15px 0;
         text-align: center;
         color: #747474;
@@ -149,39 +138,58 @@ const HeaderTextGroup = styled.div`
         font-weight: 500;
         display: block
     }
-    .text1 { 
-      font-size: 30px;
-      line-height: 30px;
-      font-weight: bold;
+  @media (max-width: ${props => props.theme.screen.xs}) {
+    .slick {
+      width: 102%
     }
-    h2 { 
-      text-align: center;
-      color: #747474;
-      padding-top: 13px;
+    .h2 {
+      font-size: 15px;
     }
-  }
-  > div {
-    width: 120%;
-    margin-bottom: -4.5%;
+      align-items: center;
+      .img-res {
+        justify-content: center
+      }
 
-    @media (max-width: ${props => props.theme.screen.md}) {
-      margin: 0 16px;
+      .text1 { 
+        font-size: 30px;
+        line-height: 30px;
+        font-weight: bold;
+      }
+      h2 { 
+        text-align: center;
+        color: #747474;
+        padding-top: 13px;
+      }
     }
-  }
+    > div {
+      width: 120%;
+      margin-bottom: -4.5%;
 
-  h1 {
-    color: ${props => props.theme.color.primary};
-    text-transform: uppercase;
-  }
+      @media (max-width: ${props => props.theme.screen.md}) {
+        margin: 0 16px;
+      }
+    }
 
-  h2 {
-    margin-bottom: 24px;
-    ${props => props.theme.font_size.regular}
-  }
+    h1 {
+      color: ${props => props.theme.color.primary};
+      text-transform: uppercase;
+    }
 
-  p {
-    margin-bottom: 48px;
+    h2 {
+      margin-bottom: 24px;
+      ${props => props.theme.font_size.regular}
+    }
+
+    p {
+      margin-bottom: 48px;
+    }
+
   }
+  @media (min-width: ${props => props.theme.screen.xs}) and (max-width: ${props => props.theme.screen.md}) {
+    align-items: center;
+    .img-res {
+        justify-content: center
+      }
 `
 
 const Flex = styled.div`

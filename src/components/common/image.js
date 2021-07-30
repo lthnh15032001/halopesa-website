@@ -14,7 +14,7 @@ import styled from "styled-components"
  */
 
 export const Image = ({ fluid, width, onClick, style, className, display, smWidth }) => {
-
+  console.log(width, smWidth)
   return <ImageWrapper onClick={onClick && onClick} style={style && style} className={className && className}>
     <StyledImage width={width} smWidth={smWidth} fluid={fluid} display={display} />
     <br />
@@ -39,4 +39,11 @@ const StyledImage = styled(Img)`
   width: ${props => props.smWidth ? props.smWidth : "180px"};
   display: ${props => props.display ? props.display : "none"};
 }
+@media (min-width: ${props => props.theme.screen.xs}) and (max-width: ${props => props.theme.screen.md}) {
+  width: ${props => props.smWidth && props.width && (parseInt(props.width.replace("px", "")) + (parseInt(props.smWidth.replace("px", "")))) /2 + "px"}
+}
+
 `
+
+// @media (min-width: ${props => props.theme.screen.xs}) and (max-width: ${props => props.theme.screen.md}) {
+// }

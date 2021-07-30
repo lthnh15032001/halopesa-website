@@ -2,7 +2,7 @@ import React, { Component } from "react"
 // import AnchorLink from "react-anchor-link-smooth-scroll"
 import Scrollspy from "react-scrollspy"
 import { Menu, X } from "react-feather"
-import { Link } from "gatsby"
+import { LinkGatsby } from "./style"
 import { Container } from "../../global"
 import { LogoHalopesa } from './LogoHalopesa'
 import {
@@ -62,9 +62,9 @@ export default class Navigation extends Component {
   }
 
   getNavAnchorLink = item => (
-    <Link to={`${item.link.toLowerCase()}`} onClick={this.closeMobileMenu} style={{ color: this.state.active === item.link ? "#FF6E2C" : "black" }}>
+    <LinkGatsby to={`${item.link.toLowerCase()}`} onClick={this.closeMobileMenu} style={{ color: this.state.active === item.link ? "#FF6E2C" : "black" }}>
       {item.name}
-    </Link>
+    </LinkGatsby>
   )
 
   getNavList = ({ mobile = false }) => (

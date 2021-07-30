@@ -20,7 +20,7 @@ const About = () => {
   return (
     <Section>
       <StyledContainer>
-        <Flex col={1} className="flex-md-row-reverse flex-column-reverse d-flex ">
+        <Flex col={1} className="flex-lg-row-reverse flex-md-column-reverse flex-column-reverse d-flex ">
           <div>
             <Image display smWidth="340px" fluid={aboutBrief.file.childImageSharp.fluid} width="480px" />
             <Flex col={1} className="d-flex d-md-none flex-column-reverse justify-content-center align-items-center" style={{ marginTop: 20 }}>
@@ -33,7 +33,7 @@ const About = () => {
           <div className="p-md-5 p-xs-2">
             <h1 className="text1">About Halopesa</h1>
             <Small>The HaloPesa App brings to our customers one of its kind and the best user experience with  bundles of services including Send Money , withdraw , Pay for goods & Services,  Personal Savings, Transfers to Bank accounts etc.</Small>
-            <Flex col={2} className="flex-row" style={{ marginBottom: 20, padding: 20 }}>
+            <Flex col={2} className="flex-row flex-md-column flex-lg-row" style={{ marginBottom: 20, padding: 20 }}>
               <Number>
                 <div className="number">1,000,000+</div>
                 <div className="des">Transactions</div>

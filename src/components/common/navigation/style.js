@@ -1,3 +1,4 @@
+import { Link } from "gatsby"
 import styled from "styled-components"
 
 import { Container } from "../../global"
@@ -26,11 +27,14 @@ export const TopBanner = styled(Container)`
     font-size: 16px;
   }
 `
-
+export const LinkGatsby = styled(Link)`
+ 
+`
 export const Nav = styled.nav`
   @media (max-width: ${props => props.theme.screen.xs}) {
     top: ${props => (props.scrolled ? `0` : `50px`)};
   }
+
   padding: ${props => (props.scrolled ? `16px 0` : `24px 0`)};
   position: fixed;
   width: 100%;
@@ -69,6 +73,10 @@ export const NavListWrapper = styled.div`
 `
 
 export const NavItem = styled.li`
+ @media (min-width: ${props => props.theme.screen.sm}) and (max-width: ${props => props.theme.screen.md}) {
+    font-size: 12px;
+    margin: ${props => props.last ? "0 0 0em 2.25em" : "0 1.25em;"};
+  }
   margin: ${props => props.last ? "0 0 0em 2.25em" : "0 2.25em;"};
   ${props => props.theme.font_size.xsmall};
   font-weight: 500;
