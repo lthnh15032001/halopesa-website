@@ -8,7 +8,7 @@ import { Image } from "../components/common/image"
 export const CardServices = ({ fluid, text, style, className, name, imgWidth, vertical,smWidth }) => {
     return (
         <div style={style && style} className={className && className}>
-            <Card className="border-0 shadow">
+            <Container className="border-0 shadow">
                 <CardBody>
                     <CardTitle tag="h5" className={`d-flex flex-${vertical ? "column" : "row"} justify-content-start align-items-center`}>
                         <div>
@@ -20,7 +20,7 @@ export const CardServices = ({ fluid, text, style, className, name, imgWidth, ve
                     </CardTitle>
                     <CardSubtitle tag="h6" className="mb-2 text-muted">{text && text}</CardSubtitle>
                 </CardBody>
-            </Card>
+            </Container>
         </div>
     )
 }
@@ -29,4 +29,9 @@ const H5 = styled.h5`
     color: #090909;
     font-size: 18px;
     font-weight: bold
+`
+const Container = styled(Card)`
+    @media (max-width: ${props => props.theme.screen.md}) {
+        height: 249px
+    }
 `

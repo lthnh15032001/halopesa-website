@@ -20,9 +20,9 @@ const About = () => {
   return (
     <Section>
       <StyledContainer>
-        <Flex col={1} className="flex-lg-row-reverse flex-md-column-reverse flex-column-reverse d-flex ">
+        <Flex gap="0px" col={1} className="flex-lg-row-reverse flex-md-column-reverse flex-column-reverse d-flex ">
           <div>
-            <Image display smWidth="340px" fluid={aboutBrief.file.childImageSharp.fluid} width="480px" />
+            <Image display className="d-block d-md-flex d-lg-block align-items-center justify-content-center mb-0 mb-md-5 mb-lg-0" smWidth="340px" fluid={aboutBrief.file.childImageSharp.fluid} width="480px" />
             <Flex col={1} className="d-flex d-md-none flex-column-reverse justify-content-center align-items-center" style={{ marginTop: 20 }}>
               <Button className="" name="Read more" />
               <div className="d-flex align-items-center pb-3" >
@@ -30,7 +30,7 @@ const About = () => {
               </div>
             </Flex>
           </div>
-          <div className="p-md-5 p-xs-2">
+          <div className="p-md-5 p-xs-2 d-block d-md-flex d-lg-block align-items-center flex-md-column">
             <h1 className="text1">About Halopesa</h1>
             <Small>The HaloPesa App brings to our customers one of its kind and the best user experience with  bundles of services including Send Money , withdraw , Pay for goods & Services,  Personal Savings, Transfers to Bank accounts etc.</Small>
             <Flex col={2} className="flex-row flex-md-column flex-lg-row" style={{ marginBottom: 20, padding: 20 }}>
@@ -65,9 +65,12 @@ const Small = styled.div`
   font-weight: normal;
   color: #7A7A7A;
   padding-right:40px;
+  text-align: center;
   @media (max-width: ${props => props.theme.screen.xs}) {
     padding-right: 0px;
-    text-align: center
+  }
+  @media (min-width: ${props => props.theme.screen.lg}) {
+    text-align: left
   }
 `
 const Flex = styled.div`
@@ -81,8 +84,9 @@ const Flex = styled.div`
     }
   }
   @media (max-width: ${props => props.theme.screen.md}) {
-    grid-template-columns: 1fr;
-    grid-gap: 64px;
+    ${'' /* grid-template-columns: repeat(1,1fr); */}
+    margin-top:0px!important;
+    grid-gap: ${props => props.gap ? props.gap: "64px"};
   }
   @media (max-width: ${props => props.theme.screen.xs}) {
     grid-template-columns: 2fr;
@@ -96,6 +100,7 @@ const Flex = styled.div`
       text-align:center;
     }
   }
+  
 `
 
 const Number = styled.div`
@@ -109,6 +114,9 @@ const Number = styled.div`
       margin-top: 10px;
       font-size: 32.3929px;
     }
+    @media (max-width: ${props => props.theme.screen.md}) {
+      margin-top: 0px;
+  }
   }
   .des {
     font-size: 20.8977px;

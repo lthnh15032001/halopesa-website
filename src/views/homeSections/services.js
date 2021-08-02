@@ -88,13 +88,13 @@ const Services = () => {
         <div className="d-flex justify-content-center align-items-center ">
           <a href="/" className="mt-md-3 mb-md-3 mt-2 mb-2">Learn more</a>
         </div>
-        <Flex className="flex-row d-flex mt-4">
-          <div className="col-6 col-md-4">
+        <div className="flex-row d-none d-md-flex d-lg-flex row mt-4">
+          <div className="col-6 col-md-6 col-lg-4">
             <CardServices name="Send Money" fluid={serviceBrief.sendmoney.childImageSharp.fluid} text="HaloPesa corporates with all Mobile Financial Service Providers (MFSP) and Banks in Tanzania. Therefore HaloPesa customers can easily send to and receive money from MFSPs (as TigoPesa, M-Pesa, Airtel Money) and Banks (as CRDB, NMB, FINCA). " />
             <CardServices name="Withdraw" className="mb-3 mt-3" fluid={serviceBrief.withdraw.childImageSharp.fluid} text="Customers can withdraw quickly and conveniently at more than 20.000  our Agent around Tanzania but also through HaloPesa you can withdraw through Umoja ATM and rest assured to have easy access to money anywhere you are." />
             <CardServices name="HaloYako" fluid={serviceBrief.qrscan.childImageSharp.fluid} text="HaloYako is a digital finance product designed by FINCA Microfinance Bank in partnership with Halotel for mobile customers. HaloYako enables users to save their money safely and enjoy instant access to small loans." />
           </div>
-          <div className="col-6  col-md-4 justify-content-center align-items-center d-none d-md-flex flex-column">
+          <div className="col-6  col-md-4 justify-content-center align-items-center d-none d-md-none d-lg-flex flex-column">
             <Image fluid={serviceBrief.serviceBrief.childImageSharp.fluid} width="280px" />
             <Button name="Tariff" onClick={() => {
             navigate("/blog/tariff")
@@ -106,15 +106,13 @@ const Services = () => {
               }}>How to use</a>
             </div>
           </div>
-          <div className="col-6 col-md-4">
-            <CardServices name="Airtime & Bundle" fluid={serviceBrief.airtime.childImageSharp.fluid} text="- Top up airtime at anytime from anywhere with discount up to 5%
-- Buy bundle with the best promotion for voice, sms and data which only have on HaloPesa.
-" />
+          <div className="col-6 col-md-6 col-lg-4">
+            <CardServices name="Airtime & Bundle" fluid={serviceBrief.airtime.childImageSharp.fluid} text="- Top up airtime at anytime from anywhere with discount up to 5% - Buy bundle with the best promotion for voice, sms and data which only have on HaloPesa. " />
             <CardServices name="Bills Payment" className="mb-3 mt-3" fluid={serviceBrief.bill.childImageSharp.fluid} text="Pay your recurring bills (as electricity, government service, TV subscription,betting…)  with the ease and convenience via HaloPesa. " />
             <CardServices name="Bank Transaction" fluid={serviceBrief.bank.childImageSharp.fluid} text="HaloPesa customers can now send money to the bank and withdraw money from the bank without the actual visit to the bank branch or ATM, it is very convenient and reliable. But also it gives you the control of your accounts in the comfort of your own home. " />
           </div>
-        </Flex>
-        <div className="acordion">
+        </div>
+        <div className="acordion d-fex d-md-none d-lg-none">
           {
             data.map((x, i) => {
               return (
@@ -135,7 +133,7 @@ const Services = () => {
             })
           }
         </div>
-        <div className="d-flex justify-content-center align-items-center flex-column mt-4 d-md-none">
+        <div className="d-flex justify-content-center align-items-center flex-column mt-4 d-md-flex d-lg-none">
           <div className="mb-2">
             <a href="/" onClick={(e) => {
                 e.preventDefault();

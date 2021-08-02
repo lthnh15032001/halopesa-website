@@ -39,8 +39,10 @@ export const Section = styled.section`
   @media (max-width: ${props => props.theme.screen.sm}) {
     padding: 20px 0;
   }
-
-  @media (min-width: ${props => props.theme.screen.md}) {
+  @media (max-width: ${props => props.theme.screen.md}) {
+    padding:40px 0;
+  }
+  @media (min-width: ${props => props.theme.screen.lg}) {
     padding: 80px 0;
   }
 
