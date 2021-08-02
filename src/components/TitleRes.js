@@ -18,7 +18,7 @@ const Container = styled.div`
     .des {
         width: 60%;
     }
-    @media (max-width: 575px) {
+    @media (max-width: ${props => props.theme.screen.xs}) {
         .text1 {
         font-size: 30px;
         line-height: 30px;
@@ -31,5 +31,15 @@ const Container = styled.div`
             font-weight: normal;
             color: #7A7A7A;
         }
+    }
+    @media (max-width: ${props => props.theme.screen.md}) {
+        .des {
+        width: 100%;
+        color: #7A7A7A;
+    }
+    @media (min-width: ${props => props.theme.screen.lg}) {
+        .des {
+        width: 60%;
+    }
     }
 `

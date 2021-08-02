@@ -161,19 +161,19 @@ const StyledContainer = styled(Container)`
   }
 `
 
-const Flex = styled.div`
-  display: grid;
-  justify-content: space-between;
-  align-content: center;
-  grid-template-columns: 1fr 1fr;
-  @media (max-width: ${props => props.theme.screen.md}) {
-    grid-template-columns: 1fr;
-    grid-gap: 64px;
-  }
-  @media (max-width: ${props => props.theme.screen.xs}) {
-    display: none!important
-  }
-`
+// const Flex = styled.div`
+//   display: grid;
+//   justify-content: space-between;
+//   align-content: center;
+//   grid-template-columns: 1fr 1fr;
+//   @media (max-width: ${props => props.theme.screen.md}) {
+//     grid-template-columns: 1fr;
+//     grid-gap: 64px;
+//   }
+//   @media (max-width: ${props => props.theme.screen.xs}) {
+//     display: none!important
+//   }
+// `
 const H5 = styled.div`
     color: #090909;
     font-size: 18px;

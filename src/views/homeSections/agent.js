@@ -28,20 +28,20 @@ const Agent = () => {
           des="Becoming an HaloPesa Agent is a great business opportunity that allows Agents to earn their monthly revenue following best competitive  commission rates that HaloPesa offers.
 "
         />
-        <Flex className="flex-md-row-reverse d-md-flex">
-          <div className="d-md-block d-none">
+        <Flex className="flex-lg-row-reverse d-lg-flex">
+          <div className="d-lg-block d-md-none d-none">
             <Image display smWidth="340px" fluid={agentbrief.agentbrief.childImageSharp.fluid} />
           </div>
           <div className="d-sm-flex d-md-block justify-content-center align-items-center flex-column">
-            <LogoHalopesa className="d-md-flex d-none" style={{ justifyContent: "start!important" }} />
-            <div className="d-md-block d-none">
+            <LogoHalopesa className="d-md-flex justify-content-center d-lg-block d-none" style={{ justifyContent: "start!important" }} />
+            <div className="d-md-flex d-lg-block flex-column d-none align-items-center">
               <h2>For Agent</h2>
-              <div style={{ color: "#7A7A7A" }}>
+              <div className="text-des" style={{ color: "#7A7A7A" }}>
                 Becoming an HaloPesa Agent is a great business opportunity that allows Agents to earn their monthly revenue following best competitive  commission rates that HaloPesa offers.
                 </div>
             </div>
-            <Image className="d-md-none d-block" display smWidth="340px" fluid={agentbrief.agentbrief.childImageSharp.fluid} />
-            <div className="d-md-block d-flex justify-content-center align-items-centerr">
+            <Image className=" mt-0 mt-md-4 mt-lg-0 d-md-flex justify-content-center d-lg-none d-block" display smWidth="340px" fluid={agentbrief.agentbrief.childImageSharp.fluid} />
+            <div className="d-flex d-md-flex d-lg-block justify-content-center align-items-center">
               <Button name="Read more" className="mt-md-4 " />
             </div>
           </div>
@@ -51,7 +51,13 @@ const Agent = () => {
   )
 }
 export default Agent
-const StyledContainer = styled(Container)``
+const StyledContainer = styled(Container)`
+  .text-des { 
+    @media (max-width: ${props => props.theme.screen.md}) {
+      text-align:center
+    }
+  }
+`
 
 const StyledSection = styled(Section)`
 background-color: ${props => props.theme.color.background.light}

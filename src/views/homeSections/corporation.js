@@ -29,19 +29,19 @@ const Corporation = () => {
           des="HaloPesa for corporates (Business Customers) are solutions for businesses that allow organizations to collect funds from their customers on a regular basis through HaloPesa or disburse funds to their customers just by a click of a button. HaloPesa is also a suitable means for Merchants to accept payments (HaloPesa Lipa Hapa) from customers with wallets.    "
         />
         <Flex className="flex-row-md">
-          <div className="d-md-block d-none">
+          <div className="d-lg-block d-md-none d-none">
             <Image display smWidth="340px" fluid={corporationbrief.corporationbrief.childImageSharp.fluid} />
           </div>
-          <div className="d-sm-flex d-md-block justify-content-center align-items-center flex-column">
+          <div className="d-flex d-md-flex d-lg-block justify-content-center align-items-center flex-column">
             <LogoHalopesa className="d-md-flex d-none" style={{ justifyContent: "start!important" }} />
-            <div className="d-md-block d-none">
+            <div className="d-md-flex d-lg-block flex-column d-none align-items-center">
               <h2>For Corporation</h2>
-              <div style={{ color: "#7A7A7A" }}>
+              <div className="text-des" style={{ color: "#7A7A7A" }}>
                 HaloPesa for corporates (Business Customers) are solutions for businesses that allow organizations to collect funds from their customers on a regular basis through HaloPesa or disburse funds to their customers just by a click of a button. HaloPesa is also a suitable means for Merchants to accept payments (HaloPesa Lipa Hapa) from customers with wallets.
                 </div>
             </div>
-            <Image className="d-md-none d-block" display smWidth="340px" fluid={corporationbrief.corporationbrief.childImageSharp.fluid} />
-            <div className="d-flex d-md-block justify-content-center align-items-centerr">
+            <Image className=" mt-0 mt-md-4 mt-lg-0 d-md-block d-lg-none d-block" display smWidth="340px" fluid={corporationbrief.corporationbrief.childImageSharp.fluid} />
+            <div className="d-flex d-md-block justify-content-center align-items-center">
               <Button name="Read more" className="mt-md-4 " />
             </div>
           </div>
@@ -51,7 +51,13 @@ const Corporation = () => {
   )
 }
 export default Corporation
-const StyledContainer = styled(Container)``
+const StyledContainer = styled(Container)`
+  .text-des { 
+    @media (max-width: ${props => props.theme.screen.md}) {
+      text-align:center
+    }
+  }
+`
 
 const StyledSection = styled(Section)`
 `

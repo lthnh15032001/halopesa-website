@@ -38,8 +38,8 @@ const News = () => {
           <h1 className="text1">News and <br /> Promotions</h1>
           <Button name="Read more" />
         </Flex>
-        <Flex className="d-flex align-items-center mt-4 row flex-row">
-          <div className="col-12 col-md-4 mb-md-0 mb-3">
+        <div className="d-flex align-items-center mt-4 row flex-row">
+          <div className="col-12 col-md-6 col-lg-4 mb-md-4 mb-lg-0 mb-3">
             <Image className="d-flex d-md-block justify-content-center align-items-center" display smWidth="340px"  fluid={img.img1.childImageSharp.fluid} width="350px" />
             <Title>
               Sed ut perspiciatis unde omnis iste natus error sit voluptatem
@@ -48,7 +48,7 @@ const News = () => {
               Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
             </Descrip>
           </div>
-          <div className="col-12 col-md-4 mb-md-0 mb-3">
+          <div className="col-12 col-md-6 col-lg-4 mb-md-4 mb-lg-0 mb-3">
             <Image className="d-flex d-md-block justify-content-center align-items-center" display smWidth="340px"  fluid={img.img2.childImageSharp.fluid} width="350px" />
             <Title>
               Sed ut perspiciatis unde omnis iste natus error sit voluptatem
@@ -57,7 +57,7 @@ const News = () => {
               Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
             </Descrip>
           </div>
-          <div className="col-12 col-md-4 mb-md-0 mb-3">
+          <div className="col-12 col-md-6 col-lg-4 mb-md-4 mb-lg-0 mb-3">
             <Image className="d-flex d-md-block justify-content-center align-items-center" display smWidth="340px" fluid={img.img3.childImageSharp.fluid} width="350px" />
             <Title>
               Sed ut perspiciatis unde omnis iste natus error sit voluptatem
@@ -66,7 +66,7 @@ const News = () => {
               Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
             </Descrip>
           </div>
-        </Flex>
+        </div>
       </StyledContainer>
     </StyledSection>
   )
