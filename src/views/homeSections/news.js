@@ -86,6 +86,11 @@ const Flex = styled.div`
   @media (max-width: ${props => props.theme.screen.md}) {
     grid-template-columns: 1fr;
     grid-gap: 64px;
+    .text1 { 
+      font-size: 30px;
+      line-height: 30px;
+      font-weight: bold;
+    }
   }
   @media (max-width: ${props => props.theme.screen.xs}) {
     grid-template-columns: 1fr;

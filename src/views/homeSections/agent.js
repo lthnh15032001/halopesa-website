@@ -52,10 +52,17 @@ const Agent = () => {
 }
 export default Agent
 const StyledContainer = styled(Container)`
-  .text-des { 
+    
     @media (max-width: ${props => props.theme.screen.md}) {
-      text-align:center
-    }
+      .text-des { 
+        text-align:center
+      }
+      h2 {
+        font-size: 30px;
+        line-height: 30px;
+        font-weight: bold;
+        text-align:center;
+        }
   }
 `
 

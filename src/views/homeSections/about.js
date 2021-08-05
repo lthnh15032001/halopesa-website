@@ -87,6 +87,12 @@ const Flex = styled.div`
     ${'' /* grid-template-columns: repeat(1,1fr); */}
     margin-top:0px!important;
     grid-gap: ${props => props.gap ? props.gap: "64px"};
+    .text1 {
+        font-size: 30px;
+        line-height: 30px;
+        font-weight: bold;
+        text-align:center;
+        }
   }
   @media (max-width: ${props => props.theme.screen.xs}) {
     grid-template-columns: 2fr;

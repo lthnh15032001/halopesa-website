@@ -36,6 +36,13 @@ const Container = styled.div`
         .des {
         width: 100%;
         color: #7A7A7A;
+        }
+        .text1 {
+            font-size: 30px;
+            line-height: 30px;
+            font-weight: bold;
+            text-align:center;
+        }
     }
     @media (min-width: ${props => props.theme.screen.lg}) {
         .des {
