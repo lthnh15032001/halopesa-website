@@ -7,7 +7,6 @@ import { LogoHalopesa } from "../navigation/LogoHalopesa"
 const Footer = () => (
   <FooterWrapper id="footer">
     <Container className="border-bottom pt-2 pb-2">
-      sdadas
     </Container>
     <FooterColumnContainer className="pt-2">
       <div>
