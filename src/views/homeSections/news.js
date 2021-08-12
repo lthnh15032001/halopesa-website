@@ -3,7 +3,7 @@ import React from 'react'
 import styled from "styled-components"
 import { Container, Section } from "../../components/global"
 import { Button } from '../../components/Button'
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, navigate, useStaticQuery } from "gatsby"
 import { Image } from '../../components/common/image'
 const News = () => {
   const img = useStaticQuery(graphql`
@@ -36,7 +36,9 @@ const News = () => {
       <StyledContainer>
         <Flex className="d-flex align-items-center">
           <h1 className="text1">News and <br /> Promotions</h1>
-          <Button name="Read more" />
+          <Button name="Read more" onClick={() => {
+            navigate("/news")
+          }} />
         </Flex>
         <div className="d-flex align-items-center mt-4 row flex-row">
           <div className="col-12 col-md-6 col-lg-4 mb-md-4 mb-lg-0 mb-3">

@@ -26,7 +26,12 @@ const About = () => {
             <Flex col={1} className="d-flex d-md-none flex-column-reverse justify-content-center align-items-center" style={{ marginTop: 20 }}>
               <Button className="" name="Read more" />
               <div className="d-flex align-items-center pb-3" >
-                <a href="/" style={{ fontWeight: 'bold' }}> How to use</a>
+                <a href="/" style={{ fontWeight: 'bold' }}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    navigate('/blog/how-to-send')
+                  }}
+                >How to use</a>
               </div>
             </Flex>
           </div>
@@ -46,7 +51,10 @@ const About = () => {
             <Flex col={2} className="d-none d-md-grid" style={{ marginTop: 30 }}>
               <Button onClick={() => navigate("/about")} className="" name="Read more" />
               <div className="d-flex align-items-center " >
-                <a href="/" style={{ fontWeight: 'bold' }}> How to use</a>
+                <a href="/" style={{ fontWeight: 'bold' }}   onClick={(e) => {
+                    e.preventDefault();
+                    navigate('/blog/how-to-send')
+                  }}> How to use</a>
               </div>
             </Flex>
           </div>

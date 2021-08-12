@@ -6,7 +6,7 @@ import Header from "../../views/servicesSections//header"
 import AllServices from "../../views/servicesSections/allservices"
 const IndexPage = () => (
     <Layout>
-        <SEO title="Services" />
+        <SEO title="Halopesa For You" />
         <Header />
         <AllServices />
     </Layout>

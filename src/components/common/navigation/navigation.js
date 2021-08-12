@@ -16,7 +16,7 @@ import {
 } from "./style"
 import Language from './Language'
 const NAV_ITEMS = [
-  { name: "Services", link: "/services" },
+  { name: "Halopesa For You", link: "/services" },
   { name: "For Corporation", link: "/corporation" },
   { name: "For Agent", link: "/agent" },
   { name: "News and promotions", link: "/news" },

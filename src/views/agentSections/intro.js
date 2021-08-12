@@ -85,18 +85,22 @@ const Intro = () => {
                     </div>
                 </Flex>
                 <div className="mt-4">
-                    All you need is: <br />
-                        Sign an Agent Contract.<br />
-                    	Invest in an initial capital.<br />
-                    What you need to qualify<br />
-                    Active Halotel Simcard<br />
-                    National ID<br />
-                    A valid Business license<br />
-                    TIN certificate.<br />
-                    Certificate of incorporation or equivalent (If available)<br />
-                    Memorandum and Articles of Association (If Available)<br />
-                    If you would like to become an agent, Please fill the contact form below and the HaloPesa Agent recruitment team will feedback to you shortly.<br />
-                    And you will receive Agent training and Agent material that will help you become the best HaloPesa Agent you can be. Becoming a HaloPesa Agent is FREE.<br />
+                    <h5 style={{fontSize:21}}>All you need is:</h5>
+                    <ul>
+                        <li>Sign an Agent Contract.</li>
+                        <li>Invest in starting capital float</li>
+                    </ul>
+                    <h5 style={{fontSize:21}}>What you need to qualify:</h5>
+                    <ul>
+                        <li>Active Halotel Simcard</li>
+                        <li>National ID</li>
+                        <li>A valid Business license</li>
+                        <li>TIN certificate.</li>
+                        <li>Certificate of incorporation or equivalent (If available)</li>
+                        <li>Memorandum and Articles of Association (If Available)</li>
+                    </ul>
+                    And you will receive Agent training and Agent material that will help you become the best HaloPesa Agent you can be. Becoming a HaloPesa Agent is FREE.<br/>
+Visit any super-Agent in your surroundings or contact HaloPesa recruitment number <a href="tel:>0620101101">0620 101 101</a> 
 
                 </div>
             </Container>

@@ -18,13 +18,13 @@ const Container = styled.div`
     .des {
         width: 60%;
     }
-    @media (max-width: ${props => props.theme.screen.xs}) {
-        .text1 {
+    .text1 {
         font-size: 30px;
         line-height: 30px;
         font-weight: bold;
         text-align:center;
         }
+    @media (max-width: ${props => props.theme.screen.xs}) {
         .des {
             width: 100%;
             font-size: 16px;
@@ -36,12 +36,6 @@ const Container = styled.div`
         .des {
         width: 100%;
         color: #7A7A7A;
-        }
-        .text1 {
-            font-size: 30px;
-            line-height: 30px;
-            font-weight: bold;
-            text-align:center;
         }
     }
     @media (min-width: ${props => props.theme.screen.lg}) {

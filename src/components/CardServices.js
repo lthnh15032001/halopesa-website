@@ -5,10 +5,13 @@ import {
 } from 'reactstrap';
 import styled from "styled-components"
 import { Image } from "../components/common/image"
+import { navigate} from "gatsby"
 export const CardServices = ({ fluid, text, style, className, name, imgWidth, vertical,smWidth }) => {
     return (
-        <div style={style && style} className={className && className}>
-            <Container className="border-0 shadow">
+        <div style={style && style} className={className && className} onClick={() => {
+            navigate("/blog/how-to-send")
+        }}>
+            <Container className="border-0 shadow" vertical={vertical}>
                 <CardBody>
                     <CardTitle tag="h5" className={`d-flex flex-${vertical ? "column" : "row"} justify-content-start align-items-center`}>
                         <div>
@@ -31,7 +34,11 @@ const H5 = styled.h5`
     font-weight: bold
 `
 const Container = styled(Card)`
+    @media (min-width: ${props => props.theme.screen.lg}) {
+        height:${props => props.vertical ? "280px" : "auto"}
+    };
     @media (max-width: ${props => props.theme.screen.md}) {
-        height: 249px
-    }
+        height: 300px
+    };
+    cursor: pointer
 `

@@ -2,7 +2,7 @@ import React from 'react'
 import styled from "styled-components"
 import { Container, Section } from "../../components/global"
 // import Img from "gatsby-image"
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, navigate, useStaticQuery } from "gatsby"
 import { LogoHalopesa } from '../../components/common/navigation/LogoHalopesa'
 import { Image } from '../../components/common/image'
 import { Button } from '../../components/Button'
@@ -42,7 +42,9 @@ const Corporation = () => {
             </div>
             <Image className=" mt-0 mt-md-4 mt-lg-0 d-md-block d-lg-none d-block" display smWidth="340px" fluid={corporationbrief.corporationbrief.childImageSharp.fluid} />
             <div className="d-flex d-md-block justify-content-center align-items-center">
-              <Button name="Read more" className="mt-md-4 " />
+              <Button name="Read more" className="mt-md-4 " onClick={() => {
+                navigate("/corporation")
+              }} />
             </div>
           </div>
         </Flex>

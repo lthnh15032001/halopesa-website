@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from "styled-components"
 import { Container, Section } from "../../components/global"
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery,navigate } from "gatsby"
 import { LogoHalopesa } from '../../components/common/navigation/LogoHalopesa'
 import { Button } from '../../components/Button'
 import { Image } from '../../components/common/image'
@@ -42,7 +42,12 @@ const Agent = () => {
             </div>
             <Image className=" mt-0 mt-md-4 mt-lg-0 d-md-flex justify-content-center d-lg-none d-block" display smWidth="340px" fluid={agentbrief.agentbrief.childImageSharp.fluid} />
             <div className="d-flex d-md-flex d-lg-block justify-content-center align-items-center">
-              <Button name="Read more" className="mt-md-4 " />
+              <Button name="Read more" className="mt-md-4 "
+               onClick={() => {
+                navigate("/agent")
+              }}
+              
+              />
             </div>
           </div>
         </Flex>
