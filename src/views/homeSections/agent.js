@@ -33,7 +33,7 @@ const Agent = () => {
             <Image display smWidth="340px" fluid={agentbrief.agentbrief.childImageSharp.fluid} />
           </div>
           <div className="d-sm-flex d-md-block justify-content-center align-items-center flex-column">
-            <LogoHalopesa className="d-md-flex justify-content-center d-lg-block d-none" style={{ justifyContent: "start!important" }} />
+            <LogoHalopesa className="d-md-flex justify-content-md-center justify-content-lg-start d-lg-flex d-none" style={{ justifyContent: "start!important" }} />
             <div className="d-md-flex d-lg-block flex-column d-none align-items-center">
               <h2>For Agent</h2>
               <div className="text-des" style={{ color: "#7A7A7A" }}>

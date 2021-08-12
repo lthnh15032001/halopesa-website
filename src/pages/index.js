@@ -9,6 +9,7 @@ import Services from "../views/homeSections/services"
 import Corporation from "../views/homeSections/corporation"
 import Agent from "../views/homeSections/agent"
 import News from "../views/homeSections/news"
+import HalopesaApp from "../views/homeSections/halopesaapp"
 // const GetAllBlog  =  require("../hooks/use-site-metadata");
 const IndexPage = () => {
   // console.log({ site: GetAllBlog() })
@@ -21,6 +22,7 @@ const IndexPage = () => {
       <Corporation />
       <Agent />
       <News />
+      <HalopesaApp />
     </Layout>
   )
 }
