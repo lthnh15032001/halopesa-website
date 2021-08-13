@@ -2,10 +2,6 @@ import React from 'react'
 import styled from "styled-components"
 import { Container, Section } from "../../components/global"
 // import Img from "gatsby-image"
-import { graphql, navigate, useStaticQuery } from "gatsby"
-import { LogoHalopesa } from '../../components/common/navigation/LogoHalopesa'
-import { Image } from '../../components/common/image'
-import { Button } from '../../components/Button'
 
 import { TitleRes } from '../../components/TitleRes'
 const HalopesaApp = () => {
@@ -89,18 +85,4 @@ const StyledContainer = styled(Container)`
 
 const StyledSection = styled(Section)`
 background-color: ${props => props.theme.color.background.light}
-`
-const Flex = styled.div`
-  display: grid;
-  justify-content: space-between;
-  align-content: center;
-  grid-template-columns: repeat(3fr 1fr);
-//   @media (max-width: ${props => props.theme.screen.md}) {
-//     grid-template-columns: 1fr;
-//     grid-gap: 64px;
-//   }
-//   @media (max-width: ${props => props.theme.screen.sm}) {
-//     grid-template-columns: 1fr;
-//     grid-gap: 10px;
-//   }
 `

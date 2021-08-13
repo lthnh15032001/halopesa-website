@@ -87,9 +87,6 @@ const HowItsWork = () => {
             />
             <div className="text-center d-none d-md-block">
                 <h1>How does it work?</h1>
-                {/* <div className="w-100 d-flex flex-column justify-content-center align-items-center mt-3">
-                    <div style={{ width: '60%', color: "#7A7A7A" }}>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</div>
-                </div> */}
             </div>
             <div className=" d-flex flex-column justify-content-center align-items-center mt-md-5 mb-md-5 mt-4 mb-0">
                 <ul className="nav nav-pills mb-3" id="pills-tab">
@@ -99,8 +96,8 @@ const HowItsWork = () => {
                                 <button onClick={() => {
                                     setActive(i)
                                 }} className={`nav-link ${i === active ? "active" : ""} ${i !== active ? "text-dark" : "text-white"}`} style={{
-                                    marginRight: i === 1 ? "50px" : 0,
-                                    marginLeft: i === 1 || i === 3 ? "50px" : 0
+                                    marginRight: i === 1 ? "20px" : 0,
+                                    marginLeft: i === 1 ? "20px" : 0
                                 }} >{x.name}</button>
                             </li>
                         )
@@ -121,6 +118,7 @@ const HowItsWork = () => {
 
 export default HowItsWork
 const ContainerStyled = styled(Container)`
+    margin-bottom: 40px;
     .active {
         border-radius: 23px;
         background: #FF6E2C!important;

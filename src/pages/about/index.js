@@ -13,7 +13,7 @@ const IndexPage = () => (
     <Header />
     <Text />
     <ImgDescription />
-    <SocialContribute />
+    {/* <SocialContribute /> */}
     <Download />
   </Layout>
 )

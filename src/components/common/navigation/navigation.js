@@ -92,7 +92,7 @@ export default class Navigation extends Component {
             <div className="contain-top">
               <div className="hotline">Hotline: 0123 456 789</div>
               <div className="i8n">
-                <Language />
+                {/* <Language /> */}
               </div>
             </div>
           </TopBanner>

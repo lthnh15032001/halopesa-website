@@ -2,7 +2,7 @@
 import React from 'react'
 import { Container, Section } from "../../components/global"
 import styled from 'styled-components'
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, navigate, useStaticQuery } from "gatsby"
 import { Image } from '../../components/common/image'
 import { TitleRes } from '../../components/TitleRes'
 const Download = () => {
@@ -22,20 +22,16 @@ const Download = () => {
             <SectionStyled>
                 <Container>
                     <TitleRes
-                        name="Download Documents"
+                        name="Documents"
                     />
-                    <Flex col={3} className="mt-5">
-                        <div className="shadow rounded p-5 d-flex justify-content-center align-items-center flex-column">
-                            <Image display smWidth="100px" fluid={img.pdf.childImageSharp.fluid} width="140px" />
-                            <div className="text-center">Lorem ipsum dolor sit amet, consectetur.pdf</div>
-                        </div>
-                        <div className="shadow rounded p-5 d-flex justify-content-center align-items-center flex-column">
-                            <Image display smWidth="100px" fluid={img.pdf.childImageSharp.fluid} width="140px" />
-                            <div className="text-center">Lorem ipsum dolor sit amet, consectetur.pdf</div>
-                        </div>
-                        <div className="shadow rounded p-5 d-flex justify-content-center align-items-center flex-column">
-                            <Image display smWidth="100px" fluid={img.pdf.childImageSharp.fluid} width="140px" />
-                            <div className="text-center">Lorem ipsum dolor sit amet, consectetur.pdf</div>
+                    <Flex col={1} className="mt-5 w-100 d-flex justify-content-center">
+                        <div
+                            onClick={() => {
+                                navigate("/halopesa-term-and-condition")
+                            }}
+                        style={{width: "40%", cursor: 'pointer'}} className="shadow rounded p-3 d-flex justify-content-center align-items-center flex-column">
+                            <Image display smWidth="100px" fluid={img.pdf.childImageSharp.fluid} width="120px" />
+                            <div className="text-center"><strong>HaloPesa Terms and Conditions</strong></div>
                         </div>
                     </Flex>
                 </Container>
@@ -46,6 +42,8 @@ const Download = () => {
 export default Download
 
 const SectionStyled = styled(Section)`
+background-color: ${props => props.theme.color.background.light};
+
 `
 
 const Flex = styled.div`

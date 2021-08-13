@@ -1,3 +1,4 @@
+import { navigate } from "gatsby"
 import React from "react"
 import styled from "styled-components"
 import { Container } from "../../global"
@@ -11,7 +12,9 @@ const Footer = () => (
     <FooterColumnContainer className="pt-2">
       <div>
         <ul>
-          <li>About us</li>
+          <li className="about" onClick={() => {
+            navigate("/about")
+          }}>About us</li>
         </ul>
       </div>
       <div>
@@ -27,8 +30,12 @@ const Footer = () => (
       <div>
         <ul>
           <li>Support</li>
-          <li>News</li>
-          <li>FAQS</li>
+          <li onClick={() => {
+            navigate("/news")
+          }}>News</li>
+          <li onClick={() => {
+            navigate("/faqs")
+          }}>FAQS</li>
           <li>Find a store</li>
           <li>Repair & Warranty</li>
         </ul></div>
@@ -60,11 +67,26 @@ const Footer = () => (
 
 const FooterWrapper = styled.footer`
   background-color: #2e2e2e;
-  margin: 64px 0 0;
-  padding: 0px 0 80px;
+  margin: 0px 0 0;
+  padding: 20px 0 80px;
+  .about { 
+    cursor: pointer!important;
+    &:hover {
+      color: #337ab7!important
+    }
+  }
+  ul {
+    li {
+      cursor: pointer;
+      &:hover{ 
+        color: #337ab7
+      }
+    }
+  }
 `
 
 const FooterColumnContainer = styled(Container)`
+
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-column-gap: 0px;
@@ -83,6 +105,10 @@ const FooterColumnContainer = styled(Container)`
   li:first-child { 
     font-size: 20px;
     padding-bottom: 14px;
+    &:hover {
+      color: white;
+      cursor: default
+    }
   }
   ul {
     list-style: none;
