@@ -21,7 +21,7 @@ const IndexPage = () => {
       <Services />
       <Corporation />
       <Agent />
-      <News />
+      {/* <News /> */}
       <HalopesaApp />
     </Layout>
   )

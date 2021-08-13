@@ -84,5 +84,5 @@ const StyledContainer = styled(Container)`
 `
 
 const StyledSection = styled(Section)`
-background-color: ${props => props.theme.color.background.light}
+// background-color: ${props => props.theme.color.background.light}
 `
