@@ -27,7 +27,7 @@ const Download = () => {
                     <Flex col={1} className="mt-5 w-100 d-flex justify-content-center">
                         <div
                             onClick={() => {
-                                navigate("/halopesa-term-and-condition")
+                                navigate("/blog/halopesa-term-and-condition")
                             }}
                         style={{width: "40%", cursor: 'pointer'}} className="shadow rounded p-3 d-flex justify-content-center align-items-center flex-column">
                             <Image display smWidth="100px" fluid={img.pdf.childImageSharp.fluid} width="120px" />

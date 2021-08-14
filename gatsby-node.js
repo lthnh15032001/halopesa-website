@@ -24,7 +24,6 @@ exports.createPages = async ({ graphql, actions }) => {
         if (result.errors) {
             throw result.errors
         }
-        console.log(result)
         result.data.allMdx.nodes.forEach(edge => {
             createPage({
                 path: `/blog/${edge.slug}`,
