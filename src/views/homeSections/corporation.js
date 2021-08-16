@@ -26,7 +26,7 @@ const Corporation = () => {
         <TitleRes
           className="mb-3 d-md-none d-block"
           name="For Corporation"
-          des="HaloPesa for corporates (Business Customers) are solutions for businesses that allow organizations to collect funds from their customers on a regular basis through HaloPesa or disburse funds to their customers just by a click of a button. HaloPesa is also a suitable means for Merchants to accept payments (HaloPesa Lipa Hapa) from customers with wallets.    "
+          des="HaloPesa for cooperates are solutions for businesses that allow organizations to collect funds from their customers on a regular basis through HaloPesa or disburse funds to their customers across various operations just by a click of a button, we also we make it easy for merchants to accept payments (HaloPesa Lipa Hapa) from customers across various operators."
         />
         <Flex className="flex-row-md">
           <div className="d-lg-block d-md-none d-none">
@@ -37,8 +37,7 @@ const Corporation = () => {
             <div className="d-md-flex d-lg-block flex-column d-none align-items-center">
               <h2>For Corporation</h2>
               <div className="text-des" style={{ color: "#7A7A7A" }}>
-                HaloPesa for corporates (Business Customers) are solutions for businesses that allow organizations to collect funds from their customers on a regular basis through HaloPesa or disburse funds to their customers just by a click of a button. HaloPesa is also a suitable means for Merchants to accept payments (HaloPesa Lipa Hapa) from customers with wallets.
-                </div>
+              HaloPesa for cooperates are solutions for businesses that allow organizations to collect funds from their customers on a regular basis through HaloPesa or disburse funds to their customers across various operations just by a click of a button, we also we make it easy for merchants to accept payments (HaloPesa Lipa Hapa) from customers across various operators. </div>
             </div>
             <Image className=" mt-0 mt-md-4 mt-lg-0 d-md-block d-lg-none d-block" display smWidth="340px" fluid={corporationbrief.corporationbrief.childImageSharp.fluid} />
             <div className="d-flex d-md-block justify-content-center align-items-center">

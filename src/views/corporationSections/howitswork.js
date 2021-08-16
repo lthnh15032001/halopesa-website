@@ -37,7 +37,7 @@ const HowItsWork = () => {
                     </div>
                 </>: active ===2 ?
                   <>
-                    <div className="text" styke={{ fontWeight: 900 }}>General KYC requirements for HaloPesa Corporates</div>
+                    <div className="text" styke={{ fontWeight: 600 }}>General KYC requirements for HaloPesa Corporates</div>
                     <div className="mt-3 mb-3 ">
                         <div>
                             <ul>
@@ -51,7 +51,7 @@ const HowItsWork = () => {
                     </div>
                 </> : 
                 <>
-                <div className="text" styke={{ fontWeight: 900 }}>HaloPesa LIPA HAPA</div>
+                <div className="text" >HaloPesa LIPA HAPA</div>
                 <div className="mt-3 mb-3 ">
                     <div>Are you a merchant? As we are all aspiring for a Cash-lite economy in the promotion of financial inclusion, HaloPesa Lipa Hapa allows you customers to pay for various services and products with any mobile money account in Tanzania to your Lipa Hapa number
                     </div>
@@ -128,7 +128,7 @@ const ContainerStyled = styled(Container)`
     .text { 
         font-size: 30px;
         line-height: 30px;
-        font-weight: bold;
+        font-weight: 500;
     }
 `
 

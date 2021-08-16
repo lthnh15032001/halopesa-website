@@ -37,7 +37,9 @@ const About = () => {
           </div>
           <div className="p-md-5 p-xs-2 d-block d-md-flex d-lg-block align-items-center flex-md-column">
             <h1 className="text1">About Halopesa</h1>
-            <Small>The HaloPesa App brings to our customers one of its kind and the best user experience with  bundles of services including Send Money , withdraw , Pay for goods & Services,  Personal Savings, Transfers to Bank accounts etc.</Small>
+            <Small>Your mobile phone is more than just a means of communication it is also your virtual wallet. HALOPESA is a mobile money service brought to you by Halotel and it allows our customers to receive and send money quickly, safely, affordably and conveniently 24/7. 
+            <br />HaloPesa has variety of products and services that will enable our customers to reach their daily needs. HaloPesa is determined to reach every individual and cooperate in the society. HaloPesa Together for the better.
+</Small>
             <Flex col={2} className="flex-row flex-md-column flex-lg-row" style={{ marginBottom: 20, padding: 20 }}>
               <Number>
                 <div className="number">1,000,000+</div>

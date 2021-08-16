@@ -6,10 +6,10 @@ import {
 import styled from "styled-components"
 import { Image } from "../components/common/image"
 import { navigate} from "gatsby"
-export const CardServices = ({ fluid, text, style, className, name, imgWidth, vertical,smWidth }) => {
+export const CardServices = ({ fluid, text, style, className, name, imgWidth, vertical,smWidth, link }) => {
     return (
         <div style={style && style} className={className && className} onClick={() => {
-            navigate("/blog/how-to-send")
+            link !== "" ? navigate(link) : console.log("");
         }}>
             <Container className="border-0 shadow" vertical={vertical}>
                 <CardBody>
@@ -35,7 +35,7 @@ const H5 = styled.h5`
 `
 const Container = styled(Card)`
     @media (min-width: ${props => props.theme.screen.lg}) {
-        height:${props => props.vertical ? "280px" : "auto"}
+        height:${props => props.vertical ? "310px" : "auto"}
     };
     @media (max-width: ${props => props.theme.screen.md}) {
         height: 300px

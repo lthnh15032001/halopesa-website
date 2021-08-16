@@ -65,16 +65,34 @@ const Services = () => {
           }
         }
       }
+
+      undo: file(sourceInstanceName: { eq: "product" }, name: { eq: "undo" }) {
+        childImageSharp {
+          fluid(maxWidth: 1000) {
+            ...GatsbyImageSharpFluid_tracedSVG
+          }
+        }
+      }
+
+      file: file(sourceInstanceName: { eq: "product" }, name: { eq: "file" }) {
+        childImageSharp {
+          fluid(maxWidth: 1000) {
+            ...GatsbyImageSharpFluid_tracedSVG
+          }
+        }
+      }
+
     }
   `)
   const data = [
-    { name: "",},
-    { name: "Send and receive money",  text: "HaloPesa corporates with all Mobile Financial Service Providers (MFSP) and Banks in Tanzania. Therefore HaloPesa customers can easily send to and receive money from MFSPs (as TigoPesa, M-Pesa, Airtel Money) and Banks (as CRDB, NMB, FINCA). "  },
+    { name: "", },
+    { name: "Send and receive money", text: "HaloPesa corporates with all Mobile Financial Service Providers (MFSP) and Banks in Tanzania. Therefore HaloPesa customers can easily send to and receive money from MFSPs (as TigoPesa, M-Pesa, Airtel Money) and Banks (as CRDB, NMB, FINCA). " },
     { name: "Buy airtime and bundles", text: "- Top up airtime at anytime from anywhere with discount up to 5% \n- Buy bundle with the best promotion for voice, sms and data which only have on HaloPesa." },
-    { name: "Cash out money from agents", text: "Customers can withdraw quickly and conveniently at more than 20.000  our Agent around Tanzania but also through HaloPesa you can withdraw through Umoja ATM and rest assured to have easy access to money anywhere you are."  },
-    { name: "Pay bills such as LUKU", text: "Pay your recurring bills (as electricity, government service, TV subscription,betting…)  with the ease and convenience via HaloPesa. "  },
-    { name: "HaloYako", text: "HaloYako is a digital finance product designed by FINCA Microfinance Bank in partnership with Halotel for mobile customers. HaloYako enables users to save their money safely and enjoy instant access to small loans."  },
-    { name: "Bank Transaction", text: "HaloPesa customers can now send money to the bank and withdraw money from the bank without the actual visit to the bank branch or ATM, it is very convenient and reliable. But also it gives you the control of your accounts in the comfort of your own home."  },
+    { name: "Cash out money from agents", text: "Customers can withdraw quickly and conveniently at more than 20.000  our Agent around Tanzania but also through HaloPesa you can withdraw through Umoja ATM and rest assured to have easy access to money anywhere you are." },
+    { name: "Pay bills such as LUKU", text: "Pay your recurring bills (as electricity, government service, TV subscription,betting…)  with the ease and convenience via HaloPesa. " },
+    { name: "Bank Transaction", text: "HaloPesa customers can now send money to the bank and withdraw money from the bank without the actual visit to the bank branch or ATM, it is very convenient and reliable. But also it gives you the control of your accounts in the comfort of your own home." },
+    { name: "MiniStatement", text: "This service enables a customer to reverse a wrong transaction as soon as they realize the mistake. It is very easy you can now reverse a wrong transaction on your own by following the simple steps below. Feel free, Feel safe with HaloPesa self-service" },
+    { name: "Self-Reversal", text: "HaloPesa enables you to access your transactional statement and balances of your HaloPesa account at any time you want. It is convenient and reliable no need to visit a HaloPesa branch From purchasing bundles and airtime to Paying bills HaloPesa gives you a wide range of products and services to choose from.    " }
   ]
 
   return (
@@ -86,7 +104,7 @@ const Services = () => {
           des="HaloPesa is determined to make your life easier and simple by giving you control just at the tip of your fingerprints. HaloPesa allows its customer to send and receive money quickly and safely and in the comfort of your own home 24/7. HaloPesa has the affordable prices for transaction, it’s a wide spread network and it is easy and safe to use."
         />
         <div className="d-flex justify-content-center align-items-center ">
-          <a href="/" className="mt-md-3 mb-md-3 mt-2 mb-2" 
+          <a href="/" className="mt-md-3 mb-md-3 mt-2 mb-2"
             onClick={(e) => {
               e.preventDefault();
               navigate("/services");
@@ -95,22 +113,23 @@ const Services = () => {
         </div>
         <div className="flex-row d-none d-md-flex d-lg-flex row mt-4">
           <div className="col-6 col-md-6 col-lg-4">
-            <CardServices name="Send and receive money" fluid={serviceBrief.sendmoney.childImageSharp.fluid} text="HaloPesa corporates with all Mobile Financial Service Providers (MFSP) and Banks in Tanzania. Therefore HaloPesa customers can easily send to and receive money from MFSPs (as TigoPesa, M-Pesa, Airtel Money) and Banks (as CRDB, NMB, FINCA). " />
-            <CardServices name="Cash out money from agents" className="mb-3 mt-3" fluid={serviceBrief.withdraw.childImageSharp.fluid} text="Customers can withdraw quickly and conveniently at more than 20.000  our Agent around Tanzania but also through HaloPesa you can withdraw through Umoja ATM and rest assured to have easy access to money anywhere you are." />
-            <CardServices name="HaloYako" fluid={serviceBrief.qrscan.childImageSharp.fluid} text="HaloYako is a digital finance product designed by FINCA Microfinance Bank in partnership with Halotel for mobile customers. HaloYako enables users to save their money safely and enjoy instant access to small loans." />
+            <CardServices link="/blog/send-and-receive-money" name="Send and receive money" fluid={serviceBrief.sendmoney.childImageSharp.fluid} text="HaloPesa corporates with all Mobile Financial Service Providers (MFSP) and Banks in Tanzania. Therefore HaloPesa customers can easily send to and receive money from MFSPs (as TigoPesa, M-Pesa, Airtel Money) and Banks (as CRDB, NMB, FINCA). " />
+            <CardServices link="" name="Cash out money from agents" className="mb-3 mt-3" fluid={serviceBrief.withdraw.childImageSharp.fluid} text="Customers can withdraw quickly and conveniently at more than 20.000  our Agent around Tanzania but also through HaloPesa you can withdraw through Umoja ATM and rest assured to have easy access to money anywhere you are." />
+            <CardServices link="/blog/self-reveal" name="Self-Reversal" fluid={serviceBrief.undo.childImageSharp.fluid} text="This service enables a customer to reverse a wrong transaction as soon as they realize the mistake. It is very easy you can now reverse a wrong transaction on your own by following the simple steps below. Feel free, Feel safe with HaloPesa self-service" />
+            <CardServices link="/blog/ministatement" name="MiniStatement" className="mb-3 mt-3" fluid={serviceBrief.file.childImageSharp.fluid} text="HaloPesa enables you to access your transactional statement and balances of your HaloPesa account at any time you want. It is convenient and reliable no need to visit a HaloPesa branch From purchasing bundles and airtime to Paying bills HaloPesa gives you a wide range of products and services to choose from." />
           </div>
           <div className="col-6  col-md-4 justify-content-center align-items-center d-none d-md-none d-lg-flex flex-column">
             <Image fluid={serviceBrief.serviceBrief.childImageSharp.fluid} width="280px" />
             <Button name="Tariff" onClick={() => {
-            navigate("/blog/tariff")
-          }} />
-           
+              navigate("/blog/tariff")
+            }} />
+
           </div>
           <div className="col-6 col-md-6 col-lg-4">
-            <CardServices name="Buy airtime and bundles" fluid={serviceBrief.airtime.childImageSharp.fluid} text="- Top up airtime at anytime from anywhere with discount up to 5% - Buy bundle with the best promotion for voice, sms and data which only have on HaloPesa. " />
-            <CardServices name="Pay bills such as LUKU" className="mb-3 mt-3" fluid={serviceBrief.bill.childImageSharp.fluid} text="Pay your recurring bills (as electricity, government service, TV subscription,betting…)  with the ease and convenience via HaloPesa. " />
-            <CardServices name="Bank Transaction" fluid={serviceBrief.bank.childImageSharp.fluid} text="HaloPesa customers can now send money to the bank and withdraw money from the bank without the actual visit to the bank branch or ATM, it is very convenient and reliable. But also it gives you the control of your accounts in the comfort of your own home. " />
-            <CardServices className="mt-3" name="HaloPesa Visa on mobile" fluid={serviceBrief.bank.childImageSharp.fluid} text="Pay your invoice at a large of our Merchant Network (as HaloPesa Merchant, M-Pesa Merchant, Tigo Pesa Merchant, Visa and Masterpass Agent)" />
+            <CardServices link="/blog/how-to-buy-airtime" name="Buy airtime and bundles" fluid={serviceBrief.airtime.childImageSharp.fluid} text="- Top up airtime at anytime from anywhere with discount up to 5% - Buy bundle with the best promotion for voice, sms and data which only have on HaloPesa. " />
+            <CardServices link="/blog/pay-bill" name="Pay bills such as LUKU" className="mb-3 mt-3" fluid={serviceBrief.bill.childImageSharp.fluid} text="Pay your recurring bills (as electricity, government service, TV subscription,betting…)  with the ease and convenience via HaloPesa. " />
+            <CardServices link="/blog/bank-transaction" name="Bank Transaction" fluid={serviceBrief.bank.childImageSharp.fluid} text="HaloPesa customers can now send money to the bank and withdraw money from the bank without the actual visit to the bank branch or ATM, it is very convenient and reliable. But also it gives you the control of your accounts in the comfort of your own home. " />
+            <CardServices link="" className="mt-3" name="HaloPesa Visa on mobile" fluid={serviceBrief.bank.childImageSharp.fluid} text="Pay your invoice at a large of our Merchant Network (as HaloPesa Merchant, M-Pesa Merchant, Tigo Pesa Merchant, Visa and Masterpass Agent)" />
           </div>
         </div>
         <div className="acordion d-fex d-md-none d-lg-none">
@@ -122,13 +141,13 @@ const Services = () => {
                     expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel1a-content"
                     id="panel1a-header"
-                   
+
                   >
                     <H5 >{x.name}</H5>
                   </AccordionSummary>
-                  <AccordionDetails  onClick={() => navigate("/blog/how-to-send")}>
+                  <AccordionDetails onClick={() => navigate("/blog/how-to-send")}>
                     <Typography>{x.text}
-                      </Typography>
+                    </Typography>
                   </AccordionDetails>
                 </Accordion>
               )
@@ -136,7 +155,7 @@ const Services = () => {
           }
         </div>
         <div className="d-flex justify-content-center align-items-center flex-column mt-4 d-md-flex d-lg-none">
-        
+
           <Button name="Tariff" onClick={() => {
             navigate("/blog/tariff")
           }} />

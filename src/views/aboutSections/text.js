@@ -7,7 +7,7 @@ const Text = () => {
         <SectionStyled>
             <Container>
                 <div>
-                    <ul>
+                    <ul><h5>HaloPesa provides merchants and members the ease, convenience, and control of managing payments and transferring funds across multiple channels in real-time anytime, anywhere. With a strong emphasis for simplicity and flexibility, HALOPESA is focused on delivering robust and long term solutions for the security-challenges.</h5>
                         <li>HaloPesa is a licensed Mobile Money service in Tanzania that allows customers to make digital transactions easily, fast and affordably anywhere and at any time.</li>
                         <li>Your Mobile phone is more than just a means of communication it is also your virtual wallet. HaloPesa allows our customers to receive and send money quickly, safely, affordably and conveniently 24/7.</li>
                         <li>HaloPesa, the best mobile money service in Tanzania that is determined to bring you the best mobile money experience at the power of your fingertips. </li>

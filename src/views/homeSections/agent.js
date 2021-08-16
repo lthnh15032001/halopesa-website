@@ -25,8 +25,7 @@ const Agent = () => {
         <TitleRes
           className="mb-3 d-md-none d-block"
           name="For Agent"
-          des="Becoming an HaloPesa Agent is a great business opportunity that allows Agents to earn their monthly revenue following best competitive  commission rates that HaloPesa offers.
-"
+          des="As our Agents that are spread out throughout the country. HaloPesa welcomes every interested individual to join our HaloPesa Family by becoming an Agent as it is exciting and rewarding too, we welcome you to the winning team. "
         />
         <Flex className="flex-lg-row-reverse d-lg-flex">
           <div className="d-lg-block d-md-none d-none">
@@ -37,8 +36,7 @@ const Agent = () => {
             <div className="d-md-flex d-lg-block flex-column d-none align-items-center">
               <h2>For Agent</h2>
               <div className="text-des" style={{ color: "#7A7A7A" }}>
-                Becoming an HaloPesa Agent is a great business opportunity that allows Agents to earn their monthly revenue following best competitive  commission rates that HaloPesa offers.
-                </div>
+              As our Agents that are spread out throughout the country. HaloPesa welcomes every interested individual to join our HaloPesa Family by becoming an Agent as it is exciting and rewarding too, we welcome you to the winning team. </div>
             </div>
             <Image className=" mt-0 mt-md-4 mt-lg-0 d-md-flex justify-content-center d-lg-none d-block" display smWidth="340px" fluid={agentbrief.agentbrief.childImageSharp.fluid} />
             <div className="d-flex d-md-flex d-lg-block justify-content-center align-items-center">
