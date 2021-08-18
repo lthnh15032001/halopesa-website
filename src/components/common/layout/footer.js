@@ -51,7 +51,7 @@ const Footer = () => (
       </div>
       <div >
         <ul>
-          <li>My Halotel App</li>
+          <li>Halopesa App</li>
           <li>
             <LogoHalopesa />
           </li>
