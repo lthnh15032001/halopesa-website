@@ -93,7 +93,7 @@ const Header = () => {
                   The HaloPesa customers are in for a treat due for easier, better and safer and affordable services. </h2>
               </div>
             </Slider>
-            <div className="flex-row d-flex img-res pt-md-5 pt-4">
+            <div className="flex-row d-flex img-res pt-md-5 pt-4 align-items-center">
               <a target="__blank" href='https://itunes.apple.com/us/app/id1532695595'>
                 <Image display smWidth='142px' width="170px" fluid={data.appstore.childImageSharp.fluid} />
               </a>

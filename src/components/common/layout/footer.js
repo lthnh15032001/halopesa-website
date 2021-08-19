@@ -37,7 +37,7 @@ const Footer = () => {
           }}>About us</li>
           <li><a
             target="__blank"
-            href="https://www.facebook.com/Halopesa-107775141421099/" className="social">Social Network</a></li>
+            href="https://www.facebook.com/haloteltanzania" className="social">Social Network</a></li>
         </ul>
       </div>
       <div>
@@ -65,6 +65,9 @@ const Footer = () => {
         <ul>
           <li>Contact Us</li>
           <li>VIETTEL TANZANIA PLC <br />(HALOTEL)</li>
+          <li>
+            <div className="hotline py-2">Hotline: <a href="tel:100" className="text-white"><strong>100</strong></a> or text <a href="tel:0622 100100" className="text-white"><strong>0622 100100</strong></a> on Whatsapp | Email: <a href="mailto: HaloPesa@halotel.co.tz" className="text-white">HaloPesa@halotel.co.tz</a> </div>
+          </li>
           <li>Address: 10th Floor, Tanzanite Park, Plot No. 38, South Ursino, New Bagamoyo Road, P.O.Box 34176 Dar es Salaam</li>
           <li></li>
           <li></li>
@@ -76,7 +79,7 @@ const Footer = () => {
           <li>Halopesa App</li>
           <li>
             <LogoHalopesa />
-            <div className="d-lg-flex d-md-flex flex-row d-none img-res pt-2">
+            <div className="d-lg-flex d-md-flex flex-row d-none img-res pt-2 align-items-center">
               <a className="col-6" target="__blank" href='https://itunes.apple.com/us/app/id1532695595'>
                 <Image display smWidth='142px' width="150px" fluid={data.appstore.childImageSharp.fluid} />
               </a>
@@ -91,7 +94,7 @@ const Footer = () => {
         </ul>
       </div>
     </FooterColumnContainer>
-    <div className="w-100">
+    <div className="w-100 d-flex justify-content-center">
       <div style={{ width: "80%" }} className="d-lg-none d-md-none flex-row d-flex img-res pt-2 align-items-center">
         <a className="col-6" target="__blank" href='https://itunes.apple.com/us/app/id1532695595'>
           <Image display smWidth='142px' width="150px" fluid={data.appstore.childImageSharp.fluid} />
@@ -101,7 +104,7 @@ const Footer = () => {
         </a>
       </div>
     </div>
-  </FooterWrapper>
+  </FooterWrapper >
 }
 
 const FooterWrapper = styled.footer`
