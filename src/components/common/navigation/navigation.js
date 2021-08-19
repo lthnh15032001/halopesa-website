@@ -90,7 +90,7 @@ export default class Navigation extends Component {
         <div style={{ background: "#F26522", width: "100%" }}>
           <TopBanner>
             <div className="contain-top">
-              <div className="hotline">Hotline: 0123 456 789</div>
+              <div className="hotline">Hotline: <a href="tel:+255622670160" className="text-white"> +255 622 670 160</a> </div>
               <div className="i8n">
                 {/* <Language /> */}
               </div>

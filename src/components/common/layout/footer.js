@@ -2,11 +2,31 @@ import { navigate } from "gatsby"
 import React from "react"
 import styled from "styled-components"
 import { Container } from "../../global"
+import { graphql, useStaticQuery } from "gatsby"
 import { LogoHalopesa } from "../navigation/LogoHalopesa"
+import { Image } from '../image'
 
 
-const Footer = () => (
-  <FooterWrapper id="footer">
+const Footer = () => {
+  const data = useStaticQuery(graphql`
+  query {
+    appstore: file(sourceInstanceName: { eq: "product" }, name: { eq: "appstore" }) {
+      childImageSharp {
+        fluid(maxWidth: 1000) {
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
+    ggplay: file(sourceInstanceName: { eq: "product" }, name: { eq: "ggplay" }) {
+      childImageSharp {
+        fluid(maxWidth: 1000) {
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
+  }
+`)
+  return <FooterWrapper id="footer">
     <Container className="border-bottom pt-2 pb-2">
     </Container>
     <FooterColumnContainer className="pt-2">
@@ -15,6 +35,9 @@ const Footer = () => (
           <li className="about" onClick={() => {
             navigate("/about")
           }}>About us</li>
+          <li><a
+            target="__blank"
+            href="https://www.facebook.com/Halopesa-107775141421099/" className="social">Social Network</a></li>
         </ul>
       </div>
       <div>
@@ -22,9 +45,10 @@ const Footer = () => (
           <li className="about" onClick={() => {
             navigate("/services")
           }}>Product & Services</li>
-          <li><a
-            target="__blank"
-            href="https://www.facebook.com/Halopesa-107775141421099/" className="social">Social Network</a></li>
+
+          <li onClick={() => {
+            navigate("/news")
+          }}>Mobile Packages</li>
         </ul>
       </div>
       <div>
@@ -47,21 +71,38 @@ const Footer = () => (
           <li></li>
         </ul>
       </div>
-      <div >
+      <div style={{ paddingLeft: "20px" }}>
         <ul>
           <li>Halopesa App</li>
           <li>
             <LogoHalopesa />
+            <div className="d-lg-flex d-md-flex flex-row d-none img-res pt-2">
+              <a className="col-6" target="__blank" href='https://itunes.apple.com/us/app/id1532695595'>
+                <Image display smWidth='142px' width="150px" fluid={data.appstore.childImageSharp.fluid} />
+              </a>
+              <a className="col-6" target="__blank" href='https://play.google.com/store/apps/details?id=com.halopesa.eu'>
+                <Image display smWidth='142px' width="150px" fluid={data.ggplay.childImageSharp.fluid} />
+              </a>
+            </div>
           </li>
           <li>
 
           </li>
         </ul>
       </div>
-
     </FooterColumnContainer>
+    <div className="w-100">
+      <div style={{ width: "80%" }} className="d-lg-none d-md-none flex-row d-flex img-res pt-2 align-items-center">
+        <a className="col-6" target="__blank" href='https://itunes.apple.com/us/app/id1532695595'>
+          <Image display smWidth='142px' width="150px" fluid={data.appstore.childImageSharp.fluid} />
+        </a>
+        <a className="col-6" target="__blank" href='https://play.google.com/store/apps/details?id=com.halopesa.eu'>
+          <Image display smWidth='142px' width="150px" fluid={data.ggplay.childImageSharp.fluid} />
+        </a>
+      </div>
+    </div>
   </FooterWrapper>
-)
+}
 
 const FooterWrapper = styled.footer`
   background-color: #2e2e2e;

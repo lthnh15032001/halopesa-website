@@ -2,9 +2,29 @@ import React from 'react'
 import styled from "styled-components"
 import { Container, Section } from "../../components/global"
 // import Img from "gatsby-image"
+import { graphql, useStaticQuery } from "gatsby"
+import { Image } from '../../components/common/image'
 
 import { TitleRes } from '../../components/TitleRes'
 const HalopesaApp = () => {
+    const data = useStaticQuery(graphql`
+    query {
+      appstore: file(sourceInstanceName: { eq: "product" }, name: { eq: "appstore" }) {
+        childImageSharp {
+          fluid(maxWidth: 1000) {
+            ...GatsbyImageSharpFluid_tracedSVG
+          }
+        }
+      }
+      ggplay: file(sourceInstanceName: { eq: "product" }, name: { eq: "ggplay" }) {
+        childImageSharp {
+          fluid(maxWidth: 1000) {
+            ...GatsbyImageSharpFluid_tracedSVG
+          }
+        }
+      }
+    }
+  `)
     return (
         <StyledSection>
             <StyledContainer>
@@ -12,6 +32,14 @@ const HalopesaApp = () => {
                     name="HALOPESA APP"
                     des=" "
                 />
+                <div className="flex-row d-flex img-res pt-2 justify-content-center align-items-center">
+                    <a target="__blank" href='https://itunes.apple.com/us/app/id1532695595'>
+                        <Image display smWidth='142px' width="170px" fluid={data.appstore.childImageSharp.fluid} />
+                    </a>
+                    <a target="__blank" href='https://play.google.com/store/apps/details?id=com.halopesa.eu'>
+                        <Image display smWidth='142px' width="170px" fluid={data.ggplay.childImageSharp.fluid} />
+                    </a>
+                </div>
                 <div className="row mt-4">
                     <div className="col-12 col-lg-6 col-md-6">
                         <h5 className="text-center text2">About this App:</h5>
