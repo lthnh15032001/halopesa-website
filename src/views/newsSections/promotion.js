@@ -38,12 +38,12 @@ const Promotion = () => {
             <ContainerStyled>
                 <div className="row">
                     <div className="text1 pb-3">Halopesa's Promotions</div>
-                    <h5 className="my-2">How to buy Airtime and Bundles through HALOPESA </h5>
+                    {/* <h5 className="my-2">How to buy Airtime and Bundles through HALOPESA </h5>
                     <div className=''>
                         <div >Access prepaid services from your account. Buy for yourself or buy to others in real-time. You can buy airtime quickly and conveniently using your HaloPesa account. Simply by doing the following: <span style={{ fontWeight: 'bold' }}>Dial *150*88# and select ‘3’ for airtime and bundles.</span>
                         </div>
                     </div>
-                    <h5 className="pt-3">The Bundles provided through HaloPesa are as follows:</h5>
+                    <h5 className="pt-3">The Bundles provided through HaloPesa are as follows:</h5> */}
                 </div>
                 <Flex col={3}>
                     <Card className="shadow border-0 mt-4">

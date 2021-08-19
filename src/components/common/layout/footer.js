@@ -64,14 +64,14 @@ const Footer = () => {
       <div className="info">
         <ul>
           <li>Contact Us</li>
-          <li>VIETTEL TANZANIA PLC <br />(HALOTEL)</li>
+          <li><strong>VIETTEL TANZANIA PLC</strong> <br />(HALOTEL)</li>
           <li>
-            <div className="hotline py-2">Hotline: <a href="tel:100" className="text-white"><strong>100</strong></a> or text <a href="tel:0622 100100" className="text-white"><strong>0622 100100</strong></a> on Whatsapp </div>
+            <div className="hotline py-2"><strong>Hotline</strong>: <a href="tel:100" className="text-white"><strong>100</strong></a> or text <a href="tel:0622 100100" className="text-white"><strong>0622 100100</strong></a> on Whatsapp </div>
           </li>
           <li className="pb-2">
-            Email: <a href="mailto: HaloPesa@halotel.co.tz" className="text-white">HaloPesa@halotel.co.tz</a> 
+          <strong> Email</strong>: <a href="mailto: HaloPesa@halotel.co.tz" className="text-white">HaloPesa@halotel.co.tz</a> 
           </li>
-          <li>Address: 10th Floor, Tanzanite Park, Plot No. 38, South Ursino, New Bagamoyo Road, P.O.Box 34176 Dar es Salaam</li>
+          <li><strong>Address</strong>: 10th Floor, Tanzanite Park, Plot No. 38, South Ursino, New Bagamoyo Road, P.O.Box 34176 Dar es Salaam</li>
           <li></li>
           <li></li>
           <li></li>
