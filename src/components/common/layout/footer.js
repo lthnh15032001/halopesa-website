@@ -19,12 +19,12 @@ const Footer = () => (
       </div>
       <div>
         <ul>
-          <li>Product & Services</li>
-          <li>Mobile Packages</li>
-          <li>Mobile Internet</li>
-          <li>Social Network</li>
-          <li>VAS Services</li>
-          <li>Devices</li>
+          <li className="about" onClick={() => {
+            navigate("/services")
+          }}>Product & Services</li>
+          <li><a
+            target="__blank"
+            href="https://www.facebook.com/Halopesa-107775141421099/" className="social">Social Network</a></li>
         </ul>
       </div>
       <div>
@@ -36,8 +36,6 @@ const Footer = () => (
           <li onClick={() => {
             navigate("/faqs")
           }}>FAQS</li>
-          <li>Find a store</li>
-          <li>Repair & Warranty</li>
         </ul></div>
       <div>
         <ul>
@@ -86,7 +84,13 @@ const FooterWrapper = styled.footer`
 `
 
 const FooterColumnContainer = styled(Container)`
-
+  .social {
+    color: white;
+    text-decoration: none;
+    &:hover {
+      color: #0d6efd
+    }
+  }
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-column-gap: 0px;

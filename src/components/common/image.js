@@ -14,7 +14,6 @@ import styled from "styled-components"
  */
 
 export const Image = ({ fluid, width, onClick, style, className, display, smWidth }) => {
-  console.log(width, smWidth)
   return <ImageWrapper onClick={onClick && onClick} style={style && style} className={className && className}>
     <StyledImage width={width} smWidth={smWidth} fluid={fluid} display={display} />
     <br />

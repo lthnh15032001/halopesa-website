@@ -48,6 +48,9 @@ const Header = () => {
     adaptiveHeight: true,
     autoplay: true
   };
+  const redirect = (a) => {
+    window.location = a
+  }
   return (
     <HeaderWrapper id="top">
       <Container>
@@ -91,8 +94,12 @@ const Header = () => {
               </div>
             </Slider>
             <div className="flex-row d-flex img-res pt-md-5 pt-4">
-              <Image display smWidth='142px' width="170px" fluid={data.appstore.childImageSharp.fluid} />
-              <Image display smWidth='142px' width="170px" fluid={data.ggplay.childImageSharp.fluid} />
+              <a target="__blank" href='https://itunes.apple.com/us/app/id1532695595'>
+                <Image display smWidth='142px' width="170px" fluid={data.appstore.childImageSharp.fluid} />
+              </a>
+              <a target="__blank" href='https://play.google.com/store/apps/details?id=com.halopesa.eu'>
+                <Image display smWidth='142px' width="170px" fluid={data.ggplay.childImageSharp.fluid} />
+              </a>
             </div>
           </HeaderTextGroup>
           <Image display width="680px" smWidth="360px" fluid={data.greenSkew.childImageSharp.fluid} />
