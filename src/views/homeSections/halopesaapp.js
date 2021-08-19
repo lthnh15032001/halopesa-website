@@ -66,6 +66,7 @@ const HalopesaApp = () => {
                             <li>Reverse a transaction in the spot without any loss.</li>
                             <li>Make various payments such as paying bill at the power of your fingertips.</li>
                             <li>Choose between the language Swahili and English for your comfort ability. </li>
+                            <li>Install HaloPesa App to get 1GB and 10 minutes for free</li>
                         </ul>
                     </div>
                 </div>

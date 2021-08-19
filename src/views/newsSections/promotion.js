@@ -6,7 +6,6 @@ import { Image } from '../../components/common/image'
 import {
     Card, CardText, CardBody,
 } from 'reactstrap';
-import { TitleRes } from '../../components/TitleRes'
 
 const Promotion = () => {
     const img = useStaticQuery(graphql`
@@ -18,7 +17,14 @@ const Promotion = () => {
                 }
             }
         }
-        promotion: file(sourceInstanceName: { eq: "product" }, name: { eq: "promote" }) {
+        news2: file(sourceInstanceName: { eq: "product" }, name: { eq: "news2" }) {
+            childImageSharp {
+                fluid(maxWidth: 1000) {
+                    ...GatsbyImageSharpFluid_tracedSVG
+                }
+            }
+        }
+        news3: file(sourceInstanceName: { eq: "product" }, name: { eq: "news3" }) {
             childImageSharp {
                 fluid(maxWidth: 1000) {
                     ...GatsbyImageSharpFluid_tracedSVG
@@ -32,26 +38,46 @@ const Promotion = () => {
             <ContainerStyled>
                 <div className="row">
                     <div className="text1 pb-3">Halopesa's Promotions</div>
-                        <h5 className="my-2">How to buy Airtime and Bundles through HALOPESA </h5>
-                        <div className=''>
-                            <div >Access prepaid services from your account. Buy for yourself or buy to others in real-time. You can buy airtime quickly and conveniently using your HaloPesa account. Simply by doing the following: <span style={{fontWeight:'bold'}}>Dial *150*88# and select ‘3’ for airtime and bundles.</span>                                
-                            </div>
+                    <h5 className="my-2">How to buy Airtime and Bundles through HALOPESA </h5>
+                    <div className=''>
+                        <div >Access prepaid services from your account. Buy for yourself or buy to others in real-time. You can buy airtime quickly and conveniently using your HaloPesa account. Simply by doing the following: <span style={{ fontWeight: 'bold' }}>Dial *150*88# and select ‘3’ for airtime and bundles.</span>
                         </div>
-                        <h5 className="pt-3">The Bundles provided through HaloPesa are as follows:</h5>
+                    </div>
+                    <h5 className="pt-3">The Bundles provided through HaloPesa are as follows:</h5>
                 </div>
                 <Flex col={3}>
                     <Card className="shadow border-0 mt-4">
                         <Image display smWidth="340px" fluid={img.news.childImageSharp.fluid} width="368px" />
                         <CardBody className="pt-0">
-                            <CardText className="text-center"><strong>Mega Bundle</strong> </CardText>
-                            <div className="text-center">This is a weekly bundle that provides our customers the comfort ability of enjoying with HaloPesa through the whole week with <strong>1GB + 10Min (Halotel)</strong>  for <strong>1000Tsh and 3GB + 30Min (All Networks)</strong>  for 3000Tsh.</div>
+                            <CardText className="text-center"><strong>SAFETY GUARD YOUR HALOPESA ACCOUNT</strong> </CardText>
+                            <div >
+                                HaloPesa cares for the safety of your account, hence do not share your PIN number with anybody in order to avoid the following;
+                                <ul>
+                                    <li><strong>⦁	Robbery from your account</strong></li>
+                                    <li><strong>⦁	Your account to be used in fraud activities</strong></li>
+                                </ul>
+                                If ever you forget your HaloPesa PIN number kindly call 100 our call center or send us a Whatsapp message through <a href="tel:0622 100 100">0622 100 100</a> in order to reset your PIN number.
+                            </div>
                         </CardBody>
                     </Card>
                     <Card className="shadow border-0 mt-4">
-                        <Image display smWidth="340px" fluid={img.news.childImageSharp.fluid} width="368px" />
+                        <Image display smWidth="340px" fluid={img.news2.childImageSharp.fluid} width="368px" />
                         <CardBody className="pt-0">
-                            <CardText className="text-center"><strong>Royal Bundle</strong></CardText>
-                            <div className="text-center">This is a monthly bundle that provides our customers the comfort ability of enjoying with HaloPesa through the whole month with <strong>7GB + 150Min (All Networks) + 400Min (Halotel)</strong> for 10,000Tsh and <strong>15GB + 300Min (All Networks) + 800Min (Halotel)</strong> for 30,000Tsh.</div>
+                            <CardText className="text-center"><strong>HaloPesa Family is there for you!!</strong></CardText>
+                            <div className="text-center">
+                                HaloPesa or Halotel will not contact you with any other number than the Call center communication numbers which are <span className="text-danger"><strong>100</strong></span> and <span className="text-danger"><strong>0622 100 100</strong></span>. HaloPesa and their representatives <span className="text-danger"><strong>WILL NOT</strong></span> ask you for your HaloPesa PIN number.
+                            </div>
+                        </CardBody>
+                    </Card>
+                    <Card className="shadow border-0 mt-4">
+                        <Image display smWidth="340px" fluid={img.news3.childImageSharp.fluid} width="368px" />
+                        <CardBody className="pt-0">
+                            <CardText className="text-center"><strong>SAVE 5% WHEN BUYING BUNDLES.</strong></CardText>
+                            <div>
+                                <span>- HaloPesa cares about our customers and dude to that it brings an <strong>OFFER LIKE NEVER BEFORE</strong> to enable you our customer to buy bundles with the discount of 5% from HaloPesa. <br /></span>
+                                <span>- With varieties of bundles that HaloPesa has this Offer is what you need, Bundles that will save you through the week and even through the month, from the best internet to voice bundles that will enable you to talk to your loved ones constantly. <br /></span>
+                                <span>- Now you can <strong>SAY BYE BYE</strong> to hustling, you can get the bundle of your choice anytime and anywhere.<br /></span>
+                            </div>
                         </CardBody>
                     </Card>
                 </Flex>

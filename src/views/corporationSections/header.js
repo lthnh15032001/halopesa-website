@@ -18,8 +18,8 @@ const Header = () => {
     return (
         <BackgroundImageContainer fluid={img.bg.childImageSharp.fluid}>
             <HeaderWrapper>
-                <h1>For Corpration</h1>
-                <div>Home/For Corpration</div>
+                <h1>For Corporation</h1>
+                <div>Home/For Corporation</div>
             </HeaderWrapper>
         </BackgroundImageContainer>
     )
