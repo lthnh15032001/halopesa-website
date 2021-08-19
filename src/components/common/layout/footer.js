@@ -61,12 +61,15 @@ const Footer = () => {
             navigate("/faqs")
           }}>FAQS</li>
         </ul></div>
-      <div>
+      <div className="info">
         <ul>
           <li>Contact Us</li>
           <li>VIETTEL TANZANIA PLC <br />(HALOTEL)</li>
           <li>
-            <div className="hotline py-2">Hotline: <a href="tel:100" className="text-white"><strong>100</strong></a> or text <a href="tel:0622 100100" className="text-white"><strong>0622 100100</strong></a> on Whatsapp | Email: <a href="mailto: HaloPesa@halotel.co.tz" className="text-white">HaloPesa@halotel.co.tz</a> </div>
+            <div className="hotline py-2">Hotline: <a href="tel:100" className="text-white"><strong>100</strong></a> or text <a href="tel:0622 100100" className="text-white"><strong>0622 100100</strong></a> on Whatsapp </div>
+          </li>
+          <li className="pb-2">
+            Email: <a href="mailto: HaloPesa@halotel.co.tz" className="text-white">HaloPesa@halotel.co.tz</a> 
           </li>
           <li>Address: 10th Floor, Tanzanite Park, Plot No. 38, South Ursino, New Bagamoyo Road, P.O.Box 34176 Dar es Salaam</li>
           <li></li>
@@ -128,6 +131,9 @@ const FooterWrapper = styled.footer`
 `
 
 const FooterColumnContainer = styled(Container)`
+  .info {
+      width: 220px
+  }
   .social {
     color: white;
     text-decoration: none;
@@ -143,6 +149,9 @@ const FooterColumnContainer = styled(Container)`
   @media (max-width: ${props => props.theme.screen.sm}) {
     grid-template-columns: 1fr 1fr;
     grid-gap: 32px;
+    .info {
+      width: 170px
+  }
   }
   div {
     color: white
