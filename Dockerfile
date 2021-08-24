@@ -1,5 +1,4 @@
-
-# FROM node:16.4.2
+# node:16.4.2
 # MAINTAINER datlt31@viettel.com.vn
 # WORKDIR /usr/app
 # COPY package*.json ./
